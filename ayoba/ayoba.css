@@ -1,0 +1,44 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --blue: #1161A2;
+  --orange: #FBB833;
+  --white: #fff;
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--blue);
+}
+
+section {
+  width: 45vh;
+  aspect-ratio: 1;
+  position: relative;
+}
+.app{
+  position: absolute;
+  inset: 5% ;
+  border-radius: 15%;
+  border: solid;
+  background-color: var(--white);
+}
+.app p{
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(var(--orange) 20%,var(--white) 20% 40%,var(--blue) 40%);
+}
+.app p::after{
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  right: 0;
+  border-radius: 500% 500%/150% 150%;
+  background-color: var(--blue);
+}
