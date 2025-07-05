@@ -1,4 +1,4 @@
-# Welcome
+# Welcome Repo
 ## welcome to GitHub
 
-This is my first re9o in GitHub. im still learning to do more on the 9latform.
+This is my first repo in GitHub. An introduction to working with GitHub, VS Code and Git
