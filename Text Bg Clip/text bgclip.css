@@ -1,0 +1,45 @@
+body *{
+    margin: 5px;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(211,211,211);
+    transition: .5s;
+}
+h1{
+    font-size: 115px;
+    letter-spacing: -8px;
+    padding: 5px 10px;
+    background-image: repeating-linear-gradient(45deg,green,yellow,cyan);
+    background-size: 5px 5px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+button,output{
+    padding: 10px;
+    font: 1rem georgia;
+    background-color: aqua;
+    width: 200px;
+    border: none;                  ;
+    transition-property: filter ,background-color;
+    transition-duration: .3s;
+}
+button{
+    cursor: pointer;
+}
+button:hover{
+    background-color: #7ef;
+    border: solid 2px green;
+    padding-block: 8px;
+}
+button:active{
+    filter: brightness(.8);
+}
