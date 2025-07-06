@@ -1,0 +1,121 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font: 100%/1.5 sans-serif;
+    background-color: cyan;
+}
+.container{
+    width: 600px;
+    padding: 20px;
+    background-color: navy;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 1px 1px 5px inset,2px 2px 5px;
+    border: 2px white solid;
+    margin: 20px;
+    min-width: 320px;
+}
+.container h1{
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-block: 20px;
+}
+.buttons button{
+    padding: 5px 10px;
+    border: none;
+    width: 55px;
+    font-size: 1.1rem;
+    transition: .4s;
+    box-shadow: 1px 1px 5px;
+    position: relative;
+}
+.buttons button:hover {
+    opacity: .8;
+}
+.buttons button:active{
+    translate: 1px 1px;
+    
+}
+button.active:after {
+    content: attr(id);
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    color: white;
+    height: 12px;
+    border-radius: 5px;
+    left: 0;
+    border-bottom: 2px solid white;
+    font-size: 50%;
+    outline: none;
+}
+.active{
+    background-color: #ccc;
+    outline: 1px solid orange;
+}
+#text{ 
+    height: 100px;
+    resize: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-family: serif;
+    border: none;
+    width: 95%;
+    box-shadow: 1px 1px 5px;
+}
+#text:focus{
+    outline: orange 2px solid;
+}
+output{
+    width: 95%;
+    min-height: 100px;
+    border: inset ;
+    margin-top: 20px;
+    margin-left: 5%;
+    background-color: wheat;
+    font-size: 15px;
+    padding: 5px 10px;
+    text-align: justify;
+    box-shadow: 1px 1px 5px;
+}
+#bold{
+    font-weight: 900;
+}
+#italic{
+    font-style: italic;
+}
+#underline{
+    text-decoration: underline;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-style: italic;
+}
+.underline{
+    text-decoration: underline;
+}
