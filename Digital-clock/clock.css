@@ -1,0 +1,63 @@
+:root{
+    --teal: teal;
+    --white: white;
+    --indigo: indigo;
+    font-size: 4vmin;
+}
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    box-sizing: border-box;
+    font-family: Georgia;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--teal);
+    padding: 0 30px;
+    text-align: center;
+}
+.container h1 {
+    font-size: 45px;
+    color: var(--indigo);
+    text-transform: uppercase;
+}
+.container .display{
+	font-family: "fira code", monospace ;
+	font-size: 5em;
+    color: var(--white);
+    max-width: 80%;
+}
+.btn{
+    border: none;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: bold;
+    color: var(--indigo);
+}
+.btn:hover{
+    background-color: transparent;
+    outline: var(--indigo) solid;
+    color: var(--white);
+}
+.btn:active{
+    translate: 2px 2px;
+    font-weight: bolder;
+}
+[t]{
+    font-size: 18px;
+    background-color: var(--white);
+    color: var(--teal);
+    padding: 5px 10px;
+    padding-bottom: 0;
+}
+[dot]{animation: blink 1s infinite steps(1);}
+@keyframes blink {
+    50%{color: transparent;}
+}
