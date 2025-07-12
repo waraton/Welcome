@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The different font families and their examples">
+    <title>Custom Scrollbar|Font Families</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <h1>FONT FAMILIES</h1>
+    <section class="card">
+        <h2 class="font serif">Serif fonts</h2>
+
+        <p>
+            Serif fonts are proportional and have serifs. A font is
+            proportional if all characters in the font have different
+            widths. For example, a lowercase <span class="monospace">i</span> and a lowercase <span
+                class="monospace">m</span> take up
+            different horizontal spaces because they have different widths.
+            Serifs are the decorations on the ends of strokes within each
+            character, such as little lines at the top and bottom of a
+            lowercase <span class="monospace">l</span>, or at the bottom of each leg of an uppercase <span
+                class="monospace">A</span>.
+            Examples of serif fonts are <span data-font="Times">Times, <span data-font="Georgia">Georgia</span>, and
+                <span data-font="New Century Schoolbook">New Century Schoolbook</span>.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2 class="font san-serif">Sans-serif fonts</h2>
+        <p>
+            Sans-serif fonts are proportional and do not have serifs.
+            Examples of sans-serif fonts are <span data-font="Helvetica">Helvetica</span>, <span
+                data-font="Geneva01">Geneva</span>, <span data-font="Verdana">Verdana</span>,
+            <span data-font="Arial">Arial</span>, and <span data-font="Univers next pro">Univers</span>.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2 class="font monospace">Monospace fonts</h2>
+        <p>
+            Monospace fonts are not proportional. Rather, each character
+            uses up the same amount of horizontal space as all the others;
+            thus, a lowercase <span class="monospace">i</span> takes up the same horizontal space as a
+            lowercase <span class="monospace">m</span>, even though their actual letter forms may have
+            different widths. These generally are used for displaying
+            programmatic code or tabular data, like this book’s code font,
+            for example. If a font has uniform character widths, it is
+            classified as monospace, regardless of whether it has serifs.
+            Examples of monospace fonts are <span data-font="Courier">Courier</span>, <span
+                data-font="Courier New">Courier New</span>, <span data-font="Consolas">Consolas</span>,
+            and <span data-font="Andale Mono">Andale Mono</span>.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2 class="font cursive">Cursive fonts</h2>
+        <p>
+            Cursive fonts attempt to emulate human handwriting or lettering.
+            Usually, they are composed largely of flowing curves and have
+            stroke decorations that exceed those found in serif fonts. For
+            example, an uppercase <span class="monospace">A</span> might have a small curl at the bottom of
+            its left leg or be composed entirely of swashes and curls.
+            Examples of cursive fonts are <span data-font='Zapf Chancery'>Zapf Chancery</span>, <span
+                data-font='Author'>Author</span>, and <span data-font='Comic Sans'>Comic Sans</span>.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2 class="font fantasy">Fantasy fonts</h2>
+        <p>
+            Fantasy fonts are not really defined by any single
+            characteristic other than our inability to easily classify them
+            in one of the other families (these are sometimes called
+            decorative or display fonts). A few such fonts are <span data-font='Western'>Western</span>,
+            <span data-font='Woodblock'>Woodblock</span>, and <span data-font='KlingonBlade'>Klingon</span>.
+        </p>
+    </section>
+    <footer>
+        <p><cite>CSS: The Definitive Guide</cite> by Eric A. Meyer and Estelle Weyl (O’Reilly). Copyright &copy;2023
+            Eric A. Meyer and Estelle Weyl, 978-1-098-11761-0.</p>
+    </footer>
+    <script>
+        const fonts = document.querySelectorAll('[data-font]');
+        fonts.forEach(font => {
+            console.log(font);
+            font.style.fontFamily = `'${font.dataset.font}'`
+        });
+    </script>
+</body>
+
+</html>

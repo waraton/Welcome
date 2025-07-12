@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+    font: inherit;
+    outline: none;
+}
+body{
+    background-color: #8cb3d3;
+}
+section{
+    --grey: #ebebeb;
+    --greyButton: #f0f0f0;
+    --greyBorder: #dadada;
+    --hoverBorder: #8cb3d3;
+    --hoverBackground: #e6f0fa;
+    width: 415px;
+    background-color: #f28372;
+    margin: 2em auto;
+    padding: 5px;
+    position: relative;
+    font: 80% arial,sans-serif;
+    height: 525px;
+}
+h1{
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-block: 5px;
+    line-height: 24px;
+}
+img{
+    position: absolute;
+    inset: 1% 5px;
+}
+.close{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    border: none;
+    border-radius: 0;
+    width: 40px;
+    height: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #c75050;
+    color: white;
+}
+.main{
+    background-color: var(--grey);
+    border: 1px solid var(--greyBorder);
+    font-size: 12px;
+}
+form{
+    height: 415px;
+    background-color: white;
+    margin: 0 5px 5px;
+    border: 1px solid var(--greyBorder);
+    padding: 10px;
+    display: none;
+}
+form a:any-link{
+    position: absolute;
+    bottom: 50px;
+    color: blue;
+    cursor: default;
+}
+li{
+    list-style: none;
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+}
+li input{
+    display: inline-block;
+    margin-right: 5px;
+    accent-color: royalblue;
+}
+form.active{
+    display: block;
+}
+.custom label{
+    width: 160px;
+}
+.custom select{
+    display: inline-block;
+    width: 170px;
+    padding: 2px 0;
+    background-color: var(--greyButton);
+}
+#customize{
+    border: 1px solid var(--greyBorder);
+    padding: 2px 5px;
+}
+nav{
+    margin: 5px 0 0 5px;
+}
+button{
+    border: 1px solid var(--greyBorder);
+    padding: 4px;
+    margin-right: -5px;
+    background-color: var(--greyButton);
+}
+button.running{
+    background-color: white;
+    padding: 5px;
+    margin-bottom: -2px;
+    border-bottom-color: white;
+    margin-left: 0;
+}
+.taskbar{
+    margin-left: 2px;
+}
+.actionButtons{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: -5px;
+}
+.actionButtons button{
+    margin: 5px;
+    width: 73px;
+    font-size: 12px;
+}
+
+fieldset legend{
+    margin-left: 10px;
+    padding: 2px;
+}
+fieldset{
+    padding: 5px 5px 0 5px;
+    margin-bottom: 10px;
+    border: 1px solid var(--grey);
+}
+[autoDependant]{
+    padding-left: 20px;
+}
+
+#jumpList input[type=number]{
+    width: 35px;
+    padding: 2px;
+    border: 1px solid var(--grey);
+    margin-left: 55px;
+}
+.container{
+    border: 1px solid var(--greyBorder);
+    height: 255px;
+    margin-top: 5px;
+}
+.container *{
+    margin: 1px 4px 0 2px;
+}
+
+.disabled{
+    color: rgb(150, 150, 150);
+}
+button:hover:not(button.running),input:hover,.custom select:hover{
+    background: var(--hoverBackground);
+    border-color: var(--hoverBorder);
+}

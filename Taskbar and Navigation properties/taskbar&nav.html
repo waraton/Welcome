@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskbar and Navigation properties</title>
+  <link rel="stylesheet" href="taskbar&nav.css" />
+</head>
+
+<body>
+  <section>
+    <h1>Taskbar and Navigation properties</h1>
+    <img src="navbtn.png" alt="taskbar&nav" />
+    <button class="close">x</button>
+    <div class="main">
+      <nav>
+        <button data-mapped="taskbar" class="taskbar running">Taskbar</button>
+        <button data-mapped="navigation" class="">Navigation</button>
+        <button data-mapped="jumpList">Jump Lists</button>
+        <button data-mapped="toolbars">Toolbars</button>
+      </nav>
+
+      <form id="taskbar" class="page active">
+        <ul>
+          <li>
+            <input type="checkbox" id="lockTaskbar" /><label for="lockTaskbar">Lock the taskbar</label>
+          </li>
+          <li>
+            <input type="checkbox" id="hideTaskbar" checked /><label for="hideTaskbar">Auto-hide the taskbar</label>
+          </li>
+          <li>
+            <input type="checkbox" id="smallTaskbar" checked /><label for="smallTaskbar">Use small taskbar
+              buttons</label>
+          </li>
+
+          <li class="custom">
+            <label for="location">Taskbar location on screen:</label><select id="location">
+              <option>Bottom</option>
+              <option>Left</option>
+              <option>Top</option>
+              <option>Right</option>
+            </select>
+          </li>
+
+          <li class="custom">
+            <label for="buttonCombination">Taskbar buttons:</label><select id="buttonCombination">
+              <option>Always combine, hide labels</option>
+              <option>Combine when taskbar is full</option>
+              <option>Never combine</option>
+            </select>
+          </li>
+
+          <li class="custom">
+            <label for="customize">Notification area: </label>
+            <button type="button" id="customize" accesskey="c">
+              Customize...
+            </button>
+          </li>
+
+          <li>
+            <input type="checkbox" id="show" /><label for="show">Show Windows Store apps on the taskbar</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="peek" checked /><label for="peek">Use Peek to preview the desktop when you move
+              the mouse to the
+              show desktop button at the end of the taskbar</label>
+          </li>
+        </ul>
+        <a href="">How do i customize the taskbar?</a>
+      </form>
+
+      <form id="navigation" class="page">
+        <fieldset>
+          <legend>Corner Navigation</legend>
+          <li><input type="checkbox" checked />
+            <label>When I point the upper-right
+              corner, show the charms</label>
+          </li>
+          <li><input type="checkbox" checked />
+            <label>When I click th e upper-left
+              corner, switch between my recent apps</label>
+          </li>
+          <li><input type="checkbox" />
+            <label>
+              Replace Command Prompt with Windows
+              PowerShell when I right-click the lower-left corner or press
+              Windows key+x</label>
+          </li>
+        </fieldset>
+
+        <fieldset>
+          <legend>Start screen</legend>
+          <li>
+            <input type="checkbox" />
+            <label>When i sign in or close all apps on the screen, go to the
+              desktop instead of start</label>
+          </li>
+          <li>
+            <input type="checkbox" disabled id="bgOnstart" />
+            <label for="bgOnstart" class="disabled">Show my desktop background on Start</label>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <label>Show Start on the display I'm using when I press the Windows
+              logo key</label>
+          </li>
+          <li>
+            <input type="checkbox" checked auto />
+            <label>Show the Apps view automatically when i go to Start</label>
+          </li>
+          <li autoDependant>
+            <input type="checkbox" />
+            <label>Search everywhere instead of just my apps when I search
+              from the Apps view</label>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <label>List desktop apps first in the Apps view when it's sorted by
+              category</label>
+          </li>
+        </fieldset>
+      </form>
+
+      <form id="jumpList" class="page">
+        <li>
+          <label for="jump">Number of recent items to display in Jump Lists:</label><input type="number" value="10"
+            id="jump" />
+        </li>
+
+        <fieldset>
+          <legend>Privacy</legend>
+          <li>
+            <label><input type="checkbox" checked />Store recently opened
+              programs</label>
+          </li>
+          <li>
+            <label><input type="checkbox" checked />Store and display recently
+              opened programs in Jump Lists</label>
+          </li>
+        </fieldset>
+      </form>
+
+      <form id="toolbars" class="page">
+        <p>Select which toolbars to add to the taskbar.</p>
+        <div class="container">
+          <li>
+            <label><input type="checkbox" />Address</label>
+          </li>
+          <li>
+            <label><input type="checkbox" />Links</label>
+          </li>
+          <li>
+            <label><input type="checkbox" checked />Touch Keyboard</label>
+          </li>
+          <li>
+            <label><input type="checkbox" checked />Desktop</label>
+          </li>
+        </div>
+      </form>
+      <div class="actionButtons">
+        <button>OK</button>
+        <button>Cancel</button>
+        <button>Apply</button>
+      </div>
+    </div>
+  </section>
+  <script src="taskbar&nav.js"></script>
+</body>
+
+</html>
