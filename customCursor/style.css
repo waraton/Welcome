@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
-  height: 100vh;
+  min-height: 100vh;
   background-color: aliceblue;
   cursor: crosshair;
   font-size: 100%;
@@ -29,15 +29,17 @@ body{
   scale: .9;
 }
 .output{
-  width: 450px;
+  width: 500px;
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 150px;
   gap: 5px;
   line-height: 2;
   background-color: cyan;
-  border: 1px saddlebrown solid;
   color: saddlebrown;
+  font-size: .8rem;
+  border-radius: .5rem;
+  box-shadow: 1px 1px 3px;
 }
 .output >*{
   border: 1px solid;
@@ -46,4 +48,16 @@ body{
 .output output{
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+}
+.output p{
+  width: 100%;
+  grid-column: span 2;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: cyan;
+  margin-bottom: -.65rem;
+  border: none;
+}
+.output :last-child{
+  text-align: right;
 }

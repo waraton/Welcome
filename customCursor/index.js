@@ -2,8 +2,8 @@ const cursor = document.body.querySelector('.cursor')
 const output = document.body.querySelector('.output')
 
 document.body.addEventListener('mousemove',e =>{
-  cursor.style.left = `${e.x -5}px`
-  cursor.style.top = `${e.y -5}px`
+  cursor.style.left = `${e.clientX -5}px`
+  cursor.style.top = `${e.clientY -5}px`
   
   document.querySelector('.page').textContent = `${e.pageX} | ${e.pageY}`
   document.querySelector('.screen').textContent = `${e.screenX} | ${e.screenY}`
