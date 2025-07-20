@@ -1,0 +1,52 @@
+body {
+  font: 16px/1.5 sans-serif ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: skyblue ;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: Border-box ;
+}
+.name {
+  margin-block: 5px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+.app {
+  width: 150px;
+  aspect-ratio: 1;
+  border-radius: 40%;
+  background-color: white;
+  position: relative;
+  margin: 0;
+}
+.semi {
+  width: 40%;
+  aspect-ratio: 1;
+  clip-path: circle(50% at 50% 0);
+  position: absolute;
+  background-color: var(--bg);
+  inset: 50%;
+  transform: translate(-50% -50%);
+  transform-origin: 0 0;
+}
+.red.semi {
+  --bg: red;
+  rotate: 270deg;
+}
+.yellow.semi {
+  --bg: yellow;
+  rotate: 180deg;
+}
+.green.semi {
+  --bg: green;
+  rotate: 90deg;
+}
+.blue.semi {
+  --bg: blue;
+}

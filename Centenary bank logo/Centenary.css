@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+}
+.outer{
+  width: 320px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid white;
+  background:
+
+      linear-gradient(
+        yellow 0 0 )calc(50% - 9px) 52.2%/28px 3px no-repeat border-box,
+
+  linear-gradient(  
+      blue 52%, 
+      transparent 45%),
+
+  conic-gradient(at 50% 33%, 
+      blue 150deg, 
+      yellow 150deg 180deg,
+      red 180deg 200deg,
+      yellow 200deg 210deg,
+      blue 210deg); 
+}
+.inner{
+  width: 22%;
+  aspect-ratio: 2;
+  position : absolute;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-100%);
+  border-radius: 5%;
+}
+.inner::after{
+  position: absolute;
+  content: '';
+  background-color: red;
+  inset-block: 2px;
+  inset-inline: 45%;
+}
+.inner::before{
+  position: absolute;
+  content: '';
+  background-color: red;
+  inset-block: 25% 55%;
+  inset-inline: 27.5%;
+}
