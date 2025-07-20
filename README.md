@@ -26,39 +26,33 @@ My home country is South Sudan, the Land of Great Abundance. This was before the
 
 My home address is
 
-```text
-Lorijo Village  
-Mekir Boma  
-Lire Payam 
-Kajo-Keji county
-Central Equatoria State 
-South sudan
-```
+> Lorijo Village  
+> Mekir Boma  
+> Lire Payam  
+> Kajo-Keji county  
+> Central Equatoria State  
+> South Sudan
 
 Currently I don't have any permanent address. I and my family lives in the camp. We have been stuck in the camp for over so long; since Jan 2017 up to date (July 2025) whit little no ratio as of the months starting early 2025.
 
 My refugee address is
 
-```text
-Block 1, Doma village  
-Morobi Zone 11  
-Palorinya Refugee camp
-```
+> Block 1, Doma village  
+> Morobi Zone 11  
+> Palorinya Refugee camp
 
 I also stay with my Uncle in
 
-```text
-Benjamin Sokiri Modi Home
-Behind Genesis of Hope foundation
-Kubiri, Takajunge
-Mukono Municipality
-```
+> Benjamin Sokiri Modi Home  
+> Behind Genesis of Hope foundation  
+> Kubiri, Takajunge  
+> Mukono Municipality
 
 ## Contact
 
-LOOK at my [W3Profile](https://w3profile.com/waraton) to see more info about me. Also take a look at my [W3Space](https://waraton.w3paces.com/)
+LOOK at my [W3Profile](https://www.w3profile.com/waraton) to see more info about me. Also take a look at my [W3Space](https://www.waraton.w3spaces.com/)
 
-You can follow me on GitHub [@waraton](httpswww.github.com/waraton)
+You can follow me on GitHub [@waraton](https://www.github.com/waraton)
 
 Reach me on email at `bensonwaran[at]gmail[dot]com[mercial]`
 
