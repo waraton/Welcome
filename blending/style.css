@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: skyblue;
+}
+.bucket {
+  position: fixed;
+  margin: auto;
+  inset: 0;
+}
+.bucket > *{
+  mix-blend-mode: multiply;
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  inset: 0;
+  margin: auto;
+  width: 45vmin;
+  max-width: 200px;
+  transform: translate(57.725%, 0%);
+}
+.orange {
+  rotate: 30deg;
+  background: #FF9800;
+}
+.orange.two {
+  rotate: 150deg;
+}
+.orange.three {
+  rotate: -90deg;
+}
+
+.indigo {
+  rotate:-30deg;
+  background: purple;
+}
+.indigo.two {
+  rotate:-150deg;
+}
+.indigo.three {
+  rotate: 90deg;
+}

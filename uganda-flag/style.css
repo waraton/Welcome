@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: skyblue;
+}
+.flag{
+  --height: 30vmax;
+  --black: rgb(0,0,0);
+  --white: #fff;
+  --red: rgb(217, 0, 0);
+  --yellow: rgb(252, 220, 4);
+  --aspect-ratio: 3/2;
+
+  aspect-ratio: var(--aspect-ratio);
+  height: var(--height);
+  background-image: repeating-linear-gradient(var(--black) 0 calc(100%/6),var(--yellow) calc(100%/6) calc(200%/6),var(--red) calc(100%/3) 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle{
+  width: 9vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-content: center center;
+  background-color: white;
+}
+img{
+  width: 100%;
+}
