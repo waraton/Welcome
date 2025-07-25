@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+button,
+output,
+input {
+  font-family: inherit;
+}
+body {
+  --minWidth: 100%;
+  background: skyblue;
+  font: sans-serif;
+}
+form {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  border: 1px solid white;
+  width: fit-content;
+  min-width: 250px;
+  height: fit-content;
+  background: teal;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 20px 10px;
+  border-radius: 0;
+  box-shadow: -2px -1px 10px 5px #2e5b84;
+}
+form > *{
+  min-width: var(--minWidth);
+  width: 50vmin;
+}
+input {
+  width: 45px;
+  text-align: right;
+  color: blue;
+  outline: none;
+  border: 1px solid;
+  font-weight: bold;
+  font-size: .85rem;
+  padding: 2px 5px;
+  font-family: Monospace;
+  caret-color: #000;
+}
+.inputs {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.output {
+  background-color: antiquewhite;
+  background-image: 
+    linear-gradient(#0000 49.75%, black 49.75% 50.25%, #0000 50.25%),
+    linear-gradient(90deg, #0000 49.75%, black 49.75% 50.25%, #0000 50.25%);
+  border: none;
+  aspect-ratio: 1;
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px inset skyblue;
+}
+.output::after,.output::before{
+  position: absolute;
+  border-left: 1px solid black;
+  content: '';
+  border-top: 1px solid black;
+  width: 5px;
+  aspect-ratio: 1;
+  top: 1px;
+  rotate: 45deg;
+  z-index: 1;
+}
+.output::after{
+  right: 1px;
+  top: 50%;
+  rotate: 135deg;
+  translate: 0 -50%;
+}
+.graph {
+  padding: 5px;
+  border: 2px solid #0000;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.graph:hover {
+  border: solid 2px #000;
+}
+#line {
+  display: block;
+  width: .5px;
+  height: 190%;
+  transform: rotate(-90deg);
+  background: radial-gradient(black 0 5px, blue 5px 4545%) center/ 5px 5px no-repeat;
+  background-color: blue;
+}
+.details{
+  width: fit-content;
+  background-color: aliceblue;
+  position: absolute;
+  bottom: -10%;
+  inset-inline: 0;
+  border-radius: 1em;
+  padding: 1em;
+  font-size: .8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: .85;
+  color: indigo;
+  font-weight: bold;
+  box-shadow: 3px 4px 11px 3px #5d69a2;
+  display: none;
+  transform: perspective(134px) rotateX(5deg);
+  text-align: center;
+}
