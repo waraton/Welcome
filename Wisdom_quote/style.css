@@ -1,0 +1,69 @@
+*{
+  box-sizing: border-box ;
+  margin: 0;
+  border: 1upx solid;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:linear-gradient(rgba(25, 0 ,0, 0.5), rgba(25, 0,0 ,0.5)),
+  url(https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1Hjwu6.img?w=800&h=450&m=4&q=79) center/cover border-box border-box no-repeat;
+  line-height: 1.4;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  max-width: 800px;
+  min-width: 375px;
+  position: relative;
+  font-weight: bold;
+  max-width: 600px;
+  padding: 2em 2rem;
+}
+h2.title{
+  color: yellow;
+  font-size: 2rem;
+  text-align: right;
+  border-bottom: #fd08 solid;
+  width: 50%;
+  align-self: flex-end;
+  max-width: 600px;
+  padding-right: 2rem;
+}
+
+.quotee{
+  border: 1px solid;
+  margin-top: 30px;
+  font-family: helvetica;
+  padding: 10px  30px;
+  font-size: 16px;
+  background-color: #fd08;
+  color: white;
+  user-select: none;
+}
+
+article .quote{
+  font-style: italic;
+  color: white;
+  text-align: justify;
+  padding: 10px 20px;
+  text-shadow: 0 0 2px black;
+  position: relative;
+  font-size: 2.5rem;
+}
+
+article .quote::before {
+  content: '\2018';
+  color: yellow;
+  font-size: 10rem;
+  line-height: 30px;
+  font-family: serif;
+  position: absolute;
+  left: -.2em;
+  top: 10%;
+}
