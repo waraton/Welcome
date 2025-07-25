@@ -2,9 +2,15 @@
 
 ## Table of contents
 
-- [Background](Background)
-- [Color](Colors)
-- [Dimensions](Dimensions)
+- [South Sudan Flag](#south-sudan-flag)
+  - [Table of contents](#table-of-contents)
+  - [Background](#background)
+  - [colors](#colors)
+  - [What is the meaning of colors in the South Sudan flag?](#what-is-the-meaning-of-colors-in-the-south-sudan-flag)
+    - [Flag color code](#flag-color-code)
+    - [Wikipedia](#wikipedia)
+    - [The Album des Pavillons 2023](#the-album-des-pavillons-2023)
+  - [Dimensions](#dimensions)
 
 ## Background
 

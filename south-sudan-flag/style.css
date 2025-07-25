@@ -12,7 +12,7 @@ body{
   flex-direction: column;
 }
 .flag{
-  --height: 160px;
+  --height: 26vmax;
   --black: rgb(0,0,0);
   --white: rgb(255,255,255);
   --red: rgb( 210,16,52);
@@ -37,7 +37,7 @@ body{
   color: yellow;
   display: flex;
   align-items: center;
-  font-size: 425%;
+  font-size: 12vmax;
   padding-left: 5.25%;
   line-height: 1px;
   inset: 0 0;
