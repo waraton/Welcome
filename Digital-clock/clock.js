@@ -9,7 +9,7 @@ function tim() {
   const min = String(t.getMinutes());
   const sec = String(t.getSeconds());
   const apm = hr >= 12 ? "PM" : "AM";
-  const hrd = (hr > 12 || hr === 0) ? 12 - hr : hr;
+  const hrd = (hr > 12 || hr === 0) ?  hr - 12 : hr;
 
   const militaryTime = `${String(hr).padStart(2, 0)}${min.padStart(2, 0)}${sec.padStart(2, 0)}`;
 
