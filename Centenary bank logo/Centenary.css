@@ -4,14 +4,36 @@
   box-sizing: border-box;
 }
 body {
+  --blue: #2665ae;
+  --yellow: #f3ea55;
+  --red: #e4102e;
   display: flex;
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: blue;
+  background-color: skyblue;
+}
+.container{
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+.text{
+  color: var(--blue);
+  font-size: 3.75rem;
+  font-family: Questrial, sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-top: 3rem;
+  letter-spacing: 2px;
+}
+[red]{
+  color: var(--red);
 }
 .outer{
-  width: 320px;
+  height: 220px;
   aspect-ratio: 1;
   border-radius: 50%;
   position: relative;
@@ -19,40 +41,40 @@ body {
   background:
 
       linear-gradient(
-        yellow 0 0 )calc(50% - 9px) 52.2%/28px 3px no-repeat border-box,
+        var(--yellow) 0 0 ) 46% 52.5%/9% 3px no-repeat border-box,
 
   linear-gradient(  
-      blue 52%, 
+      var(--blue) 52%, 
       transparent 45%),
 
   conic-gradient(at 50% 33%, 
-      blue 150deg, 
-      yellow 150deg 180deg,
-      red 180deg 200deg,
-      yellow 200deg 210deg,
-      blue 210deg); 
+      var(--blue) 150deg, 
+      var(--yellow) 150deg 180deg,
+      var(--red) 180deg 200deg,
+      var(--yellow) 200deg 210deg,
+      var(--blue) 210deg); 
 }
 .inner{
   width: 22%;
   aspect-ratio: 2;
   position : absolute;
-  background-color: #fff;
+  background-color: var(--yellow);
   left: 50%;
   top: 50%;
   transform: translate(-50%,-100%);
-  border-radius: 5%;
+  border-radius: .5rem .5rem 0 0;
 }
 .inner::after{
   position: absolute;
   content: '';
-  background-color: red;
+  background-color: var(--red);
   inset-block: 2px;
   inset-inline: 45%;
 }
 .inner::before{
   position: absolute;
   content: '';
-  background-color: red;
+  background-color: var(--red);
   inset-block: 25% 55%;
   inset-inline: 27.5%;
 }
