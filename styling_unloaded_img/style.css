@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: orange;
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+h1,
+h2,
+h3 {
+  word-break: break-all;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+main {
+  max-width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 2rem;
+  background-color: skyblue;
+  margin-inline: auto;
+  max-width: 65rem;
+}
+section {
+  background-color: teal;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  max-width: 300px;
+}
+.image {
+  margin: 0%;
+  overflow: hidden;
+  min-height: 3rem;
+  aspect-ratio: 1.5;
+}
+img::after {
+  content: "Sorry!! Failed to load the image   ( ;";
+  padding: 1rem;
+  display: block;
+  border: 1px solid;
+}
+img::after,
+.image {
+  text-align: center;
+  background: repeating-conic-gradient(from 28deg, skyblue 12.5%, royalblue 25%)
+    center / 1rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+}
+section h3 {
+  font-size: 2rem;
+  padding: 1rem;
+}
+section p {
+  padding: 0 1rem 1rem;
+  font: 1em/1.5 sans-serif;
+}
