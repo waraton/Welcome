@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #211;
+  font-family: sans-serif;
+  line-height: 1.45;
+}
+header {
+  background-color: orange;
+  padding: 0.5rem 2rem;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+main {
+  max-width: 600px;
+  margin-inline: auto;
+}
+main>section{
+  padding-inline: 1rem;
+}
+main h2 {
+  color: white;
+  font-size: 2.23rem;
+  margin-top: 2rem;
+}
+.item {
+  transition: 0.5s;
+  background-color: skyblue;
+  border-radius: 0.5rem 0/.5rem;
+  margin-top: .125rem;
+}
+.item input[type="radio"] {
+  scale: 0;
+  position: absolute;
+}
+.item label[for*="item"],
+.title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  position: relative;
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+}
+.content {
+  transition: 0.15s;
+  height: 0px;
+  scale:1 0 ;
+  transform-origin: top;
+}
+input[type="radio"]:checked ~ p.content,
+.content.close {
+  scale: 1 1;
+  padding: 0 1rem 1rem;
+  height: fit-content;
+}
+.title > * {
+  transition: 0.5s;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  border-radius: 2rem;
+}
+.red {
+  color: red;
+  rotate: 45deg;
+}

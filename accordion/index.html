@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="accordion">
+  <meta name="keywords" content="accordion">
+  <link rel="styleSheet" href="style.css" type="text/css" media="all" />
+  <title>Accordions</title>
+</head>
+
+<body>
+  <header>
+    <h1>Accordion</h1>
+  </header>
+  <main>
+    <section class="accordion">
+      <h2>CSS Accordions</h2>
+      <section class="item">
+        <label for="item1">1 Peter 4:16 <span class="arrow">&bigtriangledown;</span></label>
+        <input type="radio" name="radioButton" id="item1" >
+        <p class="content">However, if you suffer as a Christian, do not be ashamed, but praise God that you bear that
+          name.</p>
+      </section>
+      <section class="item">
+        <label for="item2">1 Corinthians 16:13 <span class="arrow">&bigtriangledown;</span></label>
+        <input type="radio" name="radioButton" id="item2">
+        <p class="content">Be on your guard; stand firm in the faith; be courageous; be strong.</p>
+      </section>
+      <section class="item">
+        <label for="item3">John 16:33 <span class="arrow">&bigtriangledown;</span></label>
+        <input type="radio" checked name="radioButton" id="item3">
+        <p class="content">I have told you these things, so that in me you may have peace. In this world you will have
+          trouble. But take heart! I have overcome the world.</p>
+      </section>
+      <section class="item">
+        <label for="item4">1 Peter 2:24 <span class="arrow">&bigtriangledown;</span></label>
+        <input type="radio" name="radioButton" id="item4">
+        <p class="content">He himself bore our sins in His body on the tree, so that we might die to sins and live for
+          righteousness; by His wounds you have been healed.</p>
+      </section>
+      <section class="item">
+        <label for="item5">1 Corinthians 1:27 <span class="arrow">&bigtriangledown;</span></label>
+        <input type="radio" name="radioButton" id="item5">
+        <p class="content">But God chose the foolish things of the world to shame the wise; God chose the weak things of
+          the world to shame the strong.</p>
+      </section>
+    </section>
+
+    <section class="accordion jsAccordion">
+      <h2>JavaScript Accordions</h2>
+      <section class="item">
+        <h3 class="title">Isaiah 58:11<span>&plus;</span></h3>
+        <p class="content">The Lord will guide you always; he will satisfy your needs in a sun-scorched land and will strengthen your frame. You will be like a well-watered garden, like a spring whose waters never fail.</p>
+      </section>
+      <section class="item">
+        <h3 class="title">Isaiah 1:18<span>&plus;</span></h3>
+        <p class="content">“Come now, let us settle the matter,” says the Lord. “Though your sins are like scarlet, they shall be as white as snow; though they are red as crimson, they shall be like wool.</p>
+      </section>
+      <section class="item">
+        <h3 class="title">Ephesians 1:13-14<span>&plus;</span></h3>
+        <p class="content">And you also were included in Christ when you heard the message of truth, the gospel of your salvation. When you believed, you were marked in him with a seal, the promised Holy Spirit, who is a deposit guaranteeing our inheritance until the redemption of those who are God’s possession—to the praise of His glory.</p>
+      </section>
+      <section class="item">
+        <h3 class="title">Ecclesiastes 5:15<span>&plus;</span></h3>
+        <p class="content">Everyone comes naked from their mother's womb, and as everyone comes, so they depart. They take nothing from their toil that they can carry in their hands.</p>
+      </section>
+      <section class="item">
+        <h3 class="title">Revelation 21:4<span>&plus;</span></h3>
+        <p class="content">He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away.</p>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
