@@ -1,0 +1,149 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #ddd;
+  font: 16px/1.8 sans-serif;
+}
+header{
+  background-color: orange;
+  color: white;
+  padding: .5rem 2rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+main{
+  max-width: 750px; 
+  margin-inline: auto;
+}
+main > article{
+  display: flex;
+  align-items: center;
+  padding: 0% 2rem;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  justify-content: center;
+}
+.hover1{
+  width: 350px;
+  background-color: skyblue;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+}
+.heading{
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.hover1 p,.heading{
+  font-weight: 500;
+  position: relative;
+  transition: .2s;
+}
+.hover1::after{
+  transition: .2s;
+  content: '';
+  position: absolute;
+  background-color: orange;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 2px;
+}
+.hover1:hover::after{
+  height: 100%;
+}
+.hover1:hover *{
+  color: white;
+  z-index: 2;
+}
+
+figure{
+  width: 350px;
+  height: 250px;
+  color: white;
+  border-radius: .25rem;
+  position: relative;
+  border-radius: .25rem;
+}
+figure img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .2s;
+}
+figure figcaption{
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  font-weight: bold;
+  text-shadow: 0 0 4px black;
+  background-color: rgba(255, 166, 0, 0.54);
+  padding: 0.5rem 1rem;
+  scale: 1 0;
+  text-align: center;
+  transition: .2s;
+  transform-origin: bottom;
+}
+figure::after,figure::before{
+  position: absolute;
+  content: '';
+  inset: 0;
+  z-index: -1;
+  background-color: skyblue;
+  transition: .2s;
+  transform-origin: 25% 50%;
+}
+figure:hover figcaption{
+  scale: 1;
+}
+figure:hover::before{
+  transform: rotate(-5deg);
+}
+figure:hover::after {
+  transform: rotate(5deg);
+}
+.justChecking li:hover {
+  transform: rotateY(-5deg);
+  border-left :  solid orange;
+}
+.justChecking{
+  background: rgb(0, 0, 100);
+  border-radius: 3rem;
+  overflow: hidden;
+  padding: 0 3px 3px 25px;
+  display: block;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  margin-inline:auto ;
+}
+.justChecking h2{
+  color: white;
+  font-size: 2.5rem;
+  font-family: 'Arial rounded mt', sans-serif;
+  text-align: left;
+  padding: .5rem 1rem .75rem 2.5rem;
+  transform-origin: left;
+}
+.justChecking ol{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 3rem;
+  padding: 1rem 3rem;
+  perspective: inherit;
+}
+.justChecking ol li{
+  padding-left: 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transform-origin: left;
+  transition: .2s;
+}
+.justChecking ol li::marker{
+  padding-left: 1rem;
+font-weight: 8 00;
+  color: orange;
+}

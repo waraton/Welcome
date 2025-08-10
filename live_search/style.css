@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body.dark{
+  --blue: royalblue;
+  --white: #242033;
+  --black: white;
+  --darkBlue: #251a54;
+  
+}
+body {
+  --blue: royalblue;
+  --darkBlue: white;
+--white: rgb(223, 223, 223);
+--black: black;
+  background-color: var(--white);
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: 0.3s;
+}
+main {
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1rem #0004;
+  max-width: 655px;
+  overflow: auto;
+}
+.title {
+  margin-bottom: 24px;
+  font-size: 2.25rem;
+  text-align: center;
+}
+header {
+  background-color: royalblue;
+  color:white;
+  padding: 1rem 2rem;
+  transition: 0.3s;
+  font-weight: 600;
+}
+header input {
+  border-radius: 2rem;
+  width: 100%;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 10px 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+}
+.userList li {
+  list-style: none;
+  color: var(--black);
+  display: flex;
+  gap: 1rem;
+  max-height: 455px;
+  align-items: center;
+  border-bottom: 1px solid;
+  padding: 1rem 0;
+}
+.userList {
+  overflow-y: auto;
+  max-height: 300px;
+  transition: 0.2s;
+  padding: 1rem;
+  background-color: var(--darkBlue);
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--black);
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: royalblue;
+  border-radius: 1rem;
+}
+.userList li h4 {
+  font-size: 1.4rem;
+}
+.userList img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+}
+/* 
+  -mode switch btn dark and light
+  * placement
+  # Location in the page
+*/
+#switch {
+  display: none;
+}
+
+
+label[for="switch"] {
+  position: absolute;
+  width: 65px;
+  background-color: var(--white);
+  border-radius: 2rem;
+  height: 25px;
+  right: 1rem;
+  top: 0.5rem;
+  position: fixed;
+  border: 2px solid var(--black);
+  padding: 2px;
+}
+label[for="switch"]::after {
+  content: "";
+  aspect-ratio: 1;
+  background-color: var(--black);
+  inset-block: 2px;
+  border-radius: 50%;
+  transition: 0.2s;
+  position: absolute;
+}
+label[for="switch"]:has(#switch:checked)::after {
+  margin-left: 65%;
+}
+li.hide {
+  display: none;
+}
+
+/* loading animation in case data fails to load */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+  width: 100%;
+  position: relative;
+}
+
+.container .loader {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 20px;
+}
+.container .reload{
+  font: inherit;
+  font-size: 2rem;
+  height: 3rem;
+  aspect-ratio:  1;
+  border-radius: 50%;
+  color: var(--black);
+  background-color: var(--white);
+  border-color: var(--black);
+  border-style: solid;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  animation: rot 1s linear infinite 2s;
+  scale: 0;
+  transition: .2s;
+}
+@keyFrames rot{
+  from{scale: 1;}
+  to{rotate: 360deg;scale:1}
+}
+.reload:active{
+  translate: 2px 2px;
+}
+
+.loader .loading {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: royalblue;
+  margin: 0 10px;
+  animation: load 0.63s ease infinite;
+}
+@keyframes load {
+  50% {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.loader .loading.one {
+  animation-delay: 0.2s;
+}
+.loader .loading.two {
+  animation-delay: 0.3s;
+}
+.loader .loading.three {
+  animation-delay: 0.4s;
+}
+
+/* clock */
+
+.clock{
+  background-color:  var(--white);
+  position: fixed;
+  inset: auto .3rem .3rem auto;
+  height: 9rem;
+  aspect-ratio: 1;
+  border-radius: 4%;
+  box-shadow: -1px -1px 8px  .25rem var(--black);
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: .85rem;
+  gap: .2rem;
+  opacity: .85;
+}
+.year{
+  background-color: royalblue;
+  font-size: 1.5rem;
+  margin: .3ch;
+  margin-bottom: 0;display: block;
+  border-radius: .4rem;
+  color: white;
+}
+.time,.monthly{
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .25rem;
+}
+.time span, .monthly span{
+  border: solid 1px;
+  padding: 3px;
+  border-radius: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  color: royalblue;
+  filter: contrast(3);
+}
+span sup{
+  align-self: flex-start;
+}
+  span.hour{
+    border-end-end-radius:0 ;
+  }
+  span.min{
+    border-end-start-radius: 0;
+  }
+  span.day{
+    border-start-end-radius:0 ;
+  }
+  span.date{
+    border-start-start-radius: 0;
+  }
+  span.sec,span.month{
+    font-size: 1rem;
+    height: 2.7rem;
+    color: var(--black);
+  }
+
+[for=clockDisp]{
+  background-color: #251a54;
+  color: white;
+  position: fixed;
+  inset: 2.5rem 1rem auto auto;
+  padding: .25rem .5rem;
+  border-radius: 1rem 1rem;
+  font-size: .8rem; 
+}
+.clock.active{
+  display: none;
+}
