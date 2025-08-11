@@ -13,7 +13,7 @@ function tim() {
 
   const militaryTime = `${String(hr).padStart(2, 0)}${min.padStart(2, 0)}${sec.padStart(2, 0)}`;
 
-  const ordinaryTime = `${String(hrd)}<span dot>:</span>${min.padStart(2, 0)}<span t>${apm}</span><br>${sec.padStart(2, '0')}<span t>sec</span>`;
+  const ordinaryTime = `${String(hrd)}<span dot>:</span>${min.padStart(2, 0)}<span dot>:</span>${sec.padStart(2, '0')}<span t>${apm}</span>`;
   if (is24Hr) {
     display.textContent = militaryTime;
     btn.textContent = "12 Hr";
@@ -21,8 +21,13 @@ function tim() {
     display.innerHTML = ordinaryTime;
     btn.textContent = "24 Hr";
   }
+
+  document.querySelector('[hr]').style.rotate =  `${15 * hrd + min / 60 * 15}deg`
+  document.querySelector('[min]').style.rotate =  `${min * 6 + sec / 60 * 6}deg`
+  document.querySelector('[sec]').style.rotate =  `${sec * 6}deg`
 }
 
 btn.addEventListener("click", () => {
   is24Hr = !is24Hr;
 });
+
