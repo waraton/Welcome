@@ -1,0 +1,92 @@
+*{
+  padding: 0;
+  margin: 0;
+  color: #091435;
+  font-family: Sans-Serif;
+}
+body{
+  background-color: skyblue;
+  min-height: 100vh;
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+header{
+  background-color: #091435;
+  position: fixed;
+  inset: 0 0 auto;
+}
+header h1{
+  color: white;
+  text-align: center;
+  padding:.75rem 1rem;
+  text-transform: uppercase;
+}
+.qn-container{
+  background-color: rgb(147, 202, 202);
+  display: grid;
+  text-align: center;
+  gap: .5rem;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 2px 2px 5px ;
+}
+button,select,input{
+  font-family: inherit;
+}
+ol li{
+  list-style-type: lower-latin;
+  margin-left: 2.5rem;
+  text-align: left;
+}
+.buttons{
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+button{
+  border: none;
+  padding: .5rem 2rem;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px ;
+  transition: .2s;
+  flex-grow: 1;
+  cursor: pointer;
+}
+button:active{
+  translate: 2px 1px;
+  box-shadow: none;
+}
+.correct{
+  visibility: hidden;
+  display: none;
+  scale: 0;z-index: 1;
+  position: absolute;
+  inset: 0 ;
+}
+.correct.selected{
+  scale: 1;
+  visibility: visible;
+  display: grid;
+  inset: 3px;
+  place-content: center;
+  background-color: white;
+  font-size: 2rem;
+}
+.correct.selected>*{
+  position: absolute;
+  background-color: #091435;
+  height: .5rem;
+  inset-inline: 0;
+  border-radius: .5rem;
+}
+@keyframes crease{
+  to{
+    inset-inline: 50%;
+  }
+}
