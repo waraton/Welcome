@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
+  background-color: rgb(215, 215, 215);
+}
+header {
+  background-color: rgb(50, 50, 50);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+main{
+  max-width: 1200px;
+  margin-inline: auto;
+}
+main section{
+  display: grid;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1200px;
+  gap: .5rem ;
+  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+main section article{
+  display: grid;
+  align-items: stretch;
+  justify-items: center;
+  padding-bottom: 2rem;
+}
+article figure img{
+  object-fit: cover;
+  width: 100%;
+}
+figure div:has(img){
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  max-width: 200px;
+  margin-inline: auto;
+  min-width: 150px;
+  border: .5rem solid rgb(50, 50, 50);
+  margin-top: 2rem;
+  overflow: hidden;
+}
+figure figcaption{
+  font-size: 1.75rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: rgb(50, 50, 50);
+  font-family: sans-serif;padding: 0% 1rem;
+}
+main section article p{
+  text-align: center;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  font-family: "Playpen Sans", cursive;
+}
+.separator{
+  display: block;
+  width: 80%;
+  align-self: flex-end;
+  height: .5rem;
+  background-color: rgb(50, 50, 50);
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
