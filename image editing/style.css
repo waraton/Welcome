@@ -1,7 +1,17 @@
+/* resets */
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+input,button,select,textarea{
+  min-width: 0;
+  font: inherit;
+}
+body{
+  background-color: #2115;
+}
+/* header starts here */
 header{
   background-color: green;
   padding: 1rem;
@@ -10,4 +20,170 @@ header{
   font-family: sans-serif;
   text-transform: uppercase;
   color: white;
+}
+/* header ends here */
+#imageEditor{
+  max-width: 550px;
+  background-color: skyblue;
+  margin-inline: auto;
+  font-family: sans-serif;
+  padding: .2rem;
+}
+
+/* Image and its container and text */
+figure{
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+}
+figure img{
+  width: 100%;
+  background-color: #2115;
+  aspect-ratio: 1/1;
+  position: absolute;
+  object-fit: cover;
+}
+figure figcaption{
+  position: absolute;
+  margin: 1rem;
+  font-size: 2rem;
+  color: white;
+}
+/* tabs */
+.tabs ul{
+  list-style: none;
+  display: flex;
+  height: 2.5rem;
+  background-color: white;
+  align-items: stretch;
+  overflow:scroll hidden ;
+  justify-content: start;
+  user-select: none;
+}
+.tabs>ul>li{
+  width: clamp(100px 120px 150px);
+  min-width: 80px;
+  display: grid;
+  place-content: center;
+  border-right: 1px solid;
+  cursor: pointer;
+}
+.tabs ul li.active{
+  border-bottom: 2px solid green;
+}
+.tabs ul::-webkit-scrollbar{
+  height: 0;
+}
+/* ? edit tools containers */
+[editTools]{
+  min-height: 15rem;
+  padding: 1rem;
+}
+[editTools]>[id]{display: none;}
+
+[editTools]>.currentTab{
+  display: block;
+}
+/* 
+ tab actions container
+ - text tab edit
+ */
+#text.currentTab .inputs{
+  grid-template-columns: 1fr;
+  display: grid;
+}
+#text .inputs label{
+  font-size: 1rem;
+}
+#text .inputs input{
+  padding: .5rem ;
+  border: green solid;
+  border-radius: .25rem;
+}
+.inputs textarea{
+  padding: .5rem ;
+  border: green solid;
+  border-radius: .25rem;
+  font-family: sans-serif;
+  resize: vertical;
+  min-height: 5rem;
+}
+#text label{
+  margin-bottom: -2%;
+}
+input[value=Apply]{
+  border: none;
+  outline: none;
+  border-radius: 0%;
+  background-color: green;
+  color: white;
+}
+[value=Apply]:active{
+  translate: 1px 1px;
+}
+/* buttons styles */
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.buttons button{
+  width: 3rem;
+  cursor: pointer;
+  border: none;
+  border-radius: .25rem;
+  background-color: #ddd;
+  padding: .5rem;
+  font-weight: 900;
+}
+/* Inputs-ranges styles */
+.inputs{
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: .5rem;
+  margin-top: .5rem;
+}
+/* edit tools - img selector container */
+#imgBg.currentTab{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: .2rem;
+}
+#imgBg input{
+  scale: 0;
+  visibility: hidden;
+  position: absolute;
+}
+#imgBg label s{
+  position: absolute;
+  inset: 10%;
+  background-color: black;
+  overflow: hidden;
+}
+#imgBg label s::before,
+#imgBg label s::after{
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: -10%;
+  width: 50%;
+  aspect-ratio: 1/1;
+  background-color: white;
+  rotate: 45deg;
+}
+#imgBg label s::before{
+  top: 45%;
+  right: -10%;
+  width: 80%;
+  left: auto;
+}
+
+#imgBg>*{
+  position: relative;
+  aspect-ratio: 1;
+  cursor: pointer;
+  background-color: green;
 }

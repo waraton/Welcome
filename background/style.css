@@ -10,7 +10,7 @@ section.hero {
   padding: 0 5%;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(#823e4521, #845575aa);
+  background-image: linear-gradient(skyblue 0%, rgba(135, 207, 235, 0.5) 35%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,21 +58,12 @@ section.hero {
 }
 video {
   position: absolute;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   z-index: -1;
-  object-fit: contain;
+  object-fit: cover;
+  
 }
-/*@media (max-aspect-ratio: 1.5){
-  video {
-    object-fit: cover;
-  }
-}
-@media (min-aspect-ratio: 1.5){
-  video {
-    object-fit: cover;
-  }
-}*/
-
 [class*="actionButton"] {
   display: inline-block;
   padding: 1rem 2rem;
@@ -125,6 +116,7 @@ video {
   transform: rotateX(270deg);
 }
 .actionButton2::after {
+  content: "More";
   background-color: royalblue;
   transition-delay: 0.25s;
 }
@@ -136,6 +128,7 @@ video {
 /* action button 3 */
 .actionButton3 {
   border: none;
+  text-shadow: 2px 2px 5px #fff,-2px -2px 5px #fff;
   background-color: transparent;
 }
 .actionButton3::before,
@@ -160,14 +153,16 @@ video {
 
 /* action button 4 */
 .actionButton4 {
+  
+  padding: calc(1rem - 5px) calc(2rem - 5px);
   border: none;
 }
 .actionButton4::before,
 .actionButton4::after {
   padding: 0;
   inset: -5px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   z-index: -2;
   border-color: #fff;
   border-left-style: solid;

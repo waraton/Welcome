@@ -1,6 +1,7 @@
 const display = document.querySelector(".display");
 const btn = document.querySelector(".btn");
 let is24Hr = false;
+console.log(8768);
 
 setInterval(tim, 1000);
 function tim() {
@@ -22,12 +23,17 @@ function tim() {
     btn.textContent = "24 Hr";
   }
 
-  document.querySelector('[hr]').style.rotate =  `${15 * hrd + min / 60 * 15}deg`
-  document.querySelector('[min]').style.rotate =  `${min * 6 + sec / 60 * 6}deg`
+  document.querySelector('[hr]').style.rotate =  `${30 * hrd + min / 2}deg`
+  document.querySelector('[min]').style.rotate =  `${min * 6 + sec / 10}deg`
   document.querySelector('[sec]').style.rotate =  `${sec * 6}deg`
+  document.querySelectorAll('.analogue span').forEach((i)=>{
+    i.style.borderTop = 'none'
+    document.querySelectorAll('.analogue span')[hrd-1].style.borderTop = `solid`
+})
+
 }
 
 btn.addEventListener("click", () => {
   is24Hr = !is24Hr;
 });
-
+d

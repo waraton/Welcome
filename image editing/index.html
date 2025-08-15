@@ -16,109 +16,111 @@
   </header>
   <main>
     <section id="imageEditor">
-      
-    <figure>
-      <img src="" alt="">
-      <figcaption>
-        <p data-main="main">May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all.</p>
-        <small data-footer="footer">2 Corinthians 13:14</small>
-      </figcaption>
-    </figure>
-    <div class="tabs">
-      <ul>
-        <li data-tabFor="text">text</li>
-        <li data-tabFor="imgBg">image</li>
-        <li data-tabFor="font">fontSize</li>
-        <li data-tabFor="alignment">alignment</li>
-        <li data-tabFor="textColor">textColor</li>
-        <li data-tabFor="shadows">textShadow</li>
-        <li data-tabFor="imgFilter">imgFilter</li>
-        <li data-tabFor="imgBlur">imgBlur</li>
-        <li data-tabFor="footer">footer</li>
-      </ul>
-    </div>
-    <section>
-      <div id="text">
-        <div class="inputs text">
-          <label for="text">Main</label>
-          <textarea id="main" ></textarea>
-          <label for="footer">Footer</label>
-          <input type="text">
-        </div>
-      </div>
-      <div id="imgBg">
-        <input type="file" name="" id="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+      <figure>
+        <img src="../south-sudan-flag/Flag_of_South_Sudan.svg.png" alt="img">
+        <figcaption>
+          <p data-main="main">May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the
+            Holy Spirit be with you all.</p>
+          <small data-footer="footer">2 Corinthians 13:14</small>
+        </figcaption>
+      </figure>
+
+      <div class="tabs">
+        <ul>
+          <li data-tabFor="text" class="active">text</li>
+          <li data-tabFor="imgBg">image</li>
+          <li data-tabFor="font">fontSize</li>
+          <li data-tabFor="alignment">alignment</li>
+          <li data-tabFor="textColor">textColor</li>
+          <li data-tabFor="shadows">textShadow</li>
+          <li data-tabFor="imgFilter">imgFilter</li>
+          <li data-tabFor="footer">footer</li>
+        </ul>
       </div>
 
-      <div id="font">
-        <div class="buttons">
-          <button data-fontWeight="bold">B</button>
-          <button data-fontStyle="italic">I</button>
+      <section editTools>
+        <div id="text" >
+          <div class="inputs">
+            <label for="main">Main</label>
+            <textarea id="main"></textarea>
+            <label for="footer">Footer</label>
+            <input type="text">
+            <input type="button" value="Apply">
+          </div>
         </div>
 
-        <div class="inputs">
-          <label for="fontSize"><small>A</small><big>A</big></label>
-          <input type="range" id="fontSize">
-          <label for="letterSpacing">AV</label>
-          <input type="range" id="letterSpacing">
-        </div>
-      </div>
-
-      <div id="alignment">
-        <div class="buttons">
-          <button data-textAlignment="left">L</button>
-          <button data-textAlignment="center">C</button>
-          <button data-textAlignment="right">R</button>
+        <div id="imgBg">
+          <label for="mainImage"><s></s></label>
+          <input type="file" accept="image/*" id="mainImage">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt="">
         </div>
 
-        <div class="inputs">
-          <label for="lineHeight">H</label>
-          <input type="range" id="lineHeight">
-          <label for="width">w</label>
-          <input type="range" id="width">
+        <div id="font">
+          <div class="buttons">
+            <button data-fontWeight="bold">B</button>
+            <button data-fontStyle="italic">I</button>
+          </div>
+
+          <div class="inputs">
+            <label for="fontSize"><small>A</small><big>A</big></label>
+            <input type="range" id="fontSize">
+            <label for="letterSpacing">AV</label>
+            <input type="range" id="letterSpacing">
+          </div>
         </div>
-      </div>
 
-      <div id="textColor">
-        <input type="color" id="color">
-        <div id="inputs">
-          <label for="opacity"><span class="opacityDrop">0</span></label>
-          <input type="range" name="opacity" id="opacity">
+        <div id="alignment">
+          <div class="buttons">
+            <button data-textAlignment="left">L</button>
+            <button data-textAlignment="center">C</button>
+            <button data-textAlignment="right">R</button>
+          </div>
+
+          <div class="inputs">
+            <label for="lineHeight">H</label>
+            <input type="range" id="lineHeight">
+            <label for="width">w</label>
+            <input type="range" id="width">
+          </div>
         </div>
-      </div>
 
-      <div id="shadows">
-        <div class="buttons">
-          <button data-textShadow="none">T</button>
-          <button data-textShadowBlur="blur">T</button>
-          <button data-textShadowSpread="spread">T</button>
+        <div id="textColor">
+          <input type="color" id="color">
+          <div id="inputs">
+            <label for="opacity"><span class="opacityDrop">0</span></label>
+            <input type="range" name="opacity" id="opacity">
+          </div>
         </div>
-        <div class="inputs"><label for="textShadow"></label><input type="range" id="textShadow"></div>
-      </div>
 
-      <div id="imgFilter">
-        <div class="inputs"><label for="contrast"></label><input type="range" name="contrast" id="contrast"><label
-            for="brightness"></label><input type="range" name="brightness" id="brightness"><label
-            for="saturation"></label><input type="range" name="saturation" id="saturation"></div>
-      </div>
+        <div id="shadows">
+          <div class="buttons">
+            <button data-textShadow="none">T</button>
+            <button data-textShadowBlur="blur">T</button>
+            <button data-textShadowSpread="spread">T</button>
+          </div>
+          <div class="inputs"><label for="textShadow"></label><input type="range" id="textShadow"></div>
+        </div>
 
-      <div id="imgBlur">
-        <div class="inputs"><label for="blur"></label><input type="range" name="blur" id="blur"></div>
-      </div>
+        <div id="imgFilter">
+          <div class="inputs">
+            <label for="contrast"></label><input type="range" name="contrast" id="contrast">
+            <label for="brightness"></label><input type="range" name="brightness" id="brightness">
+            <label for="saturation"></label><input type="range" name="saturation" id="saturation"></div>
+            <label for="blur"></label><input type="range" name="blur" id="blur">
+        </div>
 
-      <div class="footer">
-        <div class="buttons"><button data-fontWeight="bold">B</button><button data-fontStyle="italic">I</button></div>
-        <div class="inputs"><label for="fontSize"><small>A</small><big>A</big></label><input type="range"
-            name="fontSize" id="fontSize"></div>
-      </div>
-    </section>
+        <div id="footer"class="currentTab">
+          <div class="buttons"><button data-fontWeight="bold">B</button><button data-fontStyle="italic">I</button></div>
+          <div class="inputs"><label for="fontSize"><small>A</small><big>A</big></label><input type="range"
+              name="fontSize" id="fontSize"></div>
+        </div>
+      </section>
     </section>
   </main>
   <script src="app.js"></script>
