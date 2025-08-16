@@ -1,0 +1,46 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(transparent, rgba(0, 128, 0, 0.25) 78%) bottom,
+    radial-gradient(#fff0, rgba(0, 128, 0, 0.45)) center,
+    radial-gradient(#fff0 43%, rgba(0, 0, 255, 0.45)), 100%, 50% center,
+    conic-gradient(#fff0 15%, skyblue 16% 35%, #fff0 36%) 50% 25% / 17% 15%
+      no-repeat,
+    radial-gradient(#fff0 30%, tan 32% 70%, #fff0 71%) 50% 25% / 15% 15%
+      no-repeat,
+    conic-gradient(#fff0 15%, skyblue 16% 49%, #fff0 50%) 50% 69% / 17% 15%
+      no-repeat,
+    radial-gradient(#fff0 30%, royalblue 32% 70%, #fff0 71%) 50% 70% / 15% 15%
+      no-repeat,
+    conic-gradient(#fff0 61%, skyblue 62% 99%, #fff0) 50% 83% / 17% 15%
+      no-repeat,
+    radial-gradient(#fff0 30%, royalblue 32% 70%, #fff0 71%) 50% 85% / 15% 15%
+      no-repeat,
+    radial-gradient(blue 69%, #fff0 71%) 50% 50% / 15% 15% no-repeat,
+    conic-gradient(from 180deg, #fff0 55deg, skyblue 67deg 155deg, #fff0 99deg)
+      55% 83% / 56vw 41vh no-repeat,
+    conic-gradient(from 0deg, #fff0 45deg, skyblue 60deg 155deg, #fff0 95deg)
+      45% 17% / 56vw 41vh no-repeat,
+    radial-gradient(#fff0 50%, blue 52% 70%, #fff0 71%) 50% 8% / 50% 50%
+      no-repeat,
+    radial-gradient(#fff0 50%, blue 52% 70%, transparent 71%) 50% 92% / 50% 50%
+      no-repeat,
+    linear-gradient(skyblue 0 0) center/ 52px 10px;
+}
+h2 {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  font-size: 4.5rem;
+  text-align: center;
+  font-family: sans-serif;
+  height: fit-content;
+  line-height: 1;
+  padding: 0.4rem .5rem;
+  word-break: break-all;
+  background: RADIAL-gradient(white,transparent ,orange, WHITE ) center/ .5rem.5rem;
+  color: transparent;
+  background-clip: TEXT;
+  -webkit-background-clip: TEXT;
+  transform: rotate(-25deg) skew(-15deg);
+  width: 80vw;
+}
