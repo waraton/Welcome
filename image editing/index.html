@@ -19,8 +19,7 @@
       <figure>
         <img src="../south-sudan-flag/Flag_of_South_Sudan.svg.png" alt="img">
         <figcaption>
-          <p data-main="main">May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the
-            Holy Spirit be with you all.</p>
+          <p data-main="main">May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all.</p>
           <small data-footer="footer">2 Corinthians 13:14</small>
         </figcaption>
       </figure>
@@ -39,26 +38,26 @@
       </div>
 
       <section editTools>
-        <div id="text" >
-          <div class="inputs">
-            <label for="main">Main</label>
-            <textarea id="main"></textarea>
-            <label for="footer">Footer</label>
-            <input type="text">
-            <input type="button" value="Apply">
-          </div>
+        <div id="text" class="currentTab">
+          <form class="inputs">
+            <label for="mainText">Main</label>
+            <textarea id="mainText" placeholder="Main text goes here.."></textarea>
+            <label for="footerText">Footer</label>
+            <input type="text" id="footerText" placeholder="Footer text goes here..">
+            <input type="submit" value="Apply">
+          </form>
         </div>
 
         <div id="imgBg">
           <label for="mainImage"><s></s></label>
           <input type="file" accept="image/*" id="mainImage">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
+          <img src="images/(32).jpg">
+          <img src="images/(33).jpg">
+          <img src="images/12.jpg">
+          <img src="images/304.jpg">
+          <img src="images/350.jpg">
+          <img src="images/Abstract 3D Wallpaper (28).jpg">
+          <img src="images/Other9869.jpg">
         </div>
 
         <div id="font">
@@ -109,13 +108,18 @@
 
         <div id="imgFilter">
           <div class="inputs">
-            <label for="contrast"></label><input type="range" name="contrast" id="contrast">
-            <label for="brightness"></label><input type="range" name="brightness" id="brightness">
-            <label for="saturation"></label><input type="range" name="saturation" id="saturation"></div>
-            <label for="blur"></label><input type="range" name="blur" id="blur">
+            <label for="contrast">Contrast</label>
+            <input type="range" name="contrast" id="contrast">
+            <label for="brightness">Brightness</label>
+            <input type="range" name="brightness" id="brightness">
+            <label for="saturation">Saturation</label>
+            <input type="range" name="saturation" id="saturation">
+            <label for="blur">Blur</label>
+            <input type="range" name="blur" id="blur">
+          s</div>
         </div>
 
-        <div id="footer"class="currentTab">
+        <div id="footer">
           <div class="buttons"><button data-fontWeight="bold">B</button><button data-fontStyle="italic">I</button></div>
           <div class="inputs"><label for="fontSize"><small>A</small><big>A</big></label><input type="range"
               name="fontSize" id="fontSize"></div>
