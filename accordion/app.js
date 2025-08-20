@@ -1,3 +1,4 @@
+const bgs = document.querySelectorAll('.bg > div')
 document.querySelectorAll(".jsAccordion .title span").forEach((button) => {
   button.addEventListener("click", () => {
     accordion(button);
@@ -23,4 +24,23 @@ function accordion(x) {
       }
     }
   });
+}
+bgs.forEach((bg)=>{
+  bg.addEventListener('click',()=>{
+    removeGrow()
+    bg.classList.add('grow')  
+  })
+  
+})
+function removeGrow() {
+  bgs.forEach((bg)=>{
+    bg.classList.remove('grow')  
+  })
+}
+setInterval(() => {
+  randomBg()
+}, 8352);
+function randomBg(){
+  removeGrow()
+  bgs[Math.floor(Math.random()*bgs.length)].classList.add('grow')
 }
