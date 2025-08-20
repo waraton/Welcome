@@ -52,7 +52,7 @@ figure div:has(img){
   margin-top: 2rem;
   overflow: hidden;
 }
-figure figcaption{
+article h2{
   font-size: 1.75rem;
   text-align: center;
   margin-top: 1rem;
