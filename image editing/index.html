@@ -19,8 +19,8 @@
       <figure>
         <img src="../south-sudan-flag/Flag_of_South_Sudan.svg.png" alt="img">
         <figcaption>
-          <p data-main="main">May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all.</p>
-          <small data-footer="footer">2 Corinthians 13:14</small>
+          <p data-main="main">May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all.<br>
+          <small data-footer="footer" style="font: normal 14px serif;">2 Corinthians 13:14</small></p>
         </figcaption>
       </figure>
 
@@ -62,67 +62,72 @@
 
         <div id="font">
           <div class="buttons">
-            <button data-fontWeight="bold">B</button>
-            <button data-fontStyle="italic">I</button>
+            <button data-style="fontWeight" data-value="bold">B</button>
+            <button data-style="fontStyle" data-value="italic">I</button>
           </div>
 
           <div class="inputs">
             <label for="fontSize"><small>A</small><big>A</big></label>
-            <input type="range" id="fontSize">
-            <label for="letterSpacing">AV</label>
-            <input type="range" id="letterSpacing">
+            <input type="range" min="12" max="48" id="fontSize" data-unit="px">
+            <label for="wordSpacing">AV</label>
+            <input type="range" step=".1" min="0" max="15" id="wordSpacing" data-unit="px">
           </div>
         </div>
 
         <div id="alignment">
           <div class="buttons">
-            <button data-textAlignment="left">L</button>
-            <button data-textAlignment="center">C</button>
-            <button data-textAlignment="right">R</button>
+            <button data-style="textAlign"  data-value="left">L</button>
+            <button data-style="textAlign"  data-value="center">C</button>
+            <button data-style="textAlign"  data-value="right">R</button>
           </div>
 
           <div class="inputs">
             <label for="lineHeight">H</label>
-            <input type="range" id="lineHeight">
+            <input type="range" min="1" max="3" step=".1" id="lineHeight" data-unit="">
             <label for="width">w</label>
-            <input type="range" id="width">
+            <input type="range" min="5" step=".1" max="100" id="width" data-unit="%">
           </div>
         </div>
 
         <div id="textColor">
-          <input type="color" id="color">
-          <div id="inputs">
+          <div class="inputs">
+            <label for="color">color</label>
+            <input type="color" id="color">
             <label for="opacity"><span class="opacityDrop">0</span></label>
-            <input type="range" name="opacity" id="opacity">
+            <input type="range" min="0.5" max="1" step=".01" id="opacity" data-unit="">
           </div>
         </div>
 
         <div id="shadows">
           <div class="buttons">
             <button data-textShadow="none">T</button>
-            <button data-textShadowBlur="blur">T</button>
-            <button data-textShadowSpread="spread">T</button>
+            <button data-textShadow="blur">T</button>
+            <button data-textShadow="spread">T</button>
           </div>
-          <div class="inputs"><label for="textShadow"></label><input type="range" id="textShadow"></div>
+          <div class="inputs">
+            <label for="textShadow"></label>
+            <input type="range" min="0" step=".1" max="10" id="textShadow">
+          </div>
         </div>
 
         <div id="imgFilter">
           <div class="inputs">
             <label for="contrast">Contrast</label>
-            <input type="range" name="contrast" id="contrast">
+            <input type="range"  step=".1" min="0" max="10" name="contrast" id="contrast">
             <label for="brightness">Brightness</label>
-            <input type="range" name="brightness" id="brightness">
+            <input type="range"  step=".1" min="0" max="5" name="brightness" id="brightness">
             <label for="saturation">Saturation</label>
-            <input type="range" name="saturation" id="saturation">
+            <input type="range"  step=".01" min="0" max="1" name="saturation" id="saturation">
             <label for="blur">Blur</label>
-            <input type="range" name="blur" id="blur">
+            <input type="range"  step=".01" min="0" max="1" name="blur" id="blur">
           s</div>
         </div>
 
         <div id="footer">
           <div class="buttons"><button data-fontWeight="bold">B</button><button data-fontStyle="italic">I</button></div>
-          <div class="inputs"><label for="fontSize"><small>A</small><big>A</big></label><input type="range"
-              name="fontSize" id="fontSize"></div>
+          <div class="inputs">
+            <label for="footerFont"><small>A</small><big>A</big></label>
+            <input type="range" min="9" step=".1" max="16" id="footerFont"></div>
         </div>
       </section>
     </section>

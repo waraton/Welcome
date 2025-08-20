@@ -23,7 +23,7 @@ header{
 }
 /* header ends here */
 #imageEditor{
-  max-width: 550px;
+  max-width: 450px;
   background-color: skyblue;
   margin-inline: auto;
   font-family: sans-serif;
@@ -49,6 +49,8 @@ figure figcaption{
   margin: 1rem;
   font-size: 2rem;
   color: white;
+  word-break: break-word;
+  transition: .1s ease;
 }
 /* tabs */
 .tabs ul{
@@ -108,6 +110,7 @@ figure figcaption{
   font-family: sans-serif;
   resize: vertical;
   min-height: 5rem;
+  outline: none;
 }
 #text label{
   margin-bottom: -2%;
@@ -190,4 +193,9 @@ input[value=Apply]{
 #imgBg img{
   width: 100%;
   object-fit: cover;
+}
+/* js class */
+.given{
+  color: green;
+  box-shadow: 2px 2px;
 }
