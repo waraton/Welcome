@@ -1,0 +1,47 @@
+* {
+  margin:0%;
+  padding:0%;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font: 400 120%/1.5 helvetica;
+  background: linear-gradient(135deg, blueviolet, indigo, violet) center/cover fixed;
+}
+#animation {
+  box-shadow: 1px 1px 5px white;
+  width: clamp(320px, 85vmin,550px);
+  background: green;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 8vmin;
+  line-height: 15vmin;
+  display: grid;
+  grid-auto-flow: column;
+}
+::selection{
+  background-color: rgba(135, 207, 235, 0.658);
+  color: hsl(0, 0%, 23%);
+}
+@keyframes zoom {
+  20% {
+    text-shadow: 2px 2px 5px white, -5px -2px 5px pink, 5px 2px 10px yellow;
+  }
+  40% {
+    text-shadow: 2px -2px 10px lime, 4px 4px 15px white;
+    font-size: 15vmin;
+  }
+  70% {
+    text-shadow: -2px 2px 5px yellow;
+    font-size: 11vmin;
+  }
+}
+.letter {
+  animation: zoom 2s infinite alternate ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

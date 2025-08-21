@@ -1,0 +1,75 @@
+body{
+  background-color: skyblue;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+.anim {
+  font: 1.5rem verdana, sans-serif;
+  background: rgba(0,0,0,.9);
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  aspect-ratio: 1.5;
+  margin: 2rem;
+}
+.anim > * {
+  height: calc(100%/3);
+  color: white;
+  margin: 0;
+}
+.circles{
+	display: flex;
+	align-items: end;
+}
+.circle {
+  width: 1rem;
+  aspect-ratio: 1;
+  background-color: #40ff8c;
+  border-radius: 50%;
+  margin: 0 5px;
+  display : inline-block ;
+  animation: upDown 1s ease-in-out infinite;
+}
+.circle.one {
+  animation-delay: .225s;
+}
+.circle.two {
+  animation-delay: .45s;
+}
+.circle.three {
+  animation-delay: .625s;
+}
+@keyframes upDown {
+  50% {
+    translate: 0 -15px;
+  }
+  80% {
+    translate: 0px 0px;
+  }
+}
+@keyframes appear{
+  33%{content: ".\0a0\0a0"}
+  66%{content: "..\0a0";}
+  100%{content: "...";}
+}
+.loading {
+  font-weight: 400;
+  width: fit-content;
+  padding: 0 0px;
+}
+.loading::after{
+  content: '\0a0\0a0\0a0';
+  font-size: 45px;
+  animation: appear 1s infinite linear;
+}
+.cancel {
+  font-size: 2rem;
+  border-top: 1px solid #fff5;
+  text-align: center;
+  align-self: stretch;
+  padding-top: 8px;
+}

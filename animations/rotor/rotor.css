@@ -1,0 +1,49 @@
+body {
+  --wide: 900px;
+  --narrow: 320px;
+  --mainClr: #f5f5f5;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, blueviolet, indigo, violet) center/cover fixed;
+}
+
+.rotor {
+  --bg: teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  padding: 25px;
+  animation: rota 1s infinite linear;
+  border-radius: 51%;
+}
+.outer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--mainClr);
+  clip-path: Polygon(0% 0, 10% 0%, 50% 50%);
+  animation: anim infinite 1s alternate ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes anim {
+  to {
+    clip-path: polygon(0 0,280%00,50% 50%);
+  }
+}
+@keyframes rota {
+  to {
+    rotate: 2turn;
+  }
+}
+
+.inner {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: var(--bg);
+}

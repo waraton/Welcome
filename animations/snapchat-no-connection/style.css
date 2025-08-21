@@ -1,0 +1,48 @@
+body {
+  --color: skyblue;
+  background-color: var(--color);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.snapchat{
+  width: 25vmin;
+  aspect-ratio: 1;
+  position: relative;
+}
+.snapchat .cyc {
+  aspect-ratio: 1;
+  border-radius:55%;
+  position: absolute;
+  inset: 50% 50%;
+  translate: -50% -50%;
+  background: var(--color);
+}
+.rotor.cyc {
+  background: conic-gradient(#fff 0 180deg, transparent 180deg 100%);
+}
+.rotor.cyc:first-child {
+  width: 80%;
+  animation: rotor 1s infinite linear;
+}
+.rotor.cyc:first-child > * {
+  width: 85%;
+}
+.rotor.cyc:first-child > * > * {
+  width: 90%;
+  animation: rotor2 1s infinite linear;
+}
+.rotor.cyc:first-child > * > * > * {
+  width: 80%;
+}
+@keyframes rotor {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes rotor2 {
+  to {
+    rotate: -720deg;
+  }
+}
