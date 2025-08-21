@@ -1,0 +1,57 @@
+# @page CSS rule
+
+The @page rule in CSS is used to customize the appearance of printed pages, such as their size, orientation, and margins. Within the @page rule, only a limited set of properties are allowed. These properties are specifically designed for controlling the layout and style of printed pages.
+
+## Table of contents
+
+- [@page CSS rule](#page-css-rule)
+  - [Table of contents](#table-of-contents)
+  - [Allowed Properties in @page](#allowed-properties-in-page)
+    - [Margins](#margins)
+    - [Size](#size)
+    - [Bleed and Marks (in some implementations)](#bleed-and-marks-in-some-implementations)
+    - [Border Properties](#border-properties)
+    - [Padding (in some cases, though not widely supported)](#padding-in-some-cases-though-not-widely-supported)
+  - [Notes](#notes)
+
+## Allowed Properties in @page
+
+### Margins
+
+- margin
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+### Size
+
+- size (e.g., size: A4;, size: landscape;)
+
+### Bleed and Marks (in some implementations)
+
+- bleed
+- marks
+
+### Border Properties
+
+- border
+- border-width
+- border-style
+- border-color
+
+### Padding (in some cases, though not widely supported)
+
+- padding
+- padding-top
+- padding-right
+- padding-bottom
+- padding-left
+  
+## Notes
+
+1. Pseudo-classes: You can use pseudo-classes like @page :first to style the first page differently.
+1. Browser Support: Not all properties are supported across all browsers, so testing is essential for consistent results.
+1. Limitations: Most other CSS properties (e.g., background, font, etc.) are not allowed within @page.
+
+This rule is particularly useful for creating professional-looking printed documents directly from web pages.

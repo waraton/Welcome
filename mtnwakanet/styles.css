@@ -1,0 +1,106 @@
+@font-face {
+  font-family: MTNBrighterSans-Regular;
+  src: url(Fonts_Package/MTNBrighterSans-Regular/MTNBrighterSans-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+button {
+  font-family: inherit;
+}
+body {
+  font-family: "MTNBrighterSans-Regular", cursive;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+.visuallyHidden{
+  position: absolute;
+  scale: 0;
+}
+abbr{
+  text-decoration: none;
+}
+.bold,a:any-link{
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+a::after{
+  content: '\86';
+  color: blue;
+  margin-left: 2q;
+}
+main{
+  padding: 1rem;
+}
+h2{
+  margin: 1rem 0;
+}
+h3{
+  margin: .75rem 0 0;
+}
+p{
+  padding: .5rem 0;
+}
+table thead th{
+  text-transform: uppercase;
+  padding: .25rem 1rem;
+  background-color: grey;
+  color: white;
+  border: 2px solid white;
+}
+table tbody td{
+  border: 2px solid white;
+  padding: .25rem 1rem;
+  border-bottom: none;
+}
+tbody tr{
+  background-color: lightgrey;
+}
+table tbody tr:nth-child(odd){
+  background-color: white;
+}
+table{
+  border-collapse: collapse;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+tr:last-child{
+  border-bottom: 2px solid black;
+}
+tbody tr td:has(del){
+  background-color: lightgrey;
+}
+ul li{
+  margin-left: 1rem;
+}
+ul li:has(input){
+  list-style: none;
+  margin-left: 0;
+  margin-block: 2rem;
+  display: flex;
+  align-items: end;
+  font-size: 1.25rem;
+}
+ul li:has(input) input{
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  padding: .25rem;
+  margin-left: 1ch;
+}
+ul:has(a[href^='tel:']) li{
+  list-style: none;
+  margin-left: 0;
+}
+@page{
+  font-size: 8pt;
+  border: 1em solid grey;
+  margin: 0in .5in;
+  size: 15in;
+}
