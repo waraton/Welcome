@@ -44,3 +44,34 @@ h1{
   line-height: 1.5;
   font-style: italic; 
 }
+
+.fillingAnim {
+  width: 75vw;
+  border-radius: 12vh /12vh;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.strip {
+  width: 90%;
+  height: 5%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.filler {
+  width: 0%;
+  height: 100%;
+  margin: 0;
+  background: #fff;
+  animation: fill 1s infinite linear;
+  border-radius: 10px;
+}
+@keyframes fill {
+  100% {
+    width: 103%;
+  }
+}

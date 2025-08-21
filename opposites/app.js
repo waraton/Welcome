@@ -230,12 +230,10 @@ function disNext() {
   nextButton.addEventListener("click", nextQns);
   nextButton.disabled = true;
   revealButtons[counter].disabled = true;
-  console.log(counter)
 }
 
 function nextQns() {
   hideAllQns();
-  console.log(revealButtons[counter],'shoe')
   qns[counter].style.display = "grid";
   revealButtons[counter].disabled = true;
   nextButton.disabled = true;
@@ -254,6 +252,7 @@ function correct(a) {
   a.classList.add("correctChoice");
   disableOtherChoices(a);
   score++;
+  console.log(score);
 }
 function wrong(a) {
   a.classList.add("wrong");
@@ -263,5 +262,7 @@ function wrong(a) {
 function disableOtherChoices(a) {
   nextButton.disabled = false;
   revealButtons[counter - 1].disabled= false
-  console.log(revealButtons[counter + 1], 'Ainyo')
+  nextQns()
 }
+
+
