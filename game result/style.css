@@ -1,0 +1,84 @@
+body {
+  font: 16px/1.5 sans-serif ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: skyblue ;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: Border-box ;
+}
+.card2 {
+  background: white;
+  border-radius: 35px;
+  width: 320px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .2);
+  aspect-ratio: 1;
+  display: grid;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  --on: #f8c440;
+  --tw: #fda128;
+  --th: #f7952e;
+  --top: #f88e6b;
+  --mid: #ef7858;
+  --end: #e9594c;
+}
+.congs {
+  padding: 15px;
+  margin: 0 0 -15px;
+}
+.btns {
+  margin-top: -20px;
+}
+.home,.restart {
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  margin: 15px;
+  font-size: 2rem;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+}
+img {
+  width: 80%;
+}
+.home {
+  background: linear-gradient(to bottom right,var(--on), var(--tw), var(--th));
+}
+.restart {
+  background: linear-gradient(to bottom right  ,var(--top), var(--mid), var(--end));
+}
+.cont,.hard {
+  border-radius: 50px;
+  color: white;
+  border: none;
+}
+.btn-over {
+  position: relative;
+}
+.cont {
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 8px 30px;
+  background-color: #327ae8;
+  width: 200px;
+}
+.hard {
+  background-image: linear-gradient(#fa6265,#f13f59);
+  border-bottom-left-radius: 0;
+  position: absolute;
+  left: 190px;
+  top: -15px;
+  padding: 2px 7px;
+}
