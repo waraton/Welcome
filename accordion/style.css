@@ -106,3 +106,13 @@ input[type="radio"]:checked ~ p.content,
   color: white;
   cursor: auto;
 }
+progress{
+  height: 1rem;
+  position: fixed;
+  outline: none;
+  right: 1rem;
+  top: 2rem;
+  width: 15vw;
+  rotate: -.25turn;
+  accent-color: orange;
+}

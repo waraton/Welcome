@@ -44,3 +44,11 @@ function randomBg(){
   removeGrow()
   bgs[Math.floor(Math.random()*bgs.length)].classList.add('grow')
 }
+ const indicator = document.querySelector('progress')
+ const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+
+ window.addEventListener('scroll', ()=>{
+  let scrollTop = document.documentElement.scrollTop
+  indicator.value = scrollTop / scrollHeight * 100
+  indicator.style.opacity = '1'
+ })
