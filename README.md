@@ -50,9 +50,9 @@ I also stay with my Uncle in
 
 ## Contact
 
-LOOK at my [W3Profile](https://www.w3profile.com/waraton) to see more info about me. Also take a look at my [W3Space](https://www.waraton.w3spaces.com/)
+LOOK at my [W3Profile](https:/w3profile.com/waraton) to see more info about me. Also take a look at my [W3Space](https://waraton.w3spaces.com/)
 
-You can follow me on GitHub [@waraton](https://www.github.com/waraton)
+You can follow me on GitHub [@waraton](https://github.com/waraton)
 
 Reach me on email at `bensonwaran[at]gmail[dot]com[mercial]`
 
