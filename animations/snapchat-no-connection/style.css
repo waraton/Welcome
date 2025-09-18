@@ -2,14 +2,15 @@ body {
   --color: skyblue;
   background-color: var(--color);
   display: flex;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
 .snapchat{
-  width: 25vmin;
+  width: 35vmin;
   aspect-ratio: 1;
-  position: relative;
+  inset: 0;
+  margin: auto;
+  position: absolute;
 }
 .snapchat .cyc {
   aspect-ratio: 1;

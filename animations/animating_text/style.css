@@ -25,6 +25,7 @@ body {
 ::selection{
   background-color: rgba(135, 207, 235, 0.658);
   color: hsl(0, 0%, 23%);
+  perspective: 555px;
 }
 @keyframes zoom {
   20% {
@@ -44,4 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .5s;
+  text-align: center;
+  transform-origin: center;
 }
