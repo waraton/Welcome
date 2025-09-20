@@ -7,6 +7,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-items: stretch;
+  gap: 1.5rem;
   min-height: 100vh;
   background-color: skyblue;
   flex-direction: column;
@@ -44,3 +46,30 @@ body{
 }
 .green{background-color: green;}
 .red{background-color: red;}
+section:last-of-type{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  display: grid;
+  gap: .5rem;
+  max-width: 800px;
+  width: 80vw;
+  border-top: 2px solid yellow;
+  padding: .5rem 1rem;
+  text-align: center;
+  font-family:"Helvetica Neue", Helvetica, sans-serif;
+}
+.cursor{
+  border-left: 5px solid;
+  color: yellow;
+  margin-left: .125rem ;
+}
+p:has(.typed-text){
+  text-align: left;
+}
+.typed-text{
+  text-transform: none;
+  font-family: monospace;
+  font-weight: bold;
+  color: blue;
+  font-size: 1.25rem;
+}
