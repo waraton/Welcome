@@ -1,15 +1,15 @@
 * {
   margin:0%;
   padding:0%;
+  font-family: monospace;
   box-sizing: border-box;
 }
 body {
-  display: grid;
   align-items: center;
+  display: grid;
   justify-content: center;
   min-height: 100vh;
   font: 400 120%/1.5 helvetica;
-  background: linear-gradient(135deg, blueviolet, indigo, violet) center/cover fixed;
 }
 #animation {
   box-shadow: 1px 1px 5px white;
@@ -42,10 +42,8 @@ body {
 }
 .letter {
   animation: zoom 2s infinite alternate ease-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-content: center;
   transition: .5s;
   text-align: center;
-  transform-origin: center;
 }
