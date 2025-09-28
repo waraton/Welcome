@@ -1,0 +1,22 @@
+body{
+  font: 1.2rem/1.2 sans-serif;
+}
+ul[a],
+ul[b] {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+ul[b] {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  list-style: none;
+  background-color: teal;
+}
