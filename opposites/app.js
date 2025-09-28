@@ -1,12 +1,12 @@
 const opposites = {
-  1: ["Wise", "Foolish"],
-  2: ["Big", "Small"],
   3: ["Hot", "Cold"],
+  7: ["Open", "Closed"],
+  2: ["Big", "Small"],
   4: ["Fast", "Slow"],
   5: ["Good", "Bad"],
   6: ["Happy", "Sad"],
-  7: ["Open", "Closed"],
   8: ["Hard", "Soft"],
+  1: ["Wise", "Foolish"],
   9: ["Clean", "Dirty"],
   10: ["Early", "Late"],
   11: ["Empty", "Full"],
@@ -156,65 +156,48 @@ let getFrom = [];
 
 for (iterator in opposites) {
   for (let i = 0; i < 3; i++) {
-    getFrom.push(opposites[Math.floor(Math.random() * 150) + 1][1]);
+    let ind = opposites[Math.floor(Math.random() * 150) + 1][1]
+    if (!(ind in getFrom)) {
+      getFrom.push(ind);
+    }
   }
-  getFrom.push(opposites[iterator][0]);
+    getFrom.push(opposites[iterator][0]);
   getFrom.sort();
   const cont = document.createElement("section");
   cont.classList.add(`qn-container`);
   cont.classList.add(`qsn${counter}`);
-  cont.innerHTML = `
-    <p class="question"><span  class='counter'>${counter}.</span>
-      what is the opposite of <span class="word">${opposites[iterator][1]}</span>?
-    </p>
+  cont.innerHTML = `<p class="question">
+  <span  class='counter'>${counter}.</span>
+    What is the opposite of 
+      <span class="word">${opposites[iterator][1]}</span>?
+  </p>
     <ol>
     <li>${getFrom[0]}</li>
     <li>${getFrom[1]}</li>
     <li>${getFrom[2]}</li>
     <li>${getFrom[3]}</li>
     </ol>
-    <p class='correct'>${opposites[iterator][0]}<span></span></p>
-    <div class='buttons'>
-      <button class="reveal">Show</button>
-    </div>  
     `;
   ++counter;
   getFrom = [];
   document.querySelector("section").append(cont);
 }
-/** the
- * @param {number} counter The nth opposite object out of the 151
- * @param {number} timeOut The the number of second for the animation
- * @param {Array} getFrom An array of random choices selected from the 151
- */
 
 const qns = document.querySelectorAll("section[class*='qn-container qsn']");
 const choices = document.querySelectorAll("ol li");
-const revealButtons = document.querySelectorAll(".reveal");
 const questions = document.querySelectorAll("section[class^='qsn']");
 const timeOut = 5;
 counter = 1;
 const nextButton = document.querySelector(".next");
-const revealer = document.querySelector(".reveal");
-let score = 0;
+const score = []
+const wronged = []
+const skipped = []
 
-function reveal() {
-  revealButtons.forEach((reveal) => {
-    reveal.addEventListener("click", (e) => {
-      e.defaultPrevented;
-      reveal.parentElement.previousElementSibling.classList.add("selected");
-      reveal.parentElement.previousElementSibling.lastChild.style.animation = `
-    crease ${timeOut}s linear 
-    `;
-/* hello */
-      setTimeout(() => {
-        reveal.parentElement.previousElementSibling.lastChild.style.animationPlayState = true;
-        reveal.parentElement.previousElementSibling.classList.remove(
-          "selected"
-        );
-      }, timeOut * 1000);
-    });
-  });
+function viewer(e) {
+  e.classList.add('selected')
+  setTimeout(() => {
+    e.classList.remove('selected')
+  }, timeOut * 1000);
 }
 hideAllQns();
 disNext();
@@ -227,42 +210,74 @@ function hideAllQns() {
 
 function disNext() {
   qns[counter - 1].style.display = "grid";
-  nextButton.addEventListener("click", nextQns);
-  nextButton.disabled = true;
-  revealButtons[counter].disabled = true;
+  nextButton.addEventListener("click", ()=>{
+    nextQns(skipped)
+    const n = qns[counter].querySelector('.word')
+    skipped.push(n.textContent)
+    document.querySelector('[next]').textContent = skipped.length
+  })
 }
-
-function nextQns() {
+function nextQns(a) {
   hideAllQns();
   qns[counter].style.display = "grid";
-  revealButtons[counter].disabled = true;
-  nextButton.disabled = true;
   ++counter;
+  let total ;
+  if (total < 0) {
+    total = 1
+  } else {
+    total = skipped.length + score.length + wronged.length
+  }
+  const max = (total / 151) * 100
+  console.log(max); 
+  const stops = [
+    ['green',skipped.length],
+    ['blue',skipped.length + score.length],
+    ['red',total]
+  ]
+ document.querySelector('.dataRep').style.background = `conic-gradient(
+    ${stops[0][0]} 
+      0
+      ${(stops[0][1] / total)*(max - .25)}%,
+    ${stops[1][0]} 
+      ${(stops[0][1] / total)*(max + .25)}% 
+      ${(stops[1][1] / total)*(max - .25)}%,
+    ${stops[2][0]} 
+      ${(stops[1][1] / total)*(max + .25)}%
+      ${(stops[2][1] / total)*(max - .25)}%,
+    white
+      ${(stops[2][1]/total)*(max + .25)}%
+      ${max}%
+  )`
 }
 
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     choice.textContent === opposites[counter][0]
-      ? correct(choice)
-      : wrong(choice);
+    ? correct(choice,score)
+    : wrong(choice,wronged);
   });
 });
 
-function correct(a) {
+function correct(a,b) {
   a.classList.add("correctChoice");
   disableOtherChoices(a);
-  score++;
-  console.log(score);
+  b.push(a.textContent)
+  document.querySelector('[corr]').textContent = b.length
 }
-function wrong(a) {
+function wrong(a,b) {
   a.classList.add("wrong");
   disableOtherChoices(a);
+  b.push(a.textContent)
+  document.querySelector('[wrong]').textContent = b.length
 }
 
 function disableOtherChoices(a) {
-  nextButton.disabled = false;
-  revealButtons[counter - 1].disabled= false
-  nextQns()
+  setTimeout(nextQns, 1000)
 }
 
-
+document.querySelector('[scoreBoard] button').addEventListener('click',(b)=>{
+  b.target.parentElement.classList.toggle('active')
+  let c = b.target.parentElement.classList.contains('active')
+  if (c) b.target.textContent = 'Hide Score'
+  else b.target.textContent = 'Show Score'
+})
