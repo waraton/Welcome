@@ -9,30 +9,32 @@ input,button,select,textarea{
   font: inherit;
 }
 body{
-  background-color: #2115;
+  background-color: skyblue;
 }
 /* header starts here */
 header{
   background-color: green;
-  padding: 1rem;
+  padding: .5rem;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-family: sans-serif;
   text-transform: uppercase;
   color: white;
 }
 /* header ends here */
 #imageEditor{
-  max-width: 450px;
+  max-width: 1100px;
   background-color: skyblue;
   margin-inline: auto;
   font-family: sans-serif;
-  padding: .2rem;
+  padding: .5rem;
 }
 
 /* Image and its container and text */
 figure{
-  width: 100%;
+  margin-inline: auto;
+  margin-bottom: .25rem;
+  max-width: 670px;
   aspect-ratio: 1/1;
   overflow: hidden;
   position: relative;
@@ -47,31 +49,40 @@ figure img{
 figure figcaption{
   position: absolute;
   margin: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   word-break: break-word;
   transition: .1s ease;
 }
 /* tabs */
 .tabs ul{
+  scroll-padding: 50% ;
+  scroll-snap-type: x mandatory;
   list-style: none;
   display: flex;
-  height: 2.5rem;
-  background-color: white;
+  height: 2rem;
+  width: 100%;
+  background-color: green;
+  gap: .15rem;
   align-items: stretch;
   overflow:scroll hidden ;
-  justify-content: start;
+  justify-content: stretch;
   user-select: none;
+  transition: linear .5s;
 }
 .tabs>ul>li{
-  width: clamp(100px 120px 150px);
+  /* width: clamp(100px 120px 550px); */
   min-width: 80px;
+  transition: linear .5s;
+  flex-grow: 1;
+  font-size: .75rem;
+  background-color: white;
   display: grid;
   place-content: center;
-  border-right: 1px solid;
   cursor: pointer;
 }
 .tabs ul li.active{
+  scroll-snap-align: center;
   border-bottom: 2px solid green;
 }
 .tabs ul::-webkit-scrollbar{
@@ -79,10 +90,9 @@ figure figcaption{
 }
 /* ? edit tools containers */
 [editTools]{
-  min-height: 15rem;
-  padding: 1rem;
+  padding-top: .25rem;
 }
-[editTools]>[id]{display: none;}
+[editTools]>[id]{display: none; transition: .3s linear;}
 
 [editTools]>.currentTab{
   display: block;
@@ -102,6 +112,13 @@ figure figcaption{
   padding: .5rem ;
   border: green solid;
   border-radius: .25rem;
+  outline: none;
+}
+input[type='color']{
+  width: 100%;
+  display: block;
+  border: none;
+  background: none;
 }
 .inputs textarea{
   padding: .5rem ;
@@ -198,4 +215,37 @@ input[value=Apply]{
 .given{
   color: green;
   box-shadow: 2px 2px;
+}
+
+@media (min-width: 675px) or (orientation:landscape) {
+  #imageEditor{
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    grid-template-columns: minmax(auto, 500px) minmax(150px, .95fr);
+    justify-content: space-between;
+    grid-auto-flow: dense;
+  }
+  figure{
+    margin: initial;
+    max-height: 500px;
+    height: auto;
+    aspect-ratio: 1/1;
+    grid-column: 1/2;    grid-row:2/3;
+    margin: 0%;
+  }
+  [editTools]{
+    padding: 0;
+    margin: 1px;
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .tabs{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  #imgBg.currentTab{
+    display: grid;
+    grid-template-rows:  auto;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr))
+  }
 }

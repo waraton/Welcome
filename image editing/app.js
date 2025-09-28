@@ -9,7 +9,7 @@ const imageLoader = document.querySelector('input[type=file]')
 const rangeInputs= document.querySelectorAll('.inputs input[type=range][data-unit]')
 const text = document.querySelector('figure figcaption')
 const shadowBtns = document.querySelectorAll('#shadows button')
-
+const filters = document.querySelectorAll('#imgFilter input')
 tabs.forEach((tab)=>{
   tab.addEventListener('click', ()=>{
     removeActive()
@@ -34,8 +34,7 @@ function hideActiveTab() {
 form.addEventListener('submit', (e)=>{
   e.preventDefault()
   if (document.getElementById('mainText').value !==''&&document.getElementById('footerText').value !=='') {
-    mainText.textContent = document.getElementById('mainText').value
-    footerText.textContent = document.getElementById('footerText').value
+    mainText.innerHTML = `${document.getElementById('mainText').value}<br><small data-footer="footer" style="font: normal 14px serif;">${document.getElementById('footerText').value}</small>`
     form.style.color='initial'
   } else {
     form.style.color = 'red'
@@ -95,7 +94,9 @@ document.querySelector('#color').addEventListener('input',(r)=>{
 })
 
 shadowBtns.forEach((btn)=>{
-  btn.addEventListener('click',()=>{
+  btn.addEventListener('click',(e)=>{
+    btn.lastElementChild
+    mainText.style.textShadow = `${e.target.parentElement.nextElementSibling.lastElementChild.value}px ${e.target.parentElement.nextElementSibling.lastElementChild.value}px 5px #000`
     notShadowed()
     btn.classList.toggle('given')
     shadowing(btn)
@@ -110,13 +111,24 @@ function notShadowed() {
 function shadowing(btn) {
   if(btn.dataset.textshadow==="none")mainText.style.textShadow = `none`
   document.querySelector('#shadows input').addEventListener('input',(e)=>{
-    if (btn.dataset.textshadow==="blur") {
-      console.log('blur');
-      mainText.style.textShadow = `${e.target.value}px ${e.target.value}px 5px #000d`
-    } else if (btn.dataset.textshadow==="spread") {
-      mainText.style.textShadow = `2px 2px ${e.target.value+2}px #000d`
-      console.log('spread');
+    
+    if (btn.dataset.textshadow ==="blur") {
+      mainText.style.textShadow = `${e.target.value}px ${e.target.value}px 5px #000`
+    } else if (btn.dataset.textshadow ==="spread") {
+      mainText.style.textShadow = `2px 2px ${+e.target.value+2}px #000`
     } else
     mainText.style.textShadow = `none`
   })
 }
+// Image filtering effects.
+filters.forEach((filterEl)=>{
+  filterEl.addEventListener('input',(e)=>{
+  let styled = `
+  ${filters[0].id}(${filters[0].value}%)
+  ${filters[1].id}(${filters[1].value})
+  ${filters[2].id}(${filters[2].value})
+  ${filters[3].id}(${filters[3].value}px)
+`
+mainImage.style.filter = styled
+})
+})

@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <h1>Image Editor</h1>
+    <h1>img|txt Edits</h1>
   </header>
   <main>
     <section id="imageEditor">
@@ -68,9 +68,9 @@
 
           <div class="inputs">
             <label for="fontSize"><small>A</small><big>A</big></label>
-            <input type="range" min="12" max="48" id="fontSize" data-unit="px">
+            <input type="range" value="18" min="12" max="48" id="fontSize" data-unit="px">
             <label for="wordSpacing">AV</label>
-            <input type="range" step=".1" min="0" max="15" id="wordSpacing" data-unit="px">
+            <input type="range" value="0" step=".1" min="0" max="15" id="wordSpacing" data-unit="px">
           </div>
         </div>
 
@@ -83,9 +83,9 @@
 
           <div class="inputs">
             <label for="lineHeight">H</label>
-            <input type="range" min="1" max="3" step=".1" id="lineHeight" data-unit="">
+            <input type="range" value="0" min="1" max="3" step=".1" id="lineHeight" data-unit="">
             <label for="width">w</label>
-            <input type="range" min="5" step=".1" max="100" id="width" data-unit="%">
+            <input type="range" value="100" min="5" step=".1" max="100" id="width" data-unit="%">
           </div>
         </div>
 
@@ -94,7 +94,7 @@
             <label for="color">color</label>
             <input type="color" id="color">
             <label for="opacity"><span class="opacityDrop">0</span></label>
-            <input type="range" min="0.5" max="1" step=".01" id="opacity" data-unit="">
+            <input type="range" value="1" min="0.5" max="1" step=".01" id="opacity" data-unit="">
           </div>
         </div>
 
@@ -106,28 +106,32 @@
           </div>
           <div class="inputs">
             <label for="textShadow"></label>
-            <input type="range" min="0" step=".1" max="10" id="textShadow">
+            <input type="range" value="5" min="0" step=".1" max="10" id="textShadow">
           </div>
         </div>
 
         <div id="imgFilter">
           <div class="inputs">
-            <label for="contrast">Contrast</label>
-            <input type="range"  step=".1" min="0" max="10" name="contrast" id="contrast">
-            <label for="brightness">Brightness</label>
-            <input type="range"  step=".1" min="0" max="5" name="brightness" id="brightness">
-            <label for="saturation">Saturation</label>
-            <input type="range"  step=".01" min="0" max="1" name="saturation" id="saturation">
+            <label for="contrast">Cont</label>
+            <input type="range" value="100"  step=".1" min="1" max="250" name="contrast" id="contrast">
+            <label for="brightness">Bri</label>
+            <input type="range" value="1"  step=".1" min="0.125" max="10" name="brightness" id="brightness">
+            <label for="saturate">Sat</label>
+            <input type="range" value="1"  step=".01" min="0" max="1" name="saturate" id=saturate>
             <label for="blur">Blur</label>
-            <input type="range"  step=".01" min="0" max="1" name="blur" id="blur">
-          s</div>
+            <input type="range" value="0"  step=".01" min="0" max="50" name="blur" id="blur">
+            <label for="blur">Opacity</label>
+            <input type="range" value="0"  step=".01" min="0" max="100" name="opacity" id="opacity">
+            <label for="blur">BRad</label>
+            <input type="range" value="0"  step=".01" min="0" max="50" name="blur" id="blur">
+          </div>
         </div>
 
         <div id="footer">
           <div class="buttons"><button data-fontWeight="bold">B</button><button data-fontStyle="italic">I</button></div>
           <div class="inputs">
             <label for="footerFont"><small>A</small><big>A</big></label>
-            <input type="range" min="9" step=".1" max="16" id="footerFont"></div>
+            <input type="range" value="0" min="9" step=".1" max="16" id="footerFont"></div>
         </div>
       </section>
     </section>
