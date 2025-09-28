@@ -1,0 +1,173 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  background:repeating-conic-gradient(rgb(202, 202, 202) 0 5%, #6570 25%) top left/1rem 1rem;
+}
+td:not(:empty),th:not(:empty){
+  border:red .5q dotted;
+}
+hgroup{
+  margin-top: 2rem;
+}
+hgroup *{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  text-align: center;
+  padding: .25rem 1rem;
+}
+table,main>p,form,.dis{
+  width: 75vw;
+  min-width: 475px;
+  margin-inline: auto;
+  margin-block: 1rem 2rem;
+  font-size: 1rem;
+  table-layout: fixed;
+}
+
+nav{
+  background-color: green;
+  display: flex;
+  gap: 1rem;
+  padding: .5rem;
+  font-size: 1rem;
+}
+nav button{
+  border: none;
+  padding: .5rem 1rem;
+  font: inherit;
+  font-family: serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+table{
+  border-collapse: collapse;
+  border: 2px solid black;
+  perspective: 23in;
+}
+td,th{
+  word-break: break-all;
+  background-color: white;
+  text-align: center;
+  padding: .25rem .75rem;
+  color: black;
+}
+table:first-of-type *{
+  text-transform: uppercase;
+}
+table:first-of-type col.col1{
+  min-width: 100px;
+}
+table:last-of-type col.col1{
+  min-width: 200px;
+}
+table:last-of-type td:first-child{
+  text-transform: uppercase;
+}
+td[colspan='7']{
+  text-align: center;
+  letter-spacing: 4rem;
+  font: 900 1rem sans-serif;
+}
+td:empty{
+  border: none;
+  transition: background .2s linear;
+  background-image: repeating-radial-gradient(white,green 1%);
+  background-size: .5rem .5rem;
+}
+.black{
+  color:white;
+  font-weight: bold;
+  background-color: red;
+}
+.visuallyHidden{
+  scale: 0 0;
+  height: 0;
+  display: block;
+}
+.del{
+  text-decoration: line-through;
+}
+fieldset{
+  max-width: 100%;
+  padding: 0.5rem 2rem;
+  border: gray solid;
+  border-radius: 1rem
+}
+legend{
+  font-size: 1rem;
+  font-weight: bold;
+  padding:0.25rem .5rem ;
+  border: solid grey;
+  border-radius: .5rem;
+}
+textarea{
+  resize: vertical;
+}
+input,textarea{
+  outline-color: green;
+  border-radius: .25rem;
+  border: solid grey 2px;
+  font: inherit;
+  font-size: 1rem;
+  width: 100%;
+  min-width: 100px;
+  padding: .25rem .5rem;
+  transition: .2s;
+}
+input[type='submit']:active{
+  translate: 1px 1px;
+}
+form ul{
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+form li{
+  display: grid;
+}
+li[al]{
+  grid-column: 1/-1;
+}
+.dis li{
+  display: grid;
+  gap: .5rem;
+  border-block-end: dotted 1px;
+  grid-template-columns: repeat(3,.35fr) 1fr 1rem;
+  padding:.5rem;
+}
+.dis li:first-child{
+  font-weight: bold;
+  font-size: 1rem;
+}
+[del]{
+  background-color: rgb(199, 0, 0);
+  aspect-ratio: 1/1;
+  place-content: center;
+  align-self: self-start;
+  width: 1.5rem;
+  font-size: .85rem;
+  color: white;
+  cursor: pointer;
+  display: grid;
+  box-shadow: 1px 1px .5rem black;
+  border-radius: 5rem;
+}
+[del]:active{
+  box-shadow: none;
+}
+.tab{
+  display: none;
+}
+.active{
+  background-color: red;
+  color: white;
+}
+section.tab.current{
+  display: block;
+}
