@@ -5,17 +5,16 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 input,
 select,
 button {
   font-family: inherit;
+  max-width: 100%;
 }
 body {
-  font-family: "MTNBrighterSans-Regular", cursive;
-  font-size: 22px;
-  line-height: 1.5;
-  font-weight: 300;
+  font: 300 16px/1.5 "MTNBrighterSans-Regular", cursive;
 }
 .visuallyHidden{
   position: absolute;
@@ -29,13 +28,24 @@ abbr{
   color: black;
   text-decoration: none;
 }
-a::after{
-  content: '\86';
+a:hover{
+  text-decoration-skip-ink: none;
+  text-decoration: underline 2px blue;
+  text-shadow: none;
+}
+a::before{
+  content: '\11';
   color: blue;
-  margin-left: 2q;
+  margin-right: 2px;
+  font-style: normal;
 }
 main{
-  padding: 1rem;
+  width: 80vw;
+  max-width: 800px;
+  margin: auto;
+}
+main,FOOTER{
+  padding: rem;
 }
 h2{
   margin: 1rem 0;
@@ -48,23 +58,46 @@ p{
 }
 table thead th{
   text-transform: uppercase;
-  padding: .25rem 1rem;
+  padding: .25rem .5rem;
   background-color: grey;
   color: white;
-  border: 2px solid white;
+  border-inline: 2px solid white;
+  border-bottom: 2px solid;
+}
+td[rowspan],th[rowspan]{
+  border-right: none;
+}
+th[colspan],thead tr:last-child th:first-child{
+  border-left: none;
 }
 table tbody td{
   border: 2px solid white;
-  padding: .25rem 1rem;
+  border-left: none;
+  padding: .25rem .5rem;
   border-bottom: none;
 }
 tbody tr{
   background-color: lightgrey;
 }
+tbody tr:last-child td{
+  border-bottom: 2.01px solid black;
+}
 table tbody tr:nth-child(odd){
   background-color: white;
 }
+[free]{
+  display: block;
+  background-color: gray;
+  border-radius: 50%;
+  display: grid;
+  width: fit-content;
+  padding: 1rem 2rem;
+  place-content: center;
+  margin: auto;
+}
 table{
+  width: 100%;
+  table-layout: auto;
   border-collapse: collapse;
   padding-bottom: 5px;
   border-bottom: 2px solid black;
@@ -74,6 +107,7 @@ tr:last-child{
 }
 tbody tr td:has(del){
   background-color: lightgrey;
+  text-align: center ;
 }
 ul li{
   margin-left: 1rem;
@@ -83,8 +117,9 @@ ul li:has(input){
   margin-left: 0;
   margin-block: 2rem;
   display: flex;
-  align-items: end;
-  font-size: 1.25rem;
+  flex-direction: column;
+
+  font-size: 1.125rem;
 }
 ul li:has(input) input{
   flex-grow: 1;
@@ -92,7 +127,6 @@ ul li:has(input) input{
   outline: none;
   border-bottom: 1px solid;
   padding: .25rem;
-  margin-left: 1ch;
 }
 ul:has(a[href^='tel:']) li{
   list-style: none;
@@ -103,4 +137,27 @@ ul:has(a[href^='tel:']) li{
   border: 1em solid grey;
   margin: 0in .5in;
   size: 15in;
+}
+footer{
+  text-shadow: 1px 1px 2px blue;
+  color: white;
+  text-align: center;
+  display: grid;
+  gap: 0rem;
+  grid-template-columns: repeat(auto-fit,minmax(355px,1fr));
+  background-color: rgb(177, 177, 0);
+}
+footer>*:first-child:first-of-type{
+  grid-column: 1/-1;
+  font-size: 1.75rem;
+  border-bottom: 2px solid yellow;
+}
+footer>*{
+  padding: .5rem 1rem;
+}
+[attribution]{
+  background: repeating-conic-gradient(blue,yellow, blue .25%) 0/1rem 1rem;
+}
+th,td{
+  word-break: break-all;
 }
