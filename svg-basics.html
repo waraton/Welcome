@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG BASICS</title>
+  <style>
+    html {
+      font-size: 100%;
+      scrollbar-color:cornsilk cadetblue ;
+    }
+header{
+  border: 2px solid  violet;
+  box-shadow: black 0 0 2 2px inset;
+  background: cadetblue url(bg-svg.svg) no-repeat scroll 95% 50% / 150px 150px padding-box padding-box ;
+  padding: .5em;
+  font-size: 2em;
+  margin: 0em;
+  text-transform: uppercase;
+  color: rgb(2, 21, 130);
+}
+header h1{vertical-align: centre;padding: .5em;}
+    body {
+      max-inline-size: 1000px;
+      margin: auto;
+      padding-inline: 2rem;
+      font-family: 'e eloxy', Verdana, Geneva, Tahoma, sans-serif;
+      background:url(bg-svg.svg) no-repeat fixed right top content-box content-box ;
+      background-size: 15%;
+    }
+
+    svg {
+      border: 1px solid;
+    }
+
+    figure code {
+      display: block;
+      background: cornsilk fixed no-repeat;
+      max-width: 500px;
+      white-space: pre;
+      overflow-x: auto;
+      padding-inline: .5rem;
+    }
+
+    abbr {
+      text-decoration: none;
+    }
+
+    hr {
+      width: 50%;
+      text-align: center;
+      height: 5px;
+      background-color:  cadetblue;
+    }
+
+    hgroup {
+      color: cadetblue;
+      text-align: center;
+      border-right: 3px solid;
+      border-bottom: 3px solid;
+      box-shadow: 5px 5px 2px gray;
+      padding: 5px .25rem;
+      background-color: #fff8dc7d;
+      margin: .5em 2em 0 2em;
+    }
+hgroup h1{
+  background-color: transparent;
+  box-shadow: none;
+}
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: AMORE, Georgia, 'Times New Roman', Times, serif;
+      letter-spacing: 2px;
+      background-color: #fff8dbbf;
+      padding: .25rem .25em .25em .5em;
+      margin: .5rem .125rem;
+      box-shadow: 5px 5px 2px gray;
+    }
+
+    time {
+      font-family: 'digital-7 mono', monospace;
+    }
+
+    code {
+      background-color: cornsilk;
+      font: 500 1.2rem/1.25 europeantypewriter, 'ubuntu mono', 'lucida console',monospace;
+      letter-spacing: 2px;
+    }
+
+    dt {
+      padding-top: .25rem;
+      margin: .125rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header><h1>basic svg</h1></header>
+  <hgroup>
+    <h1> How to construct lines with <abbr title='Scalable Vector Graphics'>SVG</abbr></h1>
+    <p>[<time datetime="2025-03-01T22:19+03:00">01/03, 10:19 pm</time>] ME</p>
+  </hgroup>
+  <p>[<time datetime="2025-03-01T22:21+03:00">01/03, 10:21 pm</time>] Meta <abbr
+      title='Artificial Interligence'>AI</abbr>: Constructing lines with <abbr
+      title='Scalable Vector Graphics'>SVG</abbr> can be done using the <code>&lt;line&gt;</code> element or the
+    <code>&lt;path&gt;</code> element. Here are some examples:
+  </p>
+  <h2>Using the <code>&lt;line&gt;</code> Element</h2>
+  <p>The <code>&lt;line&gt;</code> element is used to draw a line between two points. It has four attributes:</p>
+  <ul>
+    <li><code>x1</code>: The x-coordinate of the starting point.</li>
+    <li><code>y1</code>: The y-coordinate of the starting point.</li>
+    <li><code>x2</code>: The x-coordinate of the ending point.</li>
+    <li><code>y2</code>: The y-coordinate of the ending point.</li>
+  </ul>
+  <h3>Example</h3>
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="200" height="200">
+      <line x1="10" y1="20" x2="190" y2="179" style="stroke:rgb(0,0,0);stroke-width:2" />
+      </svg>
+      <figcaption>
+        <code>
+&lt;svg widtH="200" height="200">
+  &lt;line x1="10" y1="20" x2="190" y2="179" style="stroke:rgb(0,0,0);stroke-width:2" />
+&lt;/svg&gt;
+      </code>
+      </figcaption>
+  </figure>
+  <h2>Using the <code>&lt;path&gt;</code> Element</h2>
+  <p>The <code>&lt;path&gt;</code> element is used to draw a path, which can include lines, curves, and arcs. It has a
+    <code>d</code> attribute that contains the path data.
+  </p>
+  <h3>Example</h3>
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="200" height="200">
+      <path d="M 10 10 L 190 190" style="stroke:rgb(0,0,0);stroke-width:2;fill:none" />
+    </svg>
+    <figcaption>
+      <code>
+&lt;svg width="200" height="200">
+  &lt;path d="M 10 10 L 190 190" style="stroke:rgb(0,0,0);stroke-width:2;fill:none" />
+&lt;/svg&gt;
+      </code>
+    </figcaption>
+  </figure>
+  <p>In this example, the <code>d</code> attribute contains the path data:</p>
+  <dl>
+    <dt><code>M 10 10</code>:</dt>
+    <dd> Move to the starting point (10, 10).</dd>
+    <dt><code>L 190 190</code>:</dt>
+    <dd> Draw a line to the ending point (190, 190).</dd>
+  </dl>
+  <h3>Common Attributes</h3>
+  <p>Both the <code>&lt;line&gt;</code> and <code>&lt;path&gt;</code> elements can have the following attributes:</p>
+  <dl>
+    <dt><code>style</code>:</dt>
+    <dd> Specifies the style of the line, including color, width, and opacity.</dd>
+    <dt><code>stroke</code>:</dt>
+    <dd> Specifies the color of the line.</dd>
+    <dt><code>stroke-width</code>:</dt>
+    <dd> Specifies the width of the line.</dd>
+    <dt><code>fill</code>:</dt>
+    <dd> Specifies the color of the fill (if any).</dd>
+  </dl>
+
+  <p>Note: You can also use other attributes, such as <code>transform</code>, <code>opacity</code>, and
+    <code>marker</code>, to customize the appearance of the line.
+  </p>
+  <hr />
+  <hgroup>
+    <h1> How to draw in <abbr title='Scalable Vector Graphics'>SVG</abbr></h1>
+    <p>[<time datetime="2025-03-01T22:20+03:00">01/03, 10:20 pm</time>] ME</p>
+  </hgroup>
+  <p>[<time datetime="2025-03-01T22:21+03:00">01/03, 10:21 pm</time>] Meta <abbr
+      title='Artificial Interligence'>AI</abbr>: <abbr title='Scalable Vector Graphics'>SVG</abbr> (Scalable Vector
+    Graphics) is a markup language used to create vector graphics for the
+    web. Here's a basic guide on how to draw in <abbr title='Scalable Vector Graphics'>SVG</abbr>:</p>
+
+  <h2>Basic Shapes</h2>
+  <p><abbr title='Scalable Vector Graphics'>SVG</abbr> provides a range of basic shapes, including:</p>
+
+  <ul>
+    <li><code>rect</code>: Rectangle</li>
+    <li><code>circle</code>: Circle</li>
+    <li><code>ellipse</code>: Ellipse</li>
+    <li><code>line</code>: Line</li>
+    <li><code>polyline</code>: Polygon line</li>
+    <li><code>polygon</code>: Polygon</li>
+  </ul>
+
+  <h3>Example: Drawing a Rectangle</h3>
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="100" height="100">
+      <rect x="10" y="10" width="80" height="80" fill="#ff0000" />
+    </svg>
+    <figcaption>
+      <code>
+&lt;svg width="100" height="100">
+  &lt;rect x="10" y="10" width="80" height="80" fill="#ff0000" />
+&lt;/svg&gt;
+</code>
+    </figcaption>
+  </figure>
+
+  <p>This code creates a red rectangle with a width of 80 and a height of 80, positioned at (10, 10) within a 100x100
+    <abbr title='Scalable Vector Graphics'>SVG</abbr>
+    canvas.
+  </p>
+
+  <h2>Paths</h2>
+  <p>Paths are used to create more complex shapes. A path is defined by a series of commands, including:</p>
+  <ul>
+    <li><code>M</code>: Move to</li>
+    <li><code>L</code>: Line to</li>
+    <li><code>H</code>: Horizontal line to</li>
+    <li><code>V</code>: Vertical line to</li>
+    <li><code>C</code>: Curve to</li>
+    <li><code>Z</code>: Close path</li>
+  </ul>
+  <h3>Example: Drawing a Triangle</h3>
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="100" height="100">
+      <path d="M 50 10 L 90 90 L 10 90 Z" fill="#00ff00" />
+    </svg>
+    <figcaption>
+      <code>
+&lt;svg width="100" height="100">
+  &lt;path d="M 50 10 L 90 90 L 10 90 Z" fill="#00ff00" />
+&lt;/svg&gt;
+</code>
+    </figcaption>
+  </figure>
+
+  <p>This code creates a green triangle with vertices at (50, 10), (90, 90), and (10, 90).</p>
+
+  <h2>Attributes</h2>
+  <p><abbr title='Scalable Vector Graphics'>SVG</abbr> elements can have various attributes, including:</p>
+  <ul>
+    <li><code>fill</code>: Fill color</li>
+    <li><code>stroke</code>: Stroke color</li>
+    <li><code>stroke-width</code>: Stroke width</li>
+    <li><code>opacity</code>: Opacity</li>
+  </ul>
+  <h3>Example: Drawing a Circle with Attributes</h3>
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" fill="#ff0000" stroke="#000000" stroke-width="2" opacity="0.5" />
+    </svg>
+    <figcaption>
+      <code>
+&lt;svg width="100" height="100">
+  &lt;circle cx="50" cy="50" r="40" fill="#ff0000" stroke="#000000" stroke-width="2" opacity="0.5" />
+&lt;/svg&gt;
+</code>
+    </figcaption>
+  </figure>
+  <p>This code creates a red circle with a black stroke, positioned at (50, 50) with a radius of 40, and an opacity
+    of 0.5.</p>
+
+  <h2>Transformations</h2>
+  <p><abbr title='Scalable Vector Graphics'>SVG</abbr> elements can be transformed using the <code>transform</code>
+    attribute, which includes:</p>
+
+  <ul>
+    <li><code>translate</code>: Translate</li>
+    <li><code>scale</code>: Scale</li>
+    <li><code>rotate</code>: Rotate</li>
+    <li><code>skewX</code>: Skew X</li>
+    <li><code>skewY</code>: Skew Y</li>
+  </ul>
+
+  <h3>Example: Drawing a Rotated Rectangle</h3>
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="100" height="100">
+      <rect x="10" y="10" width="80" height="80" fill="#ff0000" transform="rotate(45 50 50)" />
+    </svg>
+    <figcaption>
+      <code>
+&lt;svg width="100" height="100">
+  &lt;rect x="10" y="10" width="80" height="80" fill="#ff0000" transform="rotate(45 50 50)" />
+&lt;/svg&gt;
+          </code>
+    </figcaption>
+  </figure>
+  <p>This code creates a red rectangle rotated 45 degrees around the point (50, 50).</p>
+
+  <p>These are just the basics of drawing in <abbr title='Scalable Vector Graphics'>SVG</abbr>. With practice and
+    experimentation, you can create complex and
+    beautiful vector graphics.</p>
+  <hr>
+  <hgroup>
+    <h1> <abbr title='Scalable Vector Graphics'>SVG</abbr> path drawing, and the associated attributes</h1>
+    <p>[<time datetime="2025-03-02T10:46+03:00">02/03, 10:46 am</time>] ME</p>
+  </hgroup>
+  <p>[<time datetime="2025-03-02T10:48+03:00">02/03, 10:48 am</time>] Meta <abbr
+      title='Artificial Interligence'>AI</abbr>: <abbr title='Scalable Vector Graphics'>SVG</abbr> path drawing is a
+    powerful way to create complex shapes and designs. Here are
+    the basic
+    components of <abbr title='Scalable Vector Graphics'>SVG</abbr> path drawing and their associated attributes:</p>
+
+  <h2>Path Commands</h2>
+  <p>Path commands are used to define the shape of the path. The following are the basic path commands:</p>
+
+  <dl>
+    <dt><code>M</code> (Move to):</dt>
+    <dd> Moves the starting point of the path to the specified coordinates.
+    </dd>
+    <dt><code>L</code> (Line to):</dt>
+    <dd> Draws a line from the current point to the specified coordinates.
+    </dd>
+    <dt><code>H</code> (Horizontal line to):</dt>
+    <dd> Draws a horizontal line from the current point to the specified x-coordinate.
+    </dd>
+    <dt><code>V</code> (Vertical line to):</dt>
+    <dd> Draws a vertical line from the current point to the specified y-coordinate.
+    </dd>
+    <dt><code>C</code> (Curve to):</dt>
+    <dd> Draws a cubic Bézier curve from the current point to the specified coordinates.
+    </dd>
+    <dt><code>S</code> (Smooth curve to):</dt>
+    <dd> Draws a smooth cubic Bézier curve from the current point to the specified coordinates.
+    </dd>
+    <dt><code>Q</code> (Quadratic curve to):</dt>
+    <dd> Draws a quadratic Bézier curve from the current point to the specified coordinates.
+    </dd>
+    <dt><code>T</code> (Smooth quadratic curve to):</dt>
+    <dd> Draws a smooth quadratic Bézier curve from the current point to the specified coordinates.
+    </dd>
+    <dt><code>A</code> (Arc to):</dt>
+    <dd> Draws an elliptical arc from the current point to the specified coordinates.
+    </dd>
+    <dt><code>Z</code> (Close path):</dt>
+    <dd> Closes the current path.</dd>
+  </dl>
+
+  <h2>Path Attributes</h2>
+  <p>Path attributes are used to customize the appearance of the path. The following are some common path
+    attributes:</p>
+
+  <dl>
+    <dt><code>d</code> (Path data):</dt>
+    <dd> Specifies the path commands and coordinates that define the shape of the path.</dd>
+    <dt><code>fill</code> (Fill color):</dt>
+    <dd> Specifies the color used to fill the path.</dd>
+    <dt><code>stroke</code> (Stroke color):</dt>
+    <dd> Specifies the color used to draw the path.</dd>
+    <dt><code>stroke-width</code> (Stroke width):</dt>
+    <dd> Specifies the width of the path.</dd>
+    <dt><code>stroke-linecap</code> (Stroke line cap):</dt>
+    <dd> Specifies the shape of the path ends.</dd>
+    <dt><code>stroke-linejoin</code> (Stroke line join):</dt>
+    <dd> Specifies the shape of the path corners.</dd>
+    <dt><code>stroke-dasharray</code> (Stroke dash array):</dt>
+    <dd> Specifies the pattern of dashes and gaps used to draw the path.</dd>
+    <dt><code>stroke-dashoffset</code> (Stroke dash offset):</dt>
+    <dd> Specifies the offset of the dash pattern.</dd>
+    <dt><code>opacity</code> (Opacity):</dt>
+    <dd> Specifies the transparency of the path.</dd>
+  </dl>
+
+  <h2>Curve Attributes</h2>
+  <p>Curve attributes are used to customize the shape of curves. The following are some common curve attributes:</p>
+
+  <dl>
+    <dt><code>rx</code> (Radius x):</dt>
+    <dd> Specifies the x-radius of an elliptical arc.</dd>
+    <dt><code>ry</code> (Radius y):</dt>
+    <dd> Specifies the y-radius of an elliptical arc.</dd>
+    <dt><code>x-axis-rotation</code> (X-axis rotation):</dt>
+    <dd> Specifies the rotation of an elliptical arc around the x-axis.</dd>
+  </dl>
+
+  <h3>Example</h3>
+  <p>Here is an example of a path that uses some of the above attributes:</p>
+
+  <figure>
+    <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
+    <svg width="100" height="100">
+      <path d="M 10 10 C 20 20, 40 20, 50 10" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" stroke-dasharray="5, 5" stroke-dashoffset="2" opacity="0.5" />
+    </svg>
+    <figcaption>
+      <code>
+&lt;svg width="100" height="100"&gt;
+  &lt;path d="M 10 10 C 20 20, 40 20, 50 10"
+        fill="none"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dasharray="5, 5"
+        stroke-dashoffset="2"
+        opacity="0.5" /&gt;
+&lt;/svg&gt;
+          </code>
+    </figcaption>
+  </figure>
+  <p>This path draws a curve with a round line cap and join, and a dash pattern. The curve is also slightly
+    transparent.</p>
+  <hr>
+</body>
+
+</html>
