@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <section id="Background">1%</section>
   <section class="hero">
     <video src="video.mp4" muted autoplay inline-play loop></video>
     <section class="explore">
@@ -22,9 +23,28 @@
         <button class="actionButton5">Contact</button>
       </div>
     </section>
-
-
   </section>
+
+  <script>
+    const Background = document.getElementById('Background');
+    let load = 0
+    let int = setInterval(blurring, 85);
+    function blurring() {
+      load++
+      if (load > 95) {
+        clearInterval(int)
+        Background.style.display = 'none'
+      }
+      Background.innerText = `${load}%`
+      Background.style.opacity = scale(load, 0, 100, 1, 0)
+      Background.style.filter = `blur(${scale(load,0,30,0)}px)`
+    }
+    function scale(num, min, max, minO, maxO) {
+      return ((num - min) * (maxO - minO) / (max - min) + minO)
+    }
+
+
+  </script>
 </body>
 
 </html>
