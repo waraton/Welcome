@@ -20,18 +20,21 @@ hgroup *{
   text-align: center;
   padding: .25rem 1rem;
 }
-table,main>p,form,.dis{
-  width: 75vw;
+main > *,table{
   min-width: 475px;
   margin-inline: auto;
+  width: 75vw;
   margin-block: 1rem 2rem;
+}
+table,main>p,form,.dis{
   font-size: 1rem;
   table-layout: fixed;
 }
 
 nav{
   background-color: green;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
   gap: 1rem;
   padding: .5rem;
   font-size: 1rem;
@@ -64,6 +67,9 @@ table:first-of-type col.col1{
 }
 table:last-of-type col.col1{
   min-width: 200px;
+}
+thead,th{
+  border: 2px solid;
 }
 table:last-of-type td:first-child{
   text-transform: uppercase;
