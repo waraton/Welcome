@@ -1,8 +1,13 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
 body{
   background-color: skyblue;
   display: grid;
   place-content: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 .anim {
   font: 1.5rem verdana, sans-serif;
@@ -71,5 +76,13 @@ body{
   border-top: 1px solid #fff5;
   text-align: center;
   align-self: stretch;
-  padding-top: 8px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+button{
+  background-color: rgba(0,0,0,.9);
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: .5rem;
 }
