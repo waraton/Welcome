@@ -84,34 +84,46 @@ input[type="radio"]:checked ~ p.content,
   flex-direction: row;
   overflow: hidden;
   gap: .25rem;
-  height: 15rem;
+  height: 22rem;
+  perspective: 355px;
+  padding: 1rem 0;
+  transform-style: preserve-3d;
 }
 .bg > *{
+  backface-visibility: hidden;
   background-color: teal;
-  border-radius: 2rem;
   cursor: pointer;
-  color: #2111;
+  color: #c7e0;
+  user-select: none;
   text-align: center;
-  padding: .25em;
-  transition:  .5s;
+  overflow: hidden;
+  transition:  1s;
   width: 2rem;
   display: grid;
   place-content: center;
   background: linear-gradient(#2115 0 0),repeating-conic-gradient(royalblue, #2321, skyblue 15%) center/2rem 2rem ;
   font-size: 1.5rem;
   font-family: sans-serif;
+  border-radius: 1.5rem 0/1.5rem;
+  border: 1svh solid currentColor;
+  transform: scale(1, .985) rotateY(25deg);
+  transform-origin:100% top;
 }
 .grow{
-  flex-grow: 1;
   color: white;
+  text-shadow: .05em .05em 1em orange;
+  transform: none;
+  padding: 1rem;
+  flex-grow: 1;
   cursor: auto;
+  user-select: contain;
 }
 progress{
   height: 1rem;
   position: fixed;
   outline: none;
-  right: 1rem;
-  top: 2rem;
+  right: -2.5rem;
+  top: 2.5rem;
   width: 15vw;
   rotate: -.25turn;
   accent-color: orange;

@@ -4,7 +4,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: skyblue ;
+  background-color: var(--mainBg, #131313);
 }
 *{
   margin: 0;

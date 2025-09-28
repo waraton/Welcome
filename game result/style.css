@@ -48,7 +48,6 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
 }
 img {
   width: 80%;
@@ -81,4 +80,12 @@ img {
   left: 190px;
   top: -15px;
   padding: 2px 7px;
+}
+button{
+  cursor: pointer;
+  transition: .2s;
+}
+button:active{
+  translate: 1px 1px;
+  outline: 1px solid black;
 }
