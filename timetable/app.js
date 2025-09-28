@@ -166,3 +166,10 @@ buttons.forEach((button) => {
 });
 
 loadLocal();
+
+
+document.querySelectorAll('.grading table:first-of-type tbody tr td:last-child').forEach((grade)=> {if (grade.textContent < 4) grade.classList.add('active')})
+document.querySelectorAll('.grading table:first-of-type tbody tr:has(.active) td').forEach((grade)=>{
+  grade.classList.add('active')
+  grade.style.border = '1px dotted'
+})
