@@ -29,3 +29,12 @@ const aa = [a, b, c, d, e, f, g, h, i];
 aa.forEach((rr) => {
   document.querySelector("table").innerHTML += `<tr><td>${rr[0]}</td><td>${rr[1]}</td></tr>`;
 });
+
+const range = document.getElementById('range');
+const rangeContent = document.getElementById('rangeContent');
+range.addEventListener('input', ()=>{
+  const an = 10
+  rangeContent.textContent = String(range.value).padStart(3,`0`)
+  rangeContent.style.left = `${range.value / range.max * 100}%`
+})
+

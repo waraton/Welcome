@@ -67,11 +67,52 @@ h1{
   height: 100%;
   margin: 0;
   background: #fff;
-  animation: fill 1s infinite linear;
+  animation: fill .5s infinite linear;
   border-radius: 10px;
 }
 @keyframes fill {
   100% {
     width: 103%;
   }
+}
+.rangeContainer{
+  position: relative;
+  margin: 2rem auto;
+  width: fit-content;
+}
+.rangeContainer #range{
+ outline: none;
+ appearance: none; 
+ accent-color: teal;
+ height: .25rem;
+ border-radius: 1rem;
+ width: 50vw;
+ display: inline-block;
+ margin: 1.5rem auto;
+}
+.rangeContent{
+  position: absolute;
+  left: 5%;
+  line-height: 1;
+  width: 1rem;
+  border: 2px solid;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  top: -45.25%;
+  transform: translateX(-050%);
+  background-color:skyblue;
+  color: white;
+  padding: .75rem;
+  display: grid;
+  place-content: center;
+  border-radius: 51%;
+  ascent-override: 1/1;
+  transition: opacity .5s ease;
+}
+input[type='range']::-webkit-slider-thumb{
+  transition: .1s;
+  scale: .5;
+  cursor: pointer;
+  outline: 1svb solid white;
+  border-radius: 1rem;
 }
