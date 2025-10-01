@@ -1,4 +1,6 @@
-const items = document.querySelectorAll("section:first-of-type table:first-of-type td:not(:EMPTY)");
+const items = document.querySelectorAll(
+  "section:first-of-type table:first-of-type td:not(:EMPTY)"
+);
 setInterval(dater, 1500);
 const lectureTr = document.querySelectorAll("table:last-of-type tr");
 const days = document.querySelectorAll("table:first-of-type thead tr th");
@@ -116,7 +118,10 @@ add.addEventListener(`click`, (e) => {
 
 function loadLocal() {
   for (const key in localStorage) {
-    if (Object.hasOwnProperty.call(localStorage, key) && !document.getElementById(key)) {
+    if (
+      Object.hasOwnProperty.call(localStorage, key) &&
+      !document.getElementById(key)
+    ) {
       const element = JSON.parse(localStorage[key]);
       [a, b, c, d] = element;
       document.querySelector(`.dis`).innerHTML += `
@@ -131,45 +136,68 @@ function loadLocal() {
     }
   }
 }
+loadLocal();
+
 document.querySelectorAll("[del]").forEach((del) => {
   del.addEventListener("click", (e) => {
     e.preventDefault();
     localStorage.removeItem(e.target.id);
+    e.target.parentElement.style.display = "none";
   });
 });
 
 const buttons = document.querySelectorAll(`nav button`);
 const tabs = document.querySelectorAll(`section.tab`);
-
 function removeCurrent() {
   tabs.forEach((tab) => {
-    tab.classList.remove('current')
+    tab.classList.remove("current");
   });
 
-  buttons.forEach((button)=>{
-    button.classList.remove('active')
-  })
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
 }
-
 
 buttons.forEach((button) => {
   button.addEventListener(`click`, (e) => {
-    removeCurrent()
-    let actTab = button.textContent
-    tabs.forEach((tab)=>{
+    removeCurrent();
+    let actTab = button.textContent;
+    tabs.forEach((tab) => {
       if (tab.classList.contains(actTab)) {
-        tab.classList.add('current')
+        tab.classList.add("current");
       }
-    })
+    });
     e.target.classList.add(`active`);
   });
 });
 
-loadLocal();
+const classes = ["bad", "tried", "good", "excellent"];
 
-
-document.querySelectorAll('.grading table:first-of-type tbody tr td:last-child').forEach((grade)=> {if (grade.textContent < 4) grade.classList.add('active')})
-document.querySelectorAll('.grading table:first-of-type tbody tr:has(.active) td').forEach((grade)=>{
-  grade.classList.add('active')
-  grade.style.border = '1px dotted'
-})
+document
+  .querySelectorAll(".grading table:first-of-type tbody tr td:last-child")
+  .forEach((grade) => {
+    if (grade.textContent < 2.8) grade.classList.add(classes[0]);
+    if (grade.textContent < 3.6) grade.classList.add(classes[1]);
+    if (grade.textContent < 4.4) grade.classList.add(classes[2]);
+    if (grade.textContent <= 5) grade.classList.add(classes[3]);
+  });
+classes.forEach((grad) => {
+  document
+    .querySelectorAll(`.grading table:first-of-type tbody tr:has(.${grad}) td`)
+    .forEach((grade) => {
+      grade.classList.add(grad);
+      grade.style.border = "1px dotted white";
+      grade.style.color = "white";
+    });
+});
+document
+  .querySelectorAll(`.grading table:last-of-type tbody tr`)
+  .forEach((v, i, arr) => {
+    classes.forEach((clr, ind, ar) => {
+      arr[i].querySelectorAll("td").forEach((element) => {
+        element.classList.add(ar[arr.length - 1 - i]);
+        element.style.color = "white";
+        element.style.border = "1px dotted white";
+      });
+    });
+  });
