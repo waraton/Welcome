@@ -30,10 +30,72 @@ function tim() {
     i.style.borderTop = 'none'
     document.querySelectorAll('.analogue span')[hrd-1].style.borderTop = `solid`
 })
-
 }
 
 btn.addEventListener("click", () => {
   is24Hr = !is24Hr;
 });
-d
+
+const start = document.querySelector('.start')
+const stoper = document.querySelector('.stop')
+const reset = document.querySelector('.reset')
+const timeDis = document.querySelector('[timer]')
+
+const interval = 100/6
+let timerId
+let lastTimerStart = 0
+let noOfSecGone = 0
+
+function startTimer() { 
+  start.disabled = true
+  stoper.disabled = false
+  reset.disabled = true
+
+  lastTimerStart = Date.now()
+  timerId = setInterval( updater, interval);
+}
+
+function stopTimer() {
+  reset.disabled = false
+  start.disabled = true
+  stoper.disabled = true
+
+  noOfSecGone += Date.now() - lastTimerStart
+  clearInterval(timerId)
+}
+
+function reseter() {
+  reset.disabled = true
+  start.disabled = false
+  stoper.disabled = true
+  timeDis.textContent = '00:00:000'
+  noOfSecGone = 0
+}
+
+function updater() {
+  const msElapsed = Date.now() - lastTimerStart + noOfSecGone
+  const secElapsed = msElapsed / 1000
+  const minUtes = secElapsed / 60
+
+  const [ms, sc, mn] = [
+        formatter(msElapsed % 1000, 3), 
+        formatter(Math.floor(secElapsed) % 60, 2), 
+        formatter(Math.floor(minUtes), 2)
+      ]
+
+  timeDis.textContent = `${mn}:${sc}:${ms}`
+}
+
+function formatter(number, length) {
+  if (String(number).length > length) {
+    return String(number).slice(0, length)
+  }
+  return String(number).padStart(length, 0)
+}
+
+start.addEventListener('click', startTimer)
+stoper.addEventListener('click', stopTimer)
+reset.addEventListener('click', reseter)
+
+start.disabled = false
+stoper.disabled = reset.disabled = true

@@ -2,7 +2,10 @@
   --teal: teal;
   --white: white;
   --indigo: indigo;
-  font-size: 4vmin;
+  --smallFont: .75rem;
+  --largeFont: 2.25rem;
+  --monospace: tektur, "fira code", monospace;
+  font-size: 16px;
 }
 * {
   margin: 0;
@@ -15,61 +18,76 @@ body {
   background: var(--teal);
 }
 .container {
-  max-width: 700px;
-  min-width: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px,1fr));
+  gap: 2rem;
+  align-content: stretch;
+  align-items: stretch;
   margin-inline: auto;
-  padding: 0 30px;
+  padding: 1rem;
   text-align: center;
 }
 .container h2 {
-  font-size: 2.25rem;
+  font-size: var(--largeFont);
   color: var(--indigo);
   text-transform: uppercase;
   border-bottom: 2px solid;
   margin-block: 1rem;
+  align-self: start;
+}
+.container > section{
+  background-color: black;
+  min-height: 25rem;
+  border-radius: .5rem;
+  display: grid;
 }
 .container .display {
-  font-family: tektur, "fira code", monospace;
-  font-size: 3.5em;
-  line-height: 1;
+  font-family: var(--monospace);
+  font-size: var(--largeFont);
+  line-height: 2;
   color: var(--white);
-  background-color: black;
   color: navy;
-  position: relative;
-  padding: 1rem 2rem;
-  border-radius: 0.2rem;
-  margin-inline: auto;
-  margin-bottom: 1rem;
+  padding: 1rem;
   letter-spacing: 2px;
+  position: relative;
 }
 .btn {
   border: none;
-  padding: 5px 20px;
-  font-family: tektur, sans-serif;
+  padding: 5px .5rem;
+  font-family: var(--monospace);
   cursor: pointer;
   transition: 0.4s;
   font-weight: bold;
   color: var(--indigo);
+  border-radius: 2rem;
+  margin-inline: .25rem;
+}
+[type="button"].btn{
   position: fixed;
   inset: 0.3rem 0.3rem auto auto;
-  border-radius: 2rem;
+  z-index: 2;
 }
-.btn:hover {
-  outline: var(--indigo) solid;
+:disabled{
+  cursor: not-allowed;
+}
+.btn:hover:not(:disabled) {
+  color: var(--white);
+  outline: var(--white) solid 2px;
+  background-color: var(--indigo);
 }
 .btn:active {
   translate: 2px 2px;
   font-weight: bolder;
 }
 [t] {
-  font-size: 0.7rem;
+  font-size: var(--smallFont);
   background-color: var(--white);
   color: var(--teal);
   padding: 5px 10px;
   padding-bottom: 0;
-  font-family: tektur, sans-serif;
+  font-family: var(--monospace);
   position: absolute;
-  inset: auto 42% 0.25rem 42%;
+  inset: 0rem 4% auto 82%;
 }
 [dot] {
   animation: blink 1s infinite steps(1);
@@ -79,7 +97,6 @@ body {
     color: transparent;
   }
 }
-
 .analogue {
   max-height: 320px;
   aspect-ratio: 1;
@@ -116,7 +133,7 @@ body {
   background-color: #121;
 }
 .analogue div {
-  height: 45%;
+  height: 40%;
   width: 2px;
   background-color: lime;
   border: none;
@@ -130,19 +147,33 @@ body {
 .analogue [hr] {
   background-color: black;
   width: 8px;
-  height: 30%;
+  height: 20%;
 }
 .analogue [min] {
   width: 5px;
-  height: 37%;
+  height: 30%;
 }
 .analogue span{
   position: absolute;
   inset: 0 45% 50%;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   rotate: calc(var(--r) * 1deg);
   transform-origin: 50% 100%;
   padding-top: .5rem;
   text-align: center;
+}
+.buttons{
+  background-color: teal;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 100%;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: auto;
+}
+[timer]{
+  font-family: var(--monospace);
 }
