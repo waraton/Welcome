@@ -46,6 +46,11 @@ img{
     font-weight: bold;
     background-color: #c75050;
     color: white;
+    transition: .1s;
+}
+*.close:hover{
+    background-color: #c75050 !important;
+    filter: contrast(1.5);
 }
 .main{
     background-color: var(--grey);
@@ -155,7 +160,15 @@ fieldset{
 .disabled{
     color: rgb(150, 150, 150);
 }
-button:hover:not(button.running),input:hover,.custom select:hover{
+button:hover:not(button.running, button.close),input:hover,.custom select:hover{
     background: var(--hoverBackground);
     border-color: var(--hoverBorder);
+}
+
+.deactivated{
+    background-color: var(--grey);
+}
+
+.deactivated .close{
+    background-color: #cbcbcb;
 }
