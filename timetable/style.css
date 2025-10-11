@@ -18,7 +18,7 @@ hgroup *{
   text-transform: uppercase;
   font-size: 1.125rem;
   text-align: center;
-  padding: .25rem 1rem;
+  padding: .25rem .5rem;
 }
 main > *,table{
   min-width: 475px;
@@ -58,8 +58,11 @@ table{
 td,th{
   word-break: break-all;
   background-color: white;
-  padding: .25rem .75rem;
+  padding: .25rem .5rem;
   color: black;
+}
+td{
+  word-break: normal;
 }
 table:first-of-type *{
   text-transform: uppercase;
@@ -76,10 +79,12 @@ thead,th{
 table:last-of-type td:first-child{
   text-transform: uppercase;
 }
-td[colspan='7']{
+td[colSpan='7']{
+  display: -inline-grid;
+  place-content: center;
   text-align: center;
-  letter-spacing: 4rem;
-  font: 900 1rem sans-serif;
+  letter-spacing: 8.4vw;
+  font: 900 1.5rem sans-serif;
 }
 td:empty{
   border: none;
@@ -87,6 +92,7 @@ td:empty{
   background-image: repeating-radial-gradient(white,green 1%);
   background-size: .5rem .5rem;
 }
+tr td.black,
 .black{
   color:white;
   font-weight: bold;
@@ -193,4 +199,8 @@ section.tab.current{
 }
 .bad{
   background-color: red;
+}
+del{
+  background-color: yellow;
+  color: red;
 }
