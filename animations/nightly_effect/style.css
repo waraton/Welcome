@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  transition: 1s;
+  background-color: skyblue;
+  display: grid;
+  place-content: center;
+}
+.circles{
+  background-color: aqua;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  width: .25rem;
+  margin-top: 0%;
+  top: -5rem;
+  border-radius: 50%;
+  position: absolute;
+  background-image: radial-gradient(white,yellow);
+  box-shadow:
+      0 0 2px red,
+      0 0 5px yellow,
+      0 0 15px 5px white;
+  aspect-ratio: 1/1;
+  animation: zoom 1.5s infinite alternate, translator 4s infinite;
+  transform-origin: center;
+
+} 
+@keyframes zoom {
+  to{
+    width: 0.125rem;
+    box-shadow: none;
+  }
+}
+@keyframes translator {
+  to{
+    transform: translateY(150vh);
+  }
+}
+article{
+  --blue: navy;
+  --yellowgreen: greenyellow;
+  margin: 4rem;
+  max-width: 500px;
+  padding: 1rem 2rem;
+  background: linear-gradient(rgba(153, 205, 50, 0.5), #ffffff80 45%);
+  font-family: sans-serif;
+  font-size: .95rem;
+  box-shadow: 2px 2px 5px;
+  transform: perspective(745px) rotatex(25deg);
+}
+h2{
+  display: grid;
+  font-size: 2rem;
+  font-family: fantasy;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: var(--blue);
+}
+h2 span:last-child{
+  margin-left: 5rem;
+}
+article > section{
+  margin-top: 1.5rem;
+  border: 2px solid var(--blue,blue);
+  padding: .5rem 1rem;
+  display: grid;
+  gap: .5rem;
+}
+article h3{
+  color: var(--yellowgreen, yellowgreen);
+  background-color: var(--blue, blue);
+  width: fit-content;
+  padding: .125rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+article section address{
+  color: var(--yellowgreen, yellowgreen);
+  width: 75%;
+  margin-left: auto;
+  font: 1rem monospace;
+}
+address p{
+  display: grid;
+  margin-bottom: .5rem;
+}
+address p a{
+  line-break: anywhere;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline solid;
+  background-color: var(--yellowgreen, yellowgreen);
+}
+strong{
+  font-weight: normal;
+}
+strong:not([n]){
+  font-weight: 600;
+  color: var(--blue,blue);
+}
+abbr{
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.sky{
+  position: fixed;
+  transition: .2s;
+  content: '';
+  z-index: -1;
+  inset: 0;
+}
