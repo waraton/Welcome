@@ -33,8 +33,10 @@ body{
     display: flex;
     justify-content: space-between;
     margin-block: 20px;
+    gap: 1%;
 }
 .buttons button{
+    flex-grow: 1;
     padding: 5px 10px;
     border: none;
     width: 55px;
@@ -48,7 +50,6 @@ body{
 }
 .buttons button:active{
     translate: 1px 1px;
-    
 }
 button.active:after {
     content: attr(id);
@@ -67,7 +68,7 @@ button.active:after {
     background-color: #ccc;
     outline: 1px solid orange;
 }
-#text{ 
+#text{
     height: 100px;
     resize: none;
     font-size: 1.2rem;
