@@ -73,6 +73,12 @@ table:first-of-type col.col1{
 table:last-of-type col.col1{
   min-width: 200px;
 }
+.lecturers tr:has(.black) td{
+  color: white;
+  background-color: red;
+  border-color: white;
+  font-weight: bold;
+}
 thead,th{
   border: 2px solid;
 }
