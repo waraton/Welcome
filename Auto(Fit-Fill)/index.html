@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,32 @@
 <body>
   <h1>Auto-fit</h1>
   <ul a>
-    <img src="autoFit.png" alt="auto-fit">
-    <img src="sudanese.jpg" alt="auto-fit">
-    <img src="sudanese.jpg" alt="auto-fit">
+    <figure><img src="autoFit.png" alt="auto-fit"></figure>
+    <figure><img src="sudanese.jpg" alt="auto-fit"></figure>
   </ul>
   <h2>Auto-fill</h2>
   <ul b>
-    <img src="autoFill.png" alt="autofill">
-    <img src="sudanese.jpg" alt="auto-fit">
-    <img src="sudanese.jpg" alt="auto-fit">
+    <figure><img src="autoFill.png" alt="autofill"></figure>
+    <figure><img src="sudanese.jpg" alt="auto-fit"></figure>
   </ul>
-  <h3>note</h3>
+  <h3>Note</h3>
   <p>auto-fill fill the entire row with the new cells once there is enough area to fit new cell if the number of cells is fewer to call a row wrap</p>
   <p>auto fit on the other hand stretches the cells so that they fit the entire row if the cells are few to call a row wrap</p>
 </body>
+
+<script>
+  const imgs = document.querySelectorAll('img')
+  imgs.forEach((img, ind) => {
+    img.addEventListener('click', (e) => {
+      if (e.target === img) {
+        img.classList.add('active')
+        console.log(`img ${ind}`);
+      }
+      setTimeout(() => {
+        img.classList.remove('active')
+      }, 5500);
+    })
+  })
+</script>
+
 </html>
