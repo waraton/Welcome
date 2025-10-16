@@ -2,7 +2,7 @@ const items = document.querySelectorAll(
   "section:first-of-type table:first-of-type td:not(:EMPTY)"
 );
 setInterval(dater, 1500);
-const lectureTr = document.querySelectorAll("table:last-of-type tr");
+const lectureTr = document.querySelectorAll(".lecturers table tr");
 const days = document.querySelectorAll("table:first-of-type thead tr th");
 const times = document.querySelectorAll(
   "table:first-of-type tbody tr th:first-of-type"
@@ -30,7 +30,6 @@ function dater() {
   const nowDate = new Date();
 
   items.forEach((i) => {
-    console.log(i.dataset.value);
     [day, start, end] = i.dataset.value.split(" ");
     if (
       (nowDate.getHours() >= start) &
@@ -50,7 +49,7 @@ function dater() {
             .toLocaleLowerCase()
             .indexOf(i.textContent.toLocaleLowerCase()) !== -1
         ) {
-          tr.classList.add("black");
+          tr.lastElementChild.classList.add("black");
         }
         if (tr.classList.contains("eeLabs") & i.classList.contains("eeLabs")) {
           tr.classList.add("black");

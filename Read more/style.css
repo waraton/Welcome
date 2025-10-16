@@ -8,7 +8,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
     background-color: skyblue;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -43,4 +44,68 @@ article button{
     padding: 10px 30px;
     border-radius: 5px;
     cursor: pointer;
+}
+[box]{
+    aspect-ratio: 4/3;
+    width: 25vw;
+    margin-bottom: 2rem;
+    position: relative;
+    rotate: 62.5deg;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+[box]::before{
+    content: '';
+    position: absolute;
+    background-color: #aa00;
+    height: 115%;
+    width: 11%;
+    inset: 35% 108%;
+    border-radius: 15rem 5rem;
+    border: solid white .5rem;
+    transform: skewY(-5deg) rotateZ(-58.5deg) translateX(-215%) translateY(-20%);
+    transform-origin: top 10%;
+    border-style:solid  hidden hidden  solid;
+    border-start-end-radius: 0;
+    border-end-start-radius: 0;
+}
+[box] div{
+    inset: 0;
+    background-color: aqua;
+    aspect-ratio: 1/1;
+    rotate: 45deg;
+    border-radius: 0% 100% ;
+    transform-origin: center;
+    margin: auto;
+    position: absolute;
+    width: 45%;
+}
+p[r]{
+    position: absolute;
+    inset: 0;
+    aspect-ratio: 1;
+    border-radius: 0% 145%;
+    transform-origin:100% 00%;
+    background-color: rgb(114, 113, 113);
+    rotate: var(--r);
+    margin: auto;
+}
+div[d]{
+    background-color: transparent;
+    rotate: -45deg;
+    translate: 0 42.5%;
+}
+.flower{
+    overflow: hidden;
+    aspect-ratio: .75;
+    width: 25vw;
+    background: 
+        linear-gradient(#aa00 85%, green 95%),
+        repeating-conic-gradient(  
+            #aa00,
+            yellow 2.5%,
+            #aa00 5%) center / cover    ;
+    border-radius: 25% 25% 12% 12%;
+    padding-left: .5rem;
+    margin-bottom: 2rem;
 }
