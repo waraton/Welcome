@@ -71,5 +71,16 @@ p:has(.typed-text){
   font-family: monospace;
   font-weight: bold;
   color: blue;
-  font-size: 1.25rem;
+  font-size: 2rem;
+}
+p:has(select){
+  position: fixed;
+  inset: 1rem;
+  display: grid;
+  height: 4rem;
+  width: fit-content;
+  background-color: aqua;
+  padding: .25rem;
+  font-size: 2rem;
+  font-family: vivaldi,cursive;
 }

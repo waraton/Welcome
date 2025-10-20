@@ -6,10 +6,11 @@
   - [Table of contents](#table-of-contents)
   - [Background](#background)
   - [colors](#colors)
-  - [What is the meaning of colors in the South Sudan flag?](#what-is-the-meaning-of-colors-in-the-south-sudan-flag)
-    - [Flag color code](#flag-color-code)
-    - [Wikipedia](#wikipedia)
-    - [The Album des Pavillons 2023](#the-album-des-pavillons-2023)
+    - [What is the meaning of colors in the South Sudan flag?](#what-is-the-meaning-of-colors-in-the-south-sudan-flag)
+    - [Color pallets](#color-pallets)
+      - [Flag color code](#flag-color-code)
+      - [Wikipedia](#wikipedia)
+      - [The Album des Pavillons 2023](#the-album-des-pavillons-2023)
   - [Dimensions](#dimensions)
 
 ## Background
@@ -21,11 +22,13 @@ Source: <http://allafrica.com/stories/200501100007.html>
 
 ## colors
 
-## What is the meaning of colors in the South Sudan flag?
+### What is the meaning of colors in the South Sudan flag?
 
 Blue, yellow, black, white, red and green, the six colors in the South Sudanese flag, stand for the river nile, the people's unity in defending national freedom, black african people, peace, martyrs of war and fertile soil and rich equatorial vegetation, respectively. Also, specially in case of state flags, the meaning associated with the colors are generally endorsed by an official charter. However, at times the symbolism is simply understood by being descended from the culture of the land or has seeped so deeply into customs that, now, the two are inextricably linked. Please also note that there can be more than one meaning for the colors in the South Sudan flag.
 
-### Flag color code
+### Color pallets
+
+#### Flag color code
 
 | color   | blue      | yellow    | black     | white       | red        | green      |
 | ------- | --------- | --------- | --------- | ----------- | ---------- | ---------- |
@@ -35,24 +38,24 @@ Blue, yellow, black, white, red and green, the six colors in the South Sudanese 
 | Pantone | 285 C     | Yellow C  | Black 6 C | N. A.       | 2035 C     | 348 C      |
 | RAL     | 5015      | 1026      | 9005      | N. A.       | 3028       | 6037       |
 
-### Wikipedia
+#### Wikipedia
 
 | name     | CMYK        | HEX     | RGB         |
 | -------- | ----------- | ------- | ----------- |
 | Sky Blue | 100-25-0-5  | #00B6F2 | 0-182-242   |
 | Yellow   | 0-10-90-0   | #FFE51A | 255-229-26  |
-| Black    | 0-0-0-100   | #000000 | 0-0-0       |
 | Red      | 0-86-82-11  | #E22028 | 226-32-40   |
 | Green    | 100-0-48-43 | #00914C | 0-145-76    |
+| Black    | 0-0-0-100   | #000000 | 0-0-0       |
 | White    | 0-0-0-0     | #FFFFFF | 255-255-255 |
 
-### The Album des Pavillons 2023
+#### The Album des Pavillons 2023
 
 | Name   | Pantone | CMYK         | RGB       |
 | ------ | ------- | ------------ | --------- |
 | Blue   | 286c    | 99-80-0-0    | 0-53-173  |
-| Red    | 186c    | 10-100-74-2  | 210-16-52 |
 | Yellow | 109c    | 0-17-93-0    | 255-209-0 |
+| Red    | 186c    | 10-100-74-2  | 210-16-52 |
 | Green  | 356c    | 89-29-100-18 | 0-114-41  |
 
 ## Dimensions
