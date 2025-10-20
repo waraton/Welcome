@@ -5,7 +5,7 @@
 }
 body{
   background-color: #ddd;
-  font: 16px/1.8 sans-serif;
+  font: 16px/1.75 sans-serif;
 }
 header{
   background-color: orange;
@@ -19,16 +19,18 @@ main{
   margin-inline: auto;
 }
 main > article{
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
   padding: 0% 2rem;
   gap: 2.5rem;
   flex-wrap: wrap;
   margin-top: 3rem;
   justify-content: center;
+  justify-items: center;
 }
 .hover1{
-  width: 350px;
+  min-width: 320px;
   background-color: skyblue;
   padding: 1rem;
   position: relative;
@@ -66,6 +68,7 @@ figure{
   width: 350px;
   height: 250px;
   color: white;
+  background-color: aqua;
   border-radius: .25rem;
   position: relative;
   border-radius: .25rem;
@@ -108,7 +111,7 @@ figure:hover::after {
   transform: rotate(5deg);
 }
 .justChecking li:hover {
-  transform: rotateY(-5deg);
+  transform: scaleX(1.05);
   border-left :  solid orange;
 }
 .justChecking{
@@ -146,4 +149,38 @@ figure:hover::after {
   padding-left: 1rem;
 font-weight: 8 00;
   color: orange;
+}
+[cross]{
+  --ref: 1.75rem;
+  background-color: white;
+  height: var(--ref);
+  width: calc(var(--ref) * 5);
+  margin-top: calc(var(--ref) * 2.5);
+  margin-inline: auto;
+  position: relative;
+  box-sizing: content-box;
+}
+[cross],[cross]::after,[cross]::before{
+  border: .25rem red solid;
+  border-radius: .125rem;
+}
+[cross]::before,[cross]::after{
+  content: '';
+  background: inherit;
+  width: var(--ref);
+  display: inline-block;
+  height: calc(var(--ref) * 1.5);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  border-bottom-color: white;
+  translate: -50%;
+}
+[cross]::after{
+  height: calc(var(--ref) * 3.5);
+  background: inherit;
+  top: 100%;
+  border-top-color: white;
+  border-bottom-color: red;
+  z-index: 12;
 }
