@@ -1,152 +1,187 @@
 html {
- font-size: 120%;
- line-height: 2;
- background-color: #cecece ;
+  font-size: 120%;
+  background-color: #cecece;
 }
 
-*{
- padding:0;
-box-sizing: border-box;
- margin: 0%;
+* {
+  line-height: 2rem;
+  cursor: none;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0%;
 }
 
 /* Navigation buttons at the bottom of the page */
-body>ul:not(nav ul) {
- display: flex;
- flex-flow: wrap row;
- text-align: center;
- justify-content: space-evenly;
- background-color: black;
- margin: 0%;
+body > ul:not(nav ul) {
+  display: flex;
+  flex-flow: wrap row;
+  text-align: center;
+  justify-content: space-evenly;
+  background-color: black;
+  margin: 0%;
 }
 
 nav a,
 ul a:link {
- color: white;
- text-decoration: 1px dashed;
+  color: white;
+  text-decoration: 1px dashed;
 }
 
 ul:not(nav ul) li {
- padding: .5rem;
+  padding: 0.5rem;
 }
 
 nav a:hover,
 ul a:hover {
- color: yellow;
- outline: auto;
+  color: yellow;
+  outline: double;
+  outline-color: yellow;
 }
 
 nav a:visited,
 ul a:visited {
- color: #cecece;
+  color: royalblue;
 }
 
-/* navigation styls */
+/* navigation styles */
 nav {
- color: white;
- background-color: black;
- padding: .25rem 3rem;
- position: relative;
- margin: 0;
+  color: white;
+  background-color: black;
+  padding: 0.25rem 3rem;
+  position: relative;
+  margin: 0;
 }
 
 li {
- list-style: none;
- margin-top: .25rem;
+  list-style: none;
+  padding: 0.125rem;
 }
 
-nav p {
- color: yellow;
- position: absolute;
- border-top: 2px solid white;
- text-transform: uppercase;
- font-weight: bold;
- rotate: 90deg;
- transform-origin: 0 0;
- left: 2rem;
- width: 7rem;
- text-align: center;
-
+nav h2 {
+  color: yellow;
+  float: left;
+  height: fit-content;
+  border-right: 2px solid white;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 2rem;
+  font-size: 1.7rem;
+  letter-spacing: .25ch;
+  font-family: monospace;
+  word-break: break-all;
+  text-align: center;
+  margin-inline: -2rem 1rem;
+}
+[TableOfContents]{
+  background-color: black;
+  padding: 1rem;
+}
+[TableOfContents] nav{
+  max-width: 600px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 /* book header heading styes */
-h2#pg-header-heading {
- font: bold normal 1.4rem helvetica, verdana, san-serif;
- background-color: black;
- color: white;
- text-shadow: 0 0 2px;
- margin: 0;
- padding: .25rem;
- text-align: center;
+#pg-header-heading {
+  font: bold normal 1.25rem helvetica, verdana, san-serif;
+  background-color: black;
+  color: white;
+  text-shadow: 0 0 2px;
+  margin: 0;
+  padding: 0.25rem;
+  text-align: center;
 }
 
-h2#pg-header-heading #pg-title-no-subtitle {
- font-size: 1.65rem;
- display: block;
- font-variant: small-caps;
+#pg-header-heading #pg-title-no-subtitle {
+  font-size: 1.65rem;
+  display: block;
+  font-variant: small-caps;
 }
 
-/* Chapter header heading stys */
-h2[id*='CHAPTER'] {
- color: white;
- background-color: black;
- font: small-caps 400 1.5rem times, georgia, serif;
- margin: 0%;
- padding: .25rem;
+/* Chapter header heading styles */
+[id*="CHAPTER"] {
+  color: white;
+  background-color: black;
+  font: small-caps 400 1.5rem times, georgia, serif;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
 }
 
-h2[id*='CHAPTER'] span.small {
- font-size: larger;
- font-weight: bold;
- display: block;
- text-align: center;
+[id*="CHAPTER"] span.small {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 /* chapter reading section styes */
+[id*="CHAPTER"] + p::first-letter{
+  float: left;
+  font-size: 11rem;
+  vertical-align: middle;
+  font-family: harrington, forte, cursive;
+  line-height: .6;
+  padding: 1rem 0 0 2rem;
+}
 .chapter p {
- font: 1.5rem helvetica, arial, verdana, sans-serif;
- margin-inline: auto;
- max-width: 80%;
- text-align: justify;
- padding-block: .5rem;
+  font: 1.5rem/1.75 helvetica, arial, verdana, sans-serif;
+  margin-inline: auto;
+  max-width: 80%;
+  text-align: justify;
+  padding-block: 1rem;
 }
 
 .footnote p {
- font-size: 1.25rem;
- max-width: 75%;
- text-align: center;
- border-bottom: 2px solid;
- border-top: 2px solid;
- padding: 1em;
+  font-size: 1.25rem;
+  max-width: 75%;
+  text-align: center;
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  padding: 1em;
 }
 
 abbr {
- text-decoration: none;
+  text-decoration: none;
 }
 
-/* book heaader page sstying */
-section#pg-header div {
- margin-inline: 3rem 1rem;
-
- max-width: 80%;
+/* book header page styling */
+#pg-header div {
+  margin-inline: 3rem 1rem;
+  max-width: 80%;
 }
 
-section#pg-header h2+div {
- margin-top: 2rem;
+#pg-header h2 + div {
+  margin-top: 2rem;
 }
 
 #pg-start-separator {
- margin: 1rem;
+  margin: 1rem;
 }
 
 a:any-link:not(nav A, ul a) {
- color: navy;
- text-decoration: underline wavy .1px;
+  color: navy;
+  text-decoration: underline wavy 0.1px;
 }
-.pg-boilerplate{
- display: grid;
- gap: 1rem;
- max-width: 965px;
- margin-inline: auto;
- padding: 0 2rem;
- font-family:monospace
+.pg-boilerplate {
+  display: grid;
+  gap: 1rem;
+  max-width: 965px;
+  margin-inline: auto;
+  padding: 0 2rem;
+  font-family: monospace;
+}
+/* custom cursor */
+[courser]{
+  position: fixed;
+  width: 1rem;
+  inset: 50% auto auto 50%;
+  translate: -0% -0%;
+  scale: .5;
+  aspect-ratio: 1;
+  background-color: navy;
+  box-shadow: -.5rem -.5rem 0 .5rem yellow;
+  transition: box-shadow .05s;
+  border-radius: 1rem;
+}
