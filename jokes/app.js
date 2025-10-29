@@ -1,4 +1,3 @@
-joke()
 document.getElementById("btn").addEventListener("click", joke);
 
 async function joke() {
@@ -14,7 +13,9 @@ async function joke() {
 }
 const data = new Date();
 
-const [a, b, c, d, e, f, g, h, i] = [
+setInterval(joke, 15555);
+
+const aa = [
   [data.toLocaleDateString(),'toLocaleDateString()'],
   [data.toLocaleTimeString(),'toLocaleTimeString()'],
   [data.toDateString(),'toDateString()'],
@@ -24,8 +25,28 @@ const [a, b, c, d, e, f, g, h, i] = [
   [data.toUTCString(),'toUTCString()'],
   [data.toTimeString(),'toTimeString()'],
   [data.toString(),'toString()'],
+  /* date, day, fullhours, seconds, ms, minutes,month,year*/
+  ['<b>get-() value</b>','<b>get-() method</b>'],
+  [data.getDate(),'getDate()'],
+  [data.getMilliseconds(),'getMilliseconds()'],
+  [data.getSeconds(),'getSeconds()'],
+  [data.getMinutes(),'getMinutes()'],
+  [data.getHours(),'getHours()'],
+  [data.getDay(),'getDay()'],
+  [data.getTime(),'getTime()'],
+  [data.getMonth(),'getMonth()'],
+  [data.getFullYear(),'getFullYear()'],
+  [data.getTimezoneOffset(),'getTimezoneOffset()'],
+  ['<b>getUTC-() val</b>','<b>getUTC-() method</b>'],
+  [data.getUTCDate(),'getUTCDate()'],
+  [data.getUTCMilliseconds(),'getUTCMilliseconds()'],
+  [data.getUTCSeconds(),'getUTCSeconds()'],
+  [data.getUTCMinutes(),'getUTCMinutes()'],
+  [data.getUTCHours(),'getUTCHours()'],
+  [data.getUTCDay(),'getUTCDay()'],
+  [data.getUTCMonth(),'getUTCMonth()'],
+  [data.getUTCFullYear(),'getUTCFullYear()']
 ];
-const aa = [a, b, c, d, e, f, g, h, i];
 aa.forEach((rr) => {
   document.querySelector("table").innerHTML += `<tr><td>${rr[0]}</td><td>${rr[1]}</td></tr>`;
 });
