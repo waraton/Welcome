@@ -1,111 +1,197 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: skyblue;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: skyblue;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+div:has([type="search"]) {
+  min-width: 320px;
+  margin: auto;
+  max-width: 700px;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  position: fixed;
+  inset: auto 1rem 0.25rem;
+  z-index: 1;
+}
+div:has([type="search"]) *:first-child {
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+}
+div:has([type="search"]) * {
+  background-color: yellowgreen;
+  color: white;
+  font: inherit;
+  min-width: 0%;
+  border: 2px solid;
+  outline: none;
+  user-select: contain;
+  border-radius: 2rem 2rem;
+}
+div:has([type="search"]) button {
+  background-color: black;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  width: 3rem;
+  border-radius: 2rem;
+  aspect-ratio: 1;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #aa00;
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-track {
+  background: radial-gradient(red,green,blue);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: repeating-linear-gradient(
+      45deg,
+      black 33%,
+      aqua 33% 66%,
+      black 66% 100%
+    )
+    center / 1rem 2rem;
 }
 
-article{
-    max-width: 500px;
-    padding: 15px 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    margin: 2rem;
-    line-height: 1.5;
+body > article {
+  max-width: 700px;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 2rem;
+  margin-top: 3.5rem;
+  line-height: 1.5;
+  gap: 0 1rem;
 }
-article h1{
-    font-family: 'Times New Roman', Times, serif;
-    text-transform: capitalize;
+body > article:has(p > a[href]) {
+  display: grid;
+  grid-template-columns: minmax(2rem, 5rem) 1fr;
 }
-article p{
-    margin: 15px 0;
+article h1 {
+  font-family: "Times New Roman", Times, serif;
+  text-transform: capitalize;
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 2.5rem;
 }
-article .more{
-    display: none;
+article p {
+  margin: 15px 0;
+  user-select: contain;
 }
-article .more.toggled{
-    display: block;
+article .more {
+  display: none;
 }
-article button{
-    color: white;
-    background-color: black;
-    border: none;
-    font: inherit;
-    padding: 10px 30px;
-    border-radius: 5px;
-    cursor: pointer;
+article .more.toggled {
+  display: block;
 }
-[box]{
-    aspect-ratio: 4/3;
-    width: 25vw;
-    margin-bottom: 2rem;
-    position: relative;
-    rotate: 62.5deg;
-    margin: auto;
-    margin-top: 1.5rem;
+
+button:active {
+    translate: .1rem .1rem;
+    transition: .1s;
 }
-[box]::before{
-    content: '';
-    position: absolute;
-    background-color: #aa00;
-    height: 115%;
-    width: 11%;
-    inset: 35% 108%;
-    border-radius: 15rem 5rem;
-    border: solid white .5rem;
-    transform: skewY(-5deg) rotateZ(-58.5deg) translateX(-215%) translateY(-20%);
-    transform-origin: top 10%;
-    border-style:solid  hidden hidden  solid;
-    border-start-end-radius: 0;
-    border-end-start-radius: 0;
+sup{
+    vertical-align: top;
+    font-size: .5rem;
 }
-[box] div{
-    inset: 0;
-    background-color: aqua;
-    aspect-ratio: 1/1;
-    rotate: 45deg;
-    border-radius: 0% 100% ;
-    transform-origin: center;
-    margin: auto;
-    position: absolute;
-    width: 45%;
+article button {
+  color: white;
+  background-color: black;
+  border: none;
+  font: inherit;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  grid-column: 1 /-1;
 }
-p[r]{
-    position: absolute;
-    inset: 0;
-    aspect-ratio: 1;
-    border-radius: 0% 145%;
-    transform-origin:100% 00%;
-    background-color: rgb(114, 113, 113);
-    rotate: var(--r);
-    margin: auto;
+[box] {
+  aspect-ratio: 4/3;
+  width: 25vw;
+  margin-bottom: 2rem;
+  position: relative;
+  rotate: 62.5deg;
+  margin: auto;
+  margin-top: 1.5rem;
 }
-div[d]{
-    background-color: transparent;
-    rotate: -45deg;
-    translate: 0 42.5%;
+[box]::before {
+  content: "";
+  position: absolute;
+  background-color: #aa00;
+  height: 115%;
+  width: 11%;
+  inset: 35% 108%;
+  border-radius: 15rem 5rem;
+  border: solid white 0.5rem;
+  transform: skewY(-5deg) rotateZ(-58.5deg) translateX(-215%) translateY(-20%);
+  transform-origin: top 10%;
+  border-style: solid hidden hidden solid;
+  border-start-end-radius: 0;
+  border-end-start-radius: 0;
 }
-.flower{
-    overflow: hidden;
-    aspect-ratio: .75;
-    width: 25vw;
-    background: 
-        linear-gradient(#aa00 85%, green 95%),
-        repeating-conic-gradient(  
-            #aa00,
-            yellow 2.5%,
-            #aa00 5%) center / cover    ;
-    border-radius: 25% 25% 12% 12%;
-    padding-left: .5rem;
-    margin-bottom: 2rem;
+[box] div {
+  inset: 0;
+  background-color: aqua;
+  aspect-ratio: 1/1;
+  rotate: 45deg;
+  border-radius: 0% 100%;
+  transform-origin: center;
+  margin: auto;
+  position: absolute;
+  width: 45%;
+}
+p[r] {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: 1;
+  border-radius: 0% 145%;
+  transform-origin: 100% 00%;
+  background-color: rgb(114, 113, 113);
+  rotate: var(--r);
+  margin: auto;
+}
+div[d] {
+  background-color: transparent;
+  rotate: -45deg;
+  translate: 0 42.5%;
+}
+.flower {
+  overflow: hidden;
+  aspect-ratio: 0.75;
+  width: 25vw;
+  background: linear-gradient(#aa00 85%, green 95%),
+    repeating-conic-gradient(#aa00, yellow 2.5%, #aa00 5%) center / cover;
+  border-radius: 25% 25% 12% 12%;
+  padding-left: 0.5rem;
+  margin-bottom: 2rem;
+}
+mark {
+  background-color: yellowgreen;
+  color: black;
+}
+[result]:has(a) {
+    overflow-y: auto;
+    background-color: yellowgreen;
+    border: 2px solid black;
+    margin-block: 1rem;
+    line-height: 1em;
+    font-size: .85rem;
+    padding:.25rem;
+    max-height: 15rem;
+}
+tr td:first-child{
+  text-align: right;
+  background-color: blue;
 }
