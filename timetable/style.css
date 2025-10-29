@@ -1,3 +1,4 @@
+/* resets */
 *{
   box-sizing: border-box;
   margin: 0;
@@ -7,9 +8,7 @@
 body{
   background:repeating-conic-gradient(rgb(202, 202, 202) 0 5%, #6570 25%) top left/1rem 1rem;
 }
-td:not(:empty),th:not(:empty){
-  border:red .5q dotted;
-}
+/* heading styles */
 hgroup{
   margin-top: 2rem;
 }
@@ -20,48 +19,28 @@ hgroup *{
   text-align: center;
   padding: .25rem .5rem;
 }
+/* table styles */
 main > *,table{
   min-width: 475px;
   margin-inline: auto;
   width: 85vw;
   margin-block: 1rem 2rem;
 }
-table,main>p,form,.dis{
-  font-size: 1rem;
-  table-layout: fixed;
-}
-nav{
-  background-color: green;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
-  gap: 1rem;
-  padding: .5rem;
-  font-size: 1rem;
-}
-button,input[type='submit']{
-  cursor: pointer;
-  font: inherit;
-  text-align: center;
-  padding: .5rem 1rem;
-}
-nav button{
-  border: none;
-  font-family: serif;
-  text-transform: uppercase;
-}
 table{
+  table-layout: fixed;
   border-collapse: collapse;
   border: 2px solid black;
-  perspective: 23in;
 }
 td,th{
   word-break: break-all;
   background-color: white;
   padding: .25rem .5rem;
-  color: black;
 }
 td{
   word-break: normal;
+}
+td:not(:empty),th:not(:empty){
+  border:red .5q dotted;
 }
 table:first-of-type *{
   text-transform: uppercase;
@@ -72,7 +51,7 @@ table:first-of-type col.col1{
 table:last-of-type col.col1{
   min-width: 200px;
 }
-.lecturers tr:has(.black) td{
+.lecturers tr:has(.black) td,[lunch]:has(.black) td{
   color: white;
   background-color: red;
   border-color: white;
@@ -81,15 +60,15 @@ table:last-of-type col.col1{
 thead,th{
   border: 2px solid;
 }
-table:last-of-type td:first-child{
-  text-transform: uppercase;
-}
-td[colSpan='7']{
-  display: -inline-grid;
-  place-content: center;
+tr[lunch] td{
+  vertical-align: bottom;
   text-align: center;
-  letter-spacing: 8.4vw;
+  letter-spacing: 5rem;
   font: 900 1.5rem sans-serif;
+  border: none;
+}
+tr[lunch] td:first-of-type{
+  text-align: center;
 }
 td:empty{
   border: none;
@@ -103,14 +82,46 @@ tr td.black,
   font-weight: bold;
   background-color: red;
 }
+
+/* visually hidden and deleted elements */
 .visuallyHidden{
   scale: 0 0;
   height: 0;
   display: block;
 }
-.del{
+.del,del,table tr.del td{
   text-decoration: line-through;
+  background-color: yellow;
+  color: red;
 }
+/* navigation tabs */
+nav{
+  background-color: green;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+  gap: 1rem;
+  padding: .5rem;
+  font-size: 1rem;
+}
+nav button{
+  border: none;
+  font-family: serif;
+  text-transform: uppercase;
+  transition: .2s;
+}
+.tab{
+  display: none;
+}
+.active{
+  background-color: red;
+  color: white;
+  border-radius: .5rem;
+  outline: 2px solid;
+}
+section.tab.current{
+  display: block;
+}
+/* form children styles */
 fieldset{
   max-width: 100%;
   padding: 0.5rem 2rem;
@@ -124,6 +135,12 @@ legend{
   border: solid grey;
   border-radius: .5rem;
 }
+button,input[type='submit']{
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  padding: .5rem 1rem;
+}
 textarea{
   resize: vertical;
 }
@@ -132,7 +149,6 @@ input,textarea{
   border-radius: .25rem;
   border: solid grey 2px;
   font: inherit;
-  font-size: 1rem;
   width: 100%;
   min-width: 100px;
   padding: .25rem .5rem;
@@ -150,6 +166,7 @@ form ul{
 form li{
   display: grid;
 }
+/* tasks list styles */
 li[al]{
   grid-column: 1/-1;
 }
@@ -183,16 +200,7 @@ li[al]{
 [del]:active{
   box-shadow: none;
 }
-.tab{
-  display: none;
-}
-.active{
-  background-color: red;
-  color: white;
-}
-section.tab.current{
-  display: block;
-}
+/* grade level table styling */
 .excellent{
   background-color: purple;
 }
@@ -204,8 +212,4 @@ section.tab.current{
 }
 .bad{
   background-color: red;
-}
-del{
-  background-color: yellow;
-  color: red;
 }
