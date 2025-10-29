@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body style */
+body{
+  min-height: 100vh;
+  background-color: skyblue;
+  display: grid;
+  place-content: center;
+}
+main{
+  background-color: aliceblue;
+  height: 95vh;
+  padding: 1rem ;
+  display: grid;
+  place-content: center;
+}
+figure{
+  width: 85vw;
+  display: grid;
+  height: 85vh;
+  border-radius: .5rem;
+  justify-content: stretch;
+  grid-template-rows: 1fr max-content;
+  overflow: hidden;
+}
+audio{
+  grid-row: -2/-1;
+  align-self: center;
+  background-color: aliceblue;
+  min-width: 0;
+  width: 100%;
+}
+figcaption{
+  border-radius: .5rem;
+  display: grid;
+  background-color: orange;
+  place-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 8vmax;
+  font-family: forte;
+}
