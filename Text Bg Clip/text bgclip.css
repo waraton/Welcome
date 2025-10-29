@@ -1,5 +1,5 @@
 body *{
-    margin: 5px;
+    margin: 0;
     padding: 0%;
     box-sizing: border-box;
 }
@@ -14,25 +14,59 @@ body{
     transition: .5s;
 }
 h1{
-    font-size: 115px;
-    letter-spacing: -8px;
-    padding: 5px 10px;
-    background-image: repeating-linear-gradient(45deg,green,yellow,cyan);
-    background-size: 5px 5px;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -15px;
+    line-height: .75;
+    padding: .5rem 1rem;
+    background: url(IMG_20211221_075939_994_transcpr.jpg) no-repeat center/cover;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    max-width: 850px;
 }
+figure,div{
+    max-height: 400px;
+    max-width: 550px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    height: 24%;
+    object-fit: cover;
+    margin-block-start: 1rem;
+    transition: .2s;
+}
+figure img{
+    transition: inherit;
+    object-fit: cover;
+    width: 100%;
+    margin: -.275rem;
+}
+figure img.hovered{
+    scale: 2;
+    cursor: zoom-in;
+}
+figure:has(img.hovered){
+    border-radius: 23rem;
+    border: .125rem solid aqua;
+    background-clip: border-box;
+} 
 button,output{
     padding: 10px;
-    font: 1rem georgia;
+    font: 1rem monospace;
     background-color: aqua;
-    width: 200px;
+    max-width: 2500px;
     border: none;                  ;
     transition-property: filter ,background-color;
     transition-duration: .3s;
+    background-color: white;
+    display: grid;
+    place-content: center;
+    border: 2px solid aqua;
 }
 button{
+    background-color: aqua;
     cursor: pointer;
 }
 button:hover{
@@ -42,4 +76,11 @@ button:hover{
 }
 button:active{
     filter: brightness(.8);
+}
+div:has(button){
+    border-radius: 0%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    aspect-ratio: unset;
 }
