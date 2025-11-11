@@ -7,6 +7,7 @@
 }
 body{
   background:repeating-conic-gradient(rgb(202, 202, 202) 0 5%, #6570 25%) top left/1rem 1rem;
+  font-size: .75rem;
 }
 /* heading styles */
 hgroup{
@@ -21,7 +22,7 @@ hgroup *{
 }
 /* table styles */
 main > *,table{
-  min-width: 475px;
+  min-width: 575px;
   margin-inline: auto;
   width: 85vw;
   margin-block: 1rem 2rem;
@@ -34,12 +35,13 @@ table{
 td,th{
   word-break: break-all;
   background-color: white;
-  padding: .25rem .5rem;
+  border: solid .5px;
+  padding: .5rem .25rem;
 }
 td{
   word-break: normal;
 }
-td:not(:empty),th:not(:empty){
+tbody td:not(:empty), tbody th{
   border:red .5q dotted;
 }
 table:first-of-type *{
