@@ -23,13 +23,14 @@ function sel() {
     textArea.innerHTML = c[c.length - 1][2];
   });
 }
+let grad = ['conic','radial']
 setInterval(() => {
   if (!audio.paused && !audio.ended && !audio.seeking) {
     sel()
     let len = timer(audio)
-    textArea.style.backgroundPositionX = `${len/audio.duration * textArea.clientWidth}px`
-    textArea.style.backgroundSize= `.5rem ${len/audio.duration * textArea.clientHeight}px`
+    textArea.style.background = `repeating-${grad[Math.floor(Math.random() * 2)]}-gradient(green 0%, white, black, white, red, green 20%) ${len / audio.duration * textArea.clientWidth}px ${len / audio.duration * textArea.clientHeight}px /cover`
   }
+  else textArea.style.background = `linear-gradient(blue,orange)`;
 }, 500);
 
 /* setInterval(()=>{
