@@ -12,7 +12,7 @@ function loadFile(event) {
   img.src = URL.createObjectURL(event.target.files[0]);
 
   close.addEventListener("click", () => {
-    img.classList.toggle("active");
-    close.classList.toggle("exit");
+    img.classList.remove("active");
+    close.classList.remove("exit");
   });
 }
