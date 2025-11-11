@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: black;
+}
+main{
+  padding: 1rem;
+  margin: auto;
+  overflow: hidden;
+}
+#outer{
+  max-width: 600px;
+  width: 95vw;
+  display: grid;
+  align-content: center;
+  background-color: #aaf2;
+  overflow: hidden;
+}
+#outer span{
+  display: inline-grid;
+  width: 92%;
+  background-color: inherit;
+  aspect-ratio: 1;
+  border: .01px solid blue;
+  margin: auto;
+  background: linear-gradient(#fff1 16%,rgba(255, 255, 255, 0.85) 17% 23%,#fff1 24%),linear-gradient( .25turn, #fff2 46%,rgba(255, 255, 277, 0.85) 47% 53%,#fff2 54%),url(IMG-20251030-WA0012.jpg)center/contain ;
+  animation: rotor infinite 12s linear alternate;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  font-style: italic;
+  font-family: serif;
+  text-align: center;
+  align-items: center;
+}
+@keyframes rotor {
+  to{
+    rotate: 2.5deg;
+    /* translate: 5%;*/
+  }
+  /* 50%{
+    translate: 3.75% 3.75%;
+  }
+  25%{
+    translate: 3.75%-3.75%;
+  }
+  75%{
+    translate: -3.75%3.75%;
+  } */
+  /* 100%, */from{
+    rotate: -2.5deg;
+    /* translate: -3.75%-3.75%; */
+  }
+}
