@@ -22,7 +22,8 @@ hgroup *{
 }
 /* table styles */
 main > *,table{
-  min-width: 575px;
+  min-width: 475px;
+  max-width: 755px;
   margin-inline: auto;
   width: 85vw;
   margin-block: 1rem 2rem;
@@ -117,7 +118,7 @@ nav button{
 .active{
   background-color: red;
   color: white;
-  border-radius: .5rem;
+  border-radius: .25rem;
   outline: 2px solid;
 }
 section.tab.current{
