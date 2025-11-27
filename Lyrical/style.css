@@ -12,13 +12,16 @@ body{
 }
 main{
   background-color: aliceblue;
-  height: 95vh;
-  padding: 1rem ;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem ;
   display: grid;
   place-content: center;
 }
 figure{
   width: 85vw;
+  gap: .5rem ;
+  font: 1.2rem helvetica;
   display: grid;
   height: 85vh;
   border-radius: .5rem;
@@ -42,9 +45,8 @@ figcaption{
   place-content: center;
   padding: 1rem;
   text-align: center;
-  font: bold 11vmax/.95 forte,'french script mt','brush script mt',cursive;
+  font: bold 8vmax/.95 sans-serif;
   user-select: none;
-  transition: 1s;
-  background:linear-gradient(blue,orange);
-  text-transform: capitalize;
+  transition: .5s;
+  background:linear-gradient(blue,orange)
 }

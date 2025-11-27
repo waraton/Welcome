@@ -1,53 +1,64 @@
-import {timeStamps} from "./timeline.js";
-
-const audio = document.querySelector(`audio`);
+import { Tunyar } from "./timelines/tunyar.js";
+import { OurGodIsGood } from "./timelines/GodIsGood.js";
 const textArea = document.querySelector("figcaption");
-timeStamps.forEach((sam, ind, ar) => {
-  sam[0].split(":").forEach((tm, indeed, ar) => sam[0] = +ar[0] * 60 + +ar[1]);
-  sam.unshift(ind);
+let row = [];
+
+const audioSources = {
+  Tunyar: ["audios/Tunyar_By_Hardlife_Avenue_Stars_Ft_Suke_Sukari.mp3", Tunyar],
+  OurGodIsGood: ["audios/Our-God-Is-Good.mp3", OurGodIsGood],
+};
+const selectedAudio = document.querySelector("select#audio");
+const audio = document.querySelector(`audio`);
+
+selectedAudio.addEventListener("change", () => {
+  if (selectedAudio.value) {
+    row.length = 0
+    console.log(row);
+    audio.src = audioSources[selectedAudio.value][0];
+    lyrics(selectedAudio.value);
+  }
 });
 
 function timer(file) {
   return Math.floor(file.currentTime);
 }
 
-function sel() {
+function sel(lyr, are) {
   let time = timer(audio);
-  let row = [];
-  timeStamps.forEach((rowed) => {
+  lyr.forEach((rowed) => {
     if (rowed[1] < time) {
       row[0] = rowed;
     }
   });
   row.forEach((a, b, c) => {
-    textArea.innerHTML = c[c.length - 1][2];
+    are.innerHTML = c[c.length - 1][2];
   });
 }
-let grad = ['conic','radial']
-setInterval(() => {
-  if (!audio.paused && !audio.ended && !audio.seeking) {
-    sel()
-    let len = timer(audio)
-    textArea.style.background = `repeating-${grad[Math.floor(Math.random() * 2)]}-gradient(green 0%, white, black, white, red, green 20%) ${len / audio.duration * textArea.clientWidth}px ${len / audio.duration * textArea.clientHeight}px /cover`
-  }
-  else textArea.style.background = `linear-gradient(blue,orange)`;
-}, 500);
 
-/* setInterval(()=>{
+function lyrics(timeline) {
+  const usedTimeline = audioSources[timeline][1];
 
-    audio.addEventListener(`canplaythrough`,(e)=>{
-      console.log(`audio canplaythrough!!!`);
-    })
-    audio.addEventListener(`canplay`,(e)=>{
-      console.log(`audio canplay!!`);
-    })
-    audio.addEventListener(`loadedmetadata`,(e)=>{
-      console.log(`audio has loadedmetadata!!`);
-    })
-    audio.addEventListener(`loadeddata`,(e)=>{
-      console.log(`audio has loadeddata!!`);
-    })
-    audio.addEventListener(`playing`,(e)=>{
-      console.log(`audio playing!!`);
-    })
-},555) */
+  usedTimeline.forEach((sam, ind, ary) => {
+    sam[0]
+      .split(":")
+      .forEach((tm, indeed, ar) => (sam[0] = +ar[0] * 60 + +ar[1]));
+    sam.unshift(ind);
+  });
+
+  let grad = ["conic", "radial", `linear`];
+  setInterval(() => {
+    if (!audio.paused && !audio.ended && !audio.seeking) {
+      sel(usedTimeline, textArea);
+      let len = timer(audio);
+      textArea.style.background = `repeating-${
+        grad[Math.floor(Math.random() * 3)]
+      }-gradient(
+        #00800080 0%,
+        #ffffff80,
+        #00000080,
+        #ffffff80,
+        #ff000080,
+        #00800080 ${(len / audio.duration) * 25}%) center/5% 5%`;
+    } else textArea.style.background = `linear-gradient(blue,orange)`;
+  }, 500);
+}
