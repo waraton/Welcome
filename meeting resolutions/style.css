@@ -1,0 +1,251 @@
+@keyframes rotate {
+  50% {
+    rotate: 0.01turn;
+    translate: -5px 2rem;
+  }
+}
+
+@counter-style list {
+  system: cyclic;
+  symbols: "☆" "★";
+  suffix: "» ";
+}
+
+li,
+dt {
+  display: list-item;
+  list-style: list inside;
+  margin-left: 5px;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  font: 100%/1.5 tahoma, helvetica, sans-serif;
+  background-color: #74576ab1;
+  background: linear-gradient(to right, #eee 0 5rem, transparent 5rem 100%) 0rem
+      0rem / 20% 100% no-repeat fixed,
+    repeating-linear-gradient(
+        to bottom,
+        #eee 0 5rem,
+        transparent 5rem 47%,
+        #eee 47% calc(5rem + 50%),
+        transparent calc(5rem + 50%) calc(100% - 5rem)
+      )
+      0rem 0rem / 60% 100% no-repeat fixed,
+    radial-gradient(
+        circle 45vh at center right,
+        transparent 0 calc(100% - 5rem),
+        #eee calc(100% - 5rem) 100%,
+        transparent 100%
+      )
+      100% 0 / 60% 100% no-repeat fixed;
+
+  background-color: #e877ee41;
+}
+
+header {
+  background-color: #2a3254
+    /* linear-gradient(black 0 30%, white 30% 35%,red 35% 65%, white 65% 70%,  green 70%) */;
+  text-shadow: 2px 2px 5px blue;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+#title {
+  display: block;
+  font-weight: bolder;
+  font-family: helvetica;
+}
+
+h1,
+h2 {
+  font-family: georgia, serif;
+  font-size: 1.5rem;
+  padding: 0.125rem 1rem;
+  border-bottom: 2px solid;
+  color: #2a3254;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.25rem;
+}
+
+del {
+  display: NONE;
+}
+
+main {
+  padding: 0 2rem;
+  max-width: 760px;
+  margin: auto;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  text-align: center;
+}
+
+th,
+tfoot td {
+  border-block: 1px solid;
+}
+
+th,
+td {
+  border-right: 1px solid;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+footer {
+  background-color: #2a3254;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0.12rem 1rem;
+  font-size: 0.85rem;
+}
+
+.location span:not(:last-child)::after {
+  content: " ♡ ";
+  color: red;
+}
+
+.name-church {
+  font-family: georgia, serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+
+#ssd-motto {
+  background: linear-gradient(
+    black 0 30%,
+    white 30% 35%,
+    red 35% 65%,
+    white 65% 70%,
+    green 70%
+  );
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: blue;
+  text-shadow: 02px 2px 3px yellow, -02px -2px 3px yellow;
+  margin-inline: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+#members {
+  width: 300px;
+  float: right;
+  border: 5px double;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  background-color: #86ff6a72;
+}
+
+#members h3 {
+  border-bottom: 1px solid;
+  font-weight: bold;
+  margin: 0;
+}
+
+#members ul,
+#members li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.member {
+  font-style: italic;
+  font-weight: 500;
+  font-family: serif;
+}
+
+dt.member {
+  width: fit-content;
+  font-size: 1.125rem;
+  color: #2a3254;
+  border-bottom: 2px solid;
+}
+
+#donate {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: white;
+  top: 0px;
+  right: 0px;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: yellow 6px solid;
+  animation: 8s rotate linear infinite alternate;
+}
+
+#donate:hover span {
+  transform: rotateY(0turn);
+}
+#donate span {
+  position: absolute;
+  inset: 0;
+  background-color: #2a3254;
+  border-radius: 5rem 5rem 0.1rem 0.1rem/5rem 5rem 0.1rem 0.5rem;
+  height: 50%;
+  display: inline-grid;
+  place-content: center;
+  text-align: center;
+  transform: rotateY(0.5turn);
+  transition: 0.5s;
+  transform-origin: bottom;
+  color: white;
+  backface-visibility: hidden;
+  line-height: 0.95;
+}
+#donate a:link {
+  color: red;
+  border-radius: 5px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+#donate a:link::before {
+  content: "♡♥︎";
+  display: block;
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+  color: #40cbff;
+}
+.contact span {
+  padding-inline: 0.5rem;
+}
