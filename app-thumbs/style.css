@@ -1,0 +1,137 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  --ayobaBlue: #1161A2;
+  --ayobarange: #FBB833;
+  --white: #fff;
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--ayobaBlue);
+}
+
+.apps:not(not the application but the container) {
+  width: 45vh;
+  aspect-ratio: 1;
+  border: .1rem solid orange;
+  width: 45vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.app{
+  width: inherit;
+  aspect-ratio: 1;
+  border-radius: 15%;
+  border: solid;
+  background-color: var(--white);
+}
+.app p{
+  margin: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(
+    var(--ayobarange) 19.5%,
+    var(--white) 20.5% 39.5%,
+    var(--ayobaBlue) 40.5%);
+  position: relative;
+}
+.app p::after{
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  right: 0;
+  border-radius: 500% 500%/150% 150%;
+  background-color: var(--ayobaBlue);
+}
+/* google  */
+
+.a {
+  border-radius: 24%/25%;
+  position: relative;
+}
+
+.person{
+  background-color: #0057CC;
+  width: 43px/* calc(43/150 * 100% */;
+  aspect-ratio:  1;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.person::before,
+.a::before,
+.person::after{
+  content: "";
+  height: 137.5%;
+  width: 175%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% + 11px) ;
+  background-color: #578CFF;
+  border-radius: 2.3rem 1.4rem 1.4rem 3rem/2.5rem 1.4rem 1.4rem 3rem;
+  border-bottom-left-radius: 4px;
+  translate: 8px 0;
+}
+.a::before{
+  background-color: #0057CC;
+  z-index: 1;
+  top: 50%;
+  left: 45%;
+  height: 40%;
+  width: 40%;
+  border-radius: 1.5rem;
+  border-bottom-left-radius: .7rem;
+
+}
+.person::after{
+  translate: -10px 0;
+}
+/* google photos */
+.name {
+  margin-block: 5px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+.app:has(.semi) {
+  border-radius: 40%;
+  position: relative;
+}
+.semi {
+  width: 40%;
+  aspect-ratio: 1;
+  clip-path: circle(50% at 50% 0);
+  position: absolute;
+  background-color: var(--bg);
+  inset: 50%;
+  transform: translate(-50% -50%);
+  transform-origin: 0 0;
+}
+.red.semi {
+  --bg: red;
+  rotate: 270deg;
+}
+.yellow.semi {
+  --bg: yellow;
+  rotate: 180deg;
+}
+.green.semi {
+  --bg: green;
+  rotate: 90deg;
+}
+.blue.semi {
+  --bg: blue;
+}
