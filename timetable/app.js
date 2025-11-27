@@ -200,3 +200,64 @@ document
       });
     });
   });
+counter()
+function counter() {
+  const nowTime = Date.now()
+  let startTime = ''
+  let end = ''
+  let endTime = ''
+  const SEtime = () => {
+    const ele1 = document.querySelector('.exams tbody tr:first-child')
+    const ele2 = document.querySelector('.exams tbody tr:last-child')
+    ele1.querySelectorAll('td').forEach((el,ind,arr)=>{
+      el.parentElement.dataset.start = arr[1].textContent + ' ' + arr[3].textContent
+    })
+    ele2.querySelectorAll('td').forEach((el,ind,arr)=>{
+      el.parentElement.dataset.end = arr[1].textContent + ' ' + arr[4].textContent
+    })
+    return [ele1.dataset.start, ele2.dataset.end]
+  }
+
+  document.querySelectorAll('.exams table tbody tr').forEach((e,f,g)=>{
+    e.querySelectorAll(`td`).forEach((td, ind, arr) => {
+      startTime = new Date(`${arr[1].textContent}  ${arr[3].textContent}`)
+      end = new Date(`${arr[1].textContent}  ${arr[4].textContent}`)
+    })
+    e.dataset.time = startTime
+    e.dataset.end = end
+    endTime = `${g[g.length - 1].querySelector('td:nth-child(2)').textContent} ${g[g.length - 1].querySelector('*:nth-child(5)').textContent}`
+
+    if (new Date(e.dataset.time) < nowTime) e.querySelector(`td:last-child`).textContent = 'done'/*.classList.add(`bad`) e*/
+    if (new Date(e.dataset.time) <= nowTime && new Date(e.dataset.end) >= nowTime) e.querySelector(`td:last-child`).textContent = 'in progress'/*.classList.add(`good`)*/
+  })
+
+  return [nowTime, SEtime()[0], SEtime()[1]]
+}
+
+function timer(fun) {
+  
+  const ms = new Date(fun[1]).getTime() - fun[0]
+  const tim = new Date(fun[1]).getTime() - new Date(fun[2]).getTime()
+  const used = fun[0] - new Date(fun[2]).getTime()
+
+  const data = [
+    ['days', `${Math.floor(ms / 1000 / 3600 / 24)} days`],
+    ['hours', `${Math.floor(ms / 1000 / 3600) % 24} hrs`],
+    ['minutes', `${Math.floor(ms / 1000 / 60) % 60} min`],
+    ['seconds', `${Math.floor(ms / 1000) % 60} sec`],
+    ['percentage', `${(
+        (ms / tim).toFixed(4)
+      ) * 100} % ${(
+        (used / tim).toFixed(4)
+      ) * 100} %`]
+  ]
+
+  data.forEach((row)=>{
+    document.querySelector(`[${row[0]}]`).textContent = row[1]
+  })
+
+}
+
+setInterval(() => {
+  timer(counter())
+}, 100);
