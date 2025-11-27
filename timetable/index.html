@@ -18,6 +18,7 @@
       <button class="grading">grading</button>
       <button class="unit-score">unit-score</button>
       <button class="fees">fees</button>
+      <button class="exams">exams</button>
     </nav>
   </header>
   <main>
@@ -78,7 +79,7 @@
             <th>1000-1100</th>
             <td rowspan="2" data-value="mon 10 11">cmp 1103</td>
             <td rowspan="2" data-value="tue 10 11"><ins>tec 1121</ins></td>
-            <td rowspan="2" data-value="thu 10 11">cmp 1103</td> 
+            <td rowspan="2" data-value="thu 10 11">cmp 1103</td>
             <td rowspan="2" data-value="fri 10 11"><ins>ele 1102</ins></td>
           </tr>
           <tr>
@@ -377,11 +378,12 @@
         </tbody>
       </table>
     </section>
-<section class="tab fees">
+
+    <section class="tab fees">
 <h2>YEAR 1 SEMESTER I</h2>
 <table>
   <thead>
-    <tr><td>#</td> <td>ITEM</td> <td>CATEGORY</td> <td>AMOUNT</td> <td>TO PAY</td> <td>EXEMPTION</td> <td>CURR</td</tr>
+    <tr><th>#</th> <th>ITEM</th> <th>CATEGORY</th> <th>AMOUNT</th> <th>TO PAY</th> <th>EXEMPTION</th> <th>CURR</th</tr>
   </thead>
     <tbody>
       <TR><td>1</td> <TD>DEVELOPMENT FEE</TD> <TD>FUNCTIONAL FEES</TD> <TD>163,329</TD> <TD>163,329</TD> <TD>0 %</TD> <td>UGX</td></tr>
@@ -426,7 +428,100 @@
     </tr>
   </tb>
 </table>
-</section>
+    </section>
+
+    <section class="tab exams">
+      <h2>Exams TimeTable</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Course</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Friday</td>
+            <td>11/14/2025</td>
+            <td>Briefing</td>
+            <td>14:00</td>
+            <td>17:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>11/18/2025</td>
+            <td>EMT1101</td>
+            <td>14:00</td>
+            <td>17:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>11/20/2025</td>
+            <td>CMP1103</td>
+            <td>09:00</td>
+            <td>12:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>11/25/2025</td>
+            <td>ELE1121</td>
+            <td>14:00</td>
+            <td>17:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>monday</td>
+            <td>12/1/2025</td>
+            <td>TEC1121</td>
+            <td>09:00</td>
+            <td>12:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>wednesday</td>
+            <td>12/3/2025</td>
+            <td>ELE1102</td>
+            <td>14:00</td>
+            <td>17:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>12/5/2025</td>
+            <td>UNV1001</td>
+            <td>09:00</td>
+            <td>12:00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>saturday</td>
+            <td>12/6/2025</td>
+            <td>End of Exam</td>
+            <td>00:00</td>
+            <td>17:00</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section class="counter">
+        <h2>Date Counter</h2>
+        <div>
+          <span>Days : <span days>00</span></span><br>
+          <span>Hours : <span hours>00</span></span><br>
+          <span>Minutes : <span minutes>00</span></span><br>
+          <span>Seconds : <span seconds>00</span></span><br>
+          <span percentage>00%</span><br>
+        </div>
+      </section>
+    </section>
   </main>
   <script src="app.js"></script>
 
