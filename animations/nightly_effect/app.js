@@ -1,26 +1,25 @@
-let el = [];
+let elements = [];
 function create() {
-  el.push("<>");
-  let e = document.createElement(`span`);
-  e.classList.add(`circles`);
-  el.forEach(() => {
-    document.querySelector('.sky').appendChild(e);
+  elements.push("<>");
+  let span = document.createElement(`span`);
+  span.classList.add(`circles`);
+  elements.forEach(() => {
+    document.querySelector('.sky').appendChild(span);
   });
 }
 setInterval(() => {
-  let num = 0;
-  document.querySelectorAll(".circles").forEach((c, t, f) => {
-    num = t;
-    f[t].style.left = `${Math.random()* 100}vw`
-    f[t].style.animationDuration = `${t * Math.random() + 2}s`;
-    f[t].style.animationDelay = `${t * Math.random() + 1}s`;
+  let count = 0;
+  document.querySelectorAll(".circles").forEach((circle, index, array) => {
+    count = index;
+    array[index].style.left = `${Math.random()* 100}vw`
+    array[index].style.animationDuration = `${index * Math.random() + 2}s`;
+    array[index].style.animationDelay = `${index * Math.random() + 1}s`;
   });
 
-  if (num < 50) {
+  if (count < 50) {
     create();
-    document.querySelector('.sky').style.background = `hsl(210, ${10 + (40 * num) / 23}%, ${
-      50 - (30 * num) / 23
+    document.querySelector('.sky').style.background = `hsl(210, ${10 + (40 * count) / 23}%, ${
+      50 - (30 * count) / 23
     }%)`;
   }
-  console.log(  document.querySelectorAll(".circles").length);
-}, 556);
+}, 5756);

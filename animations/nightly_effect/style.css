@@ -25,13 +25,13 @@ body{
       0 0 5px yellow,
       0 0 15px 5px white;
   aspect-ratio: 1/1;
-  animation: zoom 1.5s infinite alternate, translator 4s infinite;
+  animation: zoom 2s infinite alternate, translator 4s infinite;
   transform-origin: center;
 
-} 
+}
 @keyframes zoom {
   to{
-    width: 0.125rem;
+    width: .125rem;
     box-shadow: none;
   }
 }
@@ -43,6 +43,7 @@ body{
 article{
   --blue: navy;
   --yellowgreen: greenyellow;
+  background-blend-mode: color;
   margin: 4rem;
   max-width: 500px;
   padding: 1rem 2rem;
