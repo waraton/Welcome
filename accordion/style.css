@@ -40,16 +40,22 @@ main h2 {
   position: absolute;
 }
 .item label[for*="item"],
-.title {
+.title,details summary {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 600;
   position: relative;
   font-size: 1.5rem;
   width: 100%;
+  padding: .5rem 1rem;
+}
+details p{
+  padding: 0.5rem 1rem;
+  transition: all .4s;
+}
+.title{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 1rem;
 }
 .content {
   transition: 0.15s;
@@ -62,6 +68,15 @@ input[type="radio"]:checked ~ p.content,
   scale: 1 1;
   padding: 0 1rem 1rem;
   height: fit-content;
+}
+.item label span.arrow{
+  color: white;
+  border-radius: 55%;
+  display: inline-grid;
+  aspect-ratio: 1;
+  height: 1.5rem;
+  place-content: center;
+  border: 1px solid;
 }
 .title > * {
   transition: 0.5s;
@@ -106,7 +121,7 @@ input[type="radio"]:checked ~ p.content,
   font-family: sans-serif;
   border-radius: 1.5rem 0/1.5rem;
   border: 1svh solid currentColor;
-  transform: scale(1, .985) rotateY(25deg);
+  transform:  scale(1, .985);
   transform-origin:100% top;
 }
 .grow{
@@ -119,12 +134,12 @@ input[type="radio"]:checked ~ p.content,
   user-select: contain;
 }
 progress{
-  height: 1rem;
+  height: 2rem;
   position: fixed;
   outline: none;
   right: -2.5rem;
-  top: 2.5rem;
-  width: 15vw;
+  top: 3.5rem;
+  width: 8rem;
   rotate: -.25turn;
   accent-color: orange;
 }
