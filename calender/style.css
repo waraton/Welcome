@@ -1,0 +1,78 @@
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(143, 143, 141);
+}
+#calender {
+  margin: auto;
+  display: grid;
+  max-width: 75vw;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+#calender section {
+  max-width: fit-content;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(2rem, 4rem));
+  border: 0.2rem solid oldlace;
+  border-radius: 0.5rem;
+}
+:empty {
+  background-color: #0000;
+}
+header {
+  background-color: skyblue;
+  font-size: 1.725rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+header h1 {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  -webkit-text-stroke: 0.1rem white;
+  color: transparent;
+}
+section > span {
+  margin: 0.5px;
+  background-color: orange;
+  text-align: center;
+  display: grid;
+  padding: 0.5rem 1rem;
+  place-content: center;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+}
+.heading {
+  background-color: skyblue;
+  color: brown;
+  grid-row-start: 1;
+  font-size: 1.25rem;
+  word-break: break-all;
+  vertical-align: middle;
+  text-transform: uppercase;
+  grid-column-end: 8;
+  border-radius: 0%;
+  grid-column-start: 9;
+  font-family: monospace;
+  letter-spacing: 1ch;
+  padding: 0% 1.5rem;
+  border-radius: 0 .5rem .5rem 0;
+}
+.weekTitle {
+  border-radius: 0%;
+  background-color: skyblue;
+  font-size: 1.25rem;
+  color: brown;
+  text-transform: uppercase;
+}
+.thisDay {
+  background-color: grey;
+  font-size: 1.25rem;
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid;
+}
