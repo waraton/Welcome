@@ -8,25 +8,33 @@
   <style>
     html {
       font-size: 100%;
-      scrollbar-color:cornsilk cadetblue ;
+      scrollbar-color: cornsilk cadetblue;
     }
-header{
-  border: 2px solid  violet;
-  box-shadow: black 0 0 2 2px inset;
-  background: cadetblue url(bg-svg.svg) no-repeat scroll 95% 50% / 150px 150px padding-box padding-box ;
-  padding: .5em;
-  font-size: 2em;
-  margin: 0em;
-  text-transform: uppercase;
-  color: rgb(2, 21, 130);
-}
-header h1{vertical-align: centre;padding: .5em;}
+
+    header {
+      border: 2px solid violet;
+      box-shadow: black 0 0 2 2px inset;
+      background: cadetblue url(bg-svg.svg) no-repeat scroll 95% 50% / 150px 150px padding-box padding-box;
+      padding: .5em;
+      font-size: 2em;
+      margin: 0em;
+      text-transform: uppercase;
+      color: rgb(2, 21, 130);
+      corner-shape: squircle;
+      border-radius: 1rem;
+    }
+
+    header h1 {
+      vertical-align: centre;
+      padding: .5em;
+    }
+
     body {
       max-inline-size: 1000px;
       margin: auto;
       padding-inline: 2rem;
       font-family: 'e eloxy', Verdana, Geneva, Tahoma, sans-serif;
-      background:url(bg-svg.svg) no-repeat fixed right top content-box content-box ;
+      background: url(bg-svg.svg) no-repeat fixed right top content-box content-box;
       background-size: 15%;
     }
 
@@ -51,7 +59,7 @@ header h1{vertical-align: centre;padding: .5em;}
       width: 50%;
       text-align: center;
       height: 5px;
-      background-color:  cadetblue;
+      background-color: cadetblue;
     }
 
     hgroup {
@@ -64,10 +72,12 @@ header h1{vertical-align: centre;padding: .5em;}
       background-color: #fff8dc7d;
       margin: .5em 2em 0 2em;
     }
-hgroup h1{
-  background-color: transparent;
-  box-shadow: none;
-}
+
+    hgroup h1 {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
     h1,
     h2,
     h3,
@@ -86,7 +96,7 @@ hgroup h1{
 
     code {
       background-color: cornsilk;
-      font: 500 1.2rem/1.25 europeantypewriter, 'ubuntu mono', 'lucida console',monospace;
+      font: 500 1.2rem/1.25 europeantypewriter, 'ubuntu mono', 'lucida console', monospace;
       letter-spacing: 2px;
     }
 
@@ -98,13 +108,15 @@ hgroup h1{
 </head>
 
 <body>
-  <header><h1>basic svg</h1></header>
+  <header>
+    <h1>basic svg</h1>
+  </header>
   <hgroup>
     <h1> How to construct lines with <abbr title='Scalable Vector Graphics'>SVG</abbr></h1>
     <p>[<time datetime="2025-03-01T22:19+03:00">01/03, 10:19 pm</time>] ME</p>
   </hgroup>
   <p>[<time datetime="2025-03-01T22:21+03:00">01/03, 10:21 pm</time>] Meta <abbr
-      title='Artificial Interligence'>AI</abbr>: Constructing lines with <abbr
+      title='Artificial Intelligence'>AI</abbr>: Constructing lines with <abbr
       title='Scalable Vector Graphics'>SVG</abbr> can be done using the <code>&lt;line&gt;</code> element or the
     <code>&lt;path&gt;</code> element. Here are some examples:
   </p>
@@ -121,14 +133,14 @@ hgroup h1{
     <abbr title='Scalable Vector Graphics'>SVG</abbr><br>
     <svg width="200" height="200">
       <line x1="10" y1="20" x2="190" y2="179" style="stroke:rgb(0,0,0);stroke-width:2" />
-      </svg>
-      <figcaption>
-        <code>
+    </svg>
+    <figcaption>
+      <code>
 &lt;svg widtH="200" height="200">
   &lt;line x1="10" y1="20" x2="190" y2="179" style="stroke:rgb(0,0,0);stroke-width:2" />
 &lt;/svg&gt;
       </code>
-      </figcaption>
+    </figcaption>
   </figure>
   <h2>Using the <code>&lt;path&gt;</code> Element</h2>
   <p>The <code>&lt;path&gt;</code> element is used to draw a path, which can include lines, curves, and arcs. It has a
@@ -177,7 +189,7 @@ hgroup h1{
     <p>[<time datetime="2025-03-01T22:20+03:00">01/03, 10:20 pm</time>] ME</p>
   </hgroup>
   <p>[<time datetime="2025-03-01T22:21+03:00">01/03, 10:21 pm</time>] Meta <abbr
-      title='Artificial Interligence'>AI</abbr>: <abbr title='Scalable Vector Graphics'>SVG</abbr> (Scalable Vector
+      title='Artificial Intelligence'>AI</abbr>: <abbr title='Scalable Vector Graphics'>SVG</abbr> (Scalable Vector
     Graphics) is a markup language used to create vector graphics for the
     web. Here's a basic guide on how to draw in <abbr title='Scalable Vector Graphics'>SVG</abbr>:</p>
 
@@ -302,7 +314,7 @@ hgroup h1{
     <p>[<time datetime="2025-03-02T10:46+03:00">02/03, 10:46 am</time>] ME</p>
   </hgroup>
   <p>[<time datetime="2025-03-02T10:48+03:00">02/03, 10:48 am</time>] Meta <abbr
-      title='Artificial Interligence'>AI</abbr>: <abbr title='Scalable Vector Graphics'>SVG</abbr> path drawing is a
+      title='Artificial Intelligence'>AI</abbr>: <abbr title='Scalable Vector Graphics'>SVG</abbr> path drawing is a
     powerful way to create complex shapes and designs. Here are
     the basic
     components of <abbr title='Scalable Vector Graphics'>SVG</abbr> path drawing and their associated attributes:</p>
