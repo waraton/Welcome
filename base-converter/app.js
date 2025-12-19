@@ -10,22 +10,50 @@ const inputs3 = document.querySelectorAll("#convertBases input");
 const output3 = document.querySelector("#convertBases output");
 const submit3 = document.querySelector(`#convertBases button`);
 
+const errorMSG = 'Do not leave the input empty.'
+
 submit1.addEventListener("click", () => {
   if (inputs1[1].value && inputs1[0].value && inputs1[0].value < 23) {
     const BASE = Number(inputs1[0].value);
     const NUMBER = Number(inputs1[1].value);
     const output = convertDecToBaseN(BASE, NUMBER);
-    output1.innerHTML = output
-  } else output1.innerHTML = `<span error>Enter base and number</span>`;
+    output1.innerHTML = `${output}<sub>${BASE}</sub>`;
+  } else {
+    console.error(errorMSG);
+    output1.innerHTML = `<span error>${errorMSG}</span>`;
+  }
 });
 
 submit2.addEventListener("click", () => {
   if (inputs2[1].value && inputs2[0].value && inputs2[0].value < 23) {
     const BASE = Number(inputs2[0].value);
-    const NUMBER = Number(inputs2[1].value);
+    const NUMBER = inputs2[1].value;
     const output = convertToDec(BASE, NUMBER);
-    output2.innerHTML = output
-  } else output2.innerHTML = `<span error>Enter base and number</span>`;
+    if (Number(output)) {
+      output2.innerHTML = `${output}<sub>${10}</sub>`;
+    } else {
+      console.log(`${output}: ${NUMBER} is not in base ${BASE}`);
+      output2.innerHTML = `<span Error>${NUMBER} is not in base ${BASE}</span>`;
+    }
+  } else {
+    console.error(errorMSG);
+    output2.innerHTML = `<span Error>${errorMSG}</span>`;
+  }
+});
+
+submit3.addEventListener("click", () => {
+  if (inputs3[1].value && inputs3[0].value && inputs3[0].value < 23) {
+    const BASEiN = Number(inputs3[0].value);
+    const NUMBERiN = inputs3[1].value;
+    const BASEoUT = inputs3[2].value;
+    const output = convertBases(BASEiN, NUMBERiN, BASEoUT);
+    if (Number(output)) {
+      output3.innerHTML = `${output}<sub>${BASEoUT}</sub>`;
+    }else output3.innerHTML = `${output}`;
+  } else {
+    console.error(errorMSG);
+    output3.innerHTML = `<span Error>${errorMSG}</span>`;
+  }
 });
 
 // Functions
@@ -61,7 +89,6 @@ function convertToDec(inBase, inNum) {
   let inputArray = String(inNum).split("");
   let outNumber = 0;
   const outArray = [];
-  let check;
   inputArray.forEach((element, index, array) => {
     raiseTo = array.length - index - 1;
     if (+element) {
@@ -69,21 +96,19 @@ function convertToDec(inBase, inNum) {
     } else {
       element = element.toUpperCase().charCodeAt() - 55;
     }
-    outArray.push(element);
-    check = outArray.filter((e) => e >= inBase).length === 0;
-    if (check) {
-      outNumber +=
-        element * Math.pow(inBase, raiseTo) /* ,+element,inBase,raiseTo] */;
+    outArray.push([element, raiseTo]);
+    if (element < inBase) {
+      outNumber += element * Math.pow(inBase, raiseTo);
     } else {
-      outNumber = `${inNum.toUpperCase()} is not in base ${inBase}`;
+      console.error("conflicting base and input number");
+      outNumber = `<span Error>${inNum} is not in base ${inBase}</span>`;
     }
   });
-
   return outNumber;
 }
 
 function convertBases(inBase, inNumber, outBase) {
-  const inDec = convertToDec(inNumber, inBase);
+  const inDec = convertToDec(inBase, inNumber);
   let outNumber;
   if (+inDec) {
     outNumber = convertDecToBaseN(outBase, inDec);
@@ -91,5 +116,3 @@ function convertBases(inBase, inNumber, outBase) {
 
   return outNumber;
 }
-
-/* console.log(convertBases(2, 1101, 13)); */

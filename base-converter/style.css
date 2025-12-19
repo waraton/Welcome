@@ -51,3 +51,6 @@ label{
   color: red;
   font-family: monospace;
 }
+sub{
+  line-height: .51;
+}
