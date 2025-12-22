@@ -91,7 +91,7 @@ function convertToDec(inBase, inNum) {
   const outArray = [];
   inputArray.forEach((element, index, array) => {
     raiseTo = array.length - index - 1;
-    if (+element) {
+    if (+element || +element === 0) {
       element = +element;
     } else {
       element = element.toUpperCase().charCodeAt() - 55;
@@ -104,6 +104,7 @@ function convertToDec(inBase, inNum) {
       outNumber = `<span Error>${inNum} is not in base ${inBase}</span>`;
     }
   });
+  console.log(outArray);
   return outNumber;
 }
 

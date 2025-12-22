@@ -4,7 +4,7 @@
   padding: 0;
   font-family: sans-serif;
 }
-header{
+header {
   background-color: skyblue;
   color: antiquewhite;
   padding: 1rem 2rem;
@@ -18,39 +18,85 @@ section {
   gap: 1rem;
   max-width: 25rem;
   border-radius: 1rem;
-  margin: .2rem auto;
+  margin: 0.2rem auto;
 }
-ul,li {
+ul,
+li {
   list-style: none;
   box-shadow: 0 0 0.25rem 0.1rem;
   display: grid;
 }
-section:has([Error]){
-  outline: .1rem solid red;
+section:has([Error]) {
+  outline: 0.1rem solid red;
 }
-li{
+li {
   box-shadow: none;
   gap: 0;
-  padding: .5rem;
+  padding: 0.5rem;
 }
-h2{
+h2 {
   text-align: center;
   font-size: 1.5rem;
 }
-button,input,output{
-  border: .1rem solid;
-  padding: .5rem 1rem;
+button,
+input,
+output {
+  border: 0.1rem solid;
+  padding: 0.5rem 1rem;
   text-transform: uppercase;
   overflow-x: auto;
 }
-label{
+label {
   width: fit-content;
 }
-[Error]{
+[Error] {
   background-color: skyblue;
   color: red;
   font-family: monospace;
 }
-sub{
-  line-height: .51;
+sub {
+  line-height: 0.51;
+}
+/* Notification */
+.notification {
+  width: clamp(250px, 30vw, 700px);
+  border: 2px dotted red;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  color: red;
+  position: fixed;
+  display: none;
+  inset: auto 1rem 1rem auto;
+  background-color: rgba(250, 235, 215, 0.5);
+  transform-origin: right center;
+}
+@keyframes clear {
+  to{
+    scale: 0 1;
+    translate: 5rem 0;
+  }
+
+}
+.notification > * {
+  font-family: monospace;
+  font-size: 1rem;
+}
+.notification > *::before {
+  content: "✖";
+  border-radius: 50%;
+  border: 1px dotted;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  line-height: 1;
+  margin-inline-end: 0.5rem;
+  margin-left: -1.75rem;
+  vertical-align: middle;
+  height: 1rem;
+  padding: 0.25rem;
+  text-align: center;
+}
+/* conditional display */
+body:has([Error],:where(button:active)) .notification {
+  display: block;
+  animation: clear .5s 5s 1 linear forwards;
 }
