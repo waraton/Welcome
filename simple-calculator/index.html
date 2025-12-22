@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="a beginner calculator">
+  <link rel="styleSheet" href="style.css" type="text/css" media="all" />
+  <script src="app.js" defer></script>
+  <title>Calculator</title>
+</head>
+<body>
+  <header>
+    <h1>Basic Calculations</h1>
+  </header>
+  <main>
+    <section class="calculator">
+      <input readonly type="text" id="input">
+      <output>output</output>
+      <div class="keys">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button data-calc="delete" class="clear">DEL</button>
+        <button data-calc="clear" class="clear">AC</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+        <button>/</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+        <button>-</button>
+        <button>0</button>
+        <button>.</button>
+        <button>E</button>
+        <button data-calc="history">ANS</button>
+        <button data-calc="calculate" id="calculate">=</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
