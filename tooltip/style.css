@@ -1,58 +1,95 @@
-body{
+* {
+  box-sizing: border-box;
+}
+body {
   min-height: 100vh;
   background-color: skyblue;
-}
-body p{
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  font-size: 2rem;
-  padding: 2rem 1em;
-  text-align: center;
-  background-color: teal;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  border-radius: .5rem;
-  box-shadow: 2px 2px 9px 1px #2119;
+  display: grid;
+  place-content: center;
   line-height: 1.5;
-  min-width: 420px;
+  padding: 2rem;
+}
+main {
+  padding: .5rem;
+  height: fit-content;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+}
+p {
+  background-color: teal;
+  border: 2px solid;
+  padding: 2rem 1em;
+  color: white;
+  box-shadow: 2px 2px 9px 1px #2119;
+  min-width: 320px;
   max-width: 700px;
   width: 75vw;
-  height: fit-content;
+  margin : 1rem auto;
+  border-radius: 0.5rem;
 }
-p:hover .tooltip{
+p.tooltipContainer {
+  text-align: center;
+  height: fit-content;
+  position: relative;
+}
+.ciu_embed{
+  padding: 0%;
+}
+p.tooltipContainer:hover .tooltip {
   visibility: visible;
   opacity: 1;
 }
-.tooltip{
-  transition:  .5s;
+[popovertarget]{
+ padding: .5rem 1.5rem;
+ border-radius: 2rem;
+ border: none;
+ font: inherit;
+ transition: .15s;
+ background-color: transparent;
+ box-shadow: 0 0 .5rem .1rem, inset 0 0 .5rem .1rem;
+ outline: 2px solid ;
+ color: teal;
+}
+button:hover{
+  backdrop-filter: blur(.2rem);
+  background-color: transparent;
+  filter: brightness(1.1);
+}
+button:active{
+  border: initial;
+  filter: brightness(1.5);
+  box-shadow: none;
+}
+.tooltip {
+  transition: 0.5s;
   border-radius: 2rem;
   background-color: white;
   color: black;
-  padding: 10px 20px;
+  padding: 5px 20px;
   position: absolute;
-  top: -75;
+  top: -35;
   font-size: 1rem;
-  right: 30%;
+  right: 10%;
   font-family: sans-serif;
   rotate: -8deg;
-  box-shadow: 1svb 1svb 2svb ;
+  box-shadow: 1svb 1svb 2svb;
   opacity: 0;
   visibility: hidden;
 }
-.tooltip::after,.tooltip::before{
-  box-shadow: 1svb 1svb 2svb ;
+.tooltip::after,
+.tooltip::before {
+  box-shadow: 1svb 1svb 2svb;
   content: "";
   position: absolute;
-  width: 25;
+  width: 22;
   aspect-ratio: 1;
   background: white;
-  right: 1rem;
-  bottom: -1.45rem;
+  right: .75rem;
+  bottom: -.85rem;
   border-radius: 1cm;
 }
-.tooltip::after{
-  right: 2rem;
-  bottom: -2rem;
-  width: 15;
+.tooltip::after {
+  right: 1.5rem;
+  bottom: -1.5rem;
+  width: 12;
 }

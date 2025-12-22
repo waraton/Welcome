@@ -1,11 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToolTip</title>
+  <title>ToolTip and Embed</title>
+  <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <p>But we ought always to give thanks to God for you, brothers beloved by the Lord, because God chose you as the first fruits to be saved, through sanctification by the Spirit and belief in the truth.<span class="tooltip">Thessalonians 2:13</span></p>
+  <main>
+    <p class="tooltipContainer">But we ought always to give thanks to God for you, brothers beloved by the Lord, because God chose you as the first fruits to be saved, through sanctification by the Spirit and belief in the truth.<span class="tooltip">Thessalonians 2:13</span></p>
+
+    <p class="ciu_embed" data-feature="css-relative-colors" data-periods="future_1,current,past_1,past_2,past_4" data-accessible-colours="false">
+      <picture>
+        <source type="image/webp" srcset="https://caniuse.bitsofco.de/image/css-relative-colors.webp">
+        <source type="image/png" srcset="https://caniuse.bitsofco.de/image/css-relative-colors.png">
+        <img src="https://caniuse.bitsofco.de/image/css-relative-colors.jpg"
+          alt="Data on support for the css-relative-colors feature across the major browsers from caniuse.com">
+      </picture>
+    </p>
+
+    <button popovertarget="popover">Open popover</button>
+    <p id="popover" popover=auto class="tooltipContainer"><span class="tooltip">Mathew 7:6</span>Give not that which is holy unto the dogs, neither cast ye your pearls before swine,
+      lest they trample them under their feet, and turn again and rend you.</p>
+  </main>
 </body>
+
 </html>
