@@ -16,76 +16,80 @@ button {
 body {
   font: 300 16px/1.5 "MTNBrighterSans-Regular", cursive;
 }
-.visuallyHidden{
+.visuallyHidden {
   position: absolute;
   scale: 0;
 }
-abbr{
+abbr {
   text-decoration: none;
 }
-.bold,a:any-link{
+.bold,
+a:any-link {
   font-weight: bold;
   color: black;
   text-decoration: none;
 }
-a:hover{
+a:hover {
   text-decoration-skip-ink: none;
   text-decoration: underline 2px blue;
   text-shadow: none;
 }
-a::before{
-  content: '\11';
+a::before {
+  content: "\11";
   color: blue;
   margin-right: 2px;
   font-style: normal;
 }
-main{
+main {
   width: 80vw;
   max-width: 800px;
   margin: auto;
 }
-main,FOOTER{
+main,
+FOOTER {
   padding: rem;
 }
-h2{
+h2 {
   margin: 1rem 0;
 }
-h3{
-  margin: .75rem 0 0;
+h3 {
+  margin: 0.75rem 0 0;
 }
-p{
-  padding: .5rem 0;
+p {
+  padding: 0.5rem 0;
 }
-table thead th{
+table thead th {
   text-transform: uppercase;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   background-color: grey;
   color: white;
   border-inline: 2px solid white;
   border-bottom: 2px solid;
 }
-td[rowspan],th[rowspan]{
+td[rowspan],
+th[rowspan] {
   border-right: none;
 }
-th[colspan],thead tr:last-child th:first-child{
+th[colspan],
+thead tr:last-child th:first-child {
   border-left: none;
 }
-table tbody td{
+table tbody td {
   border: 2px solid white;
   border-left: none;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border-bottom: none;
 }
-tbody tr{
+tbody tr {
   background-color: lightgrey;
 }
-tbody tr:last-child td{
+tbody tr:last-child td {
   border-bottom: 2.01px solid black;
 }
-table tbody tr:nth-child(odd){
+table tbody tr:nth-child(odd) {
   background-color: white;
 }
-[free]{
+[free] {
   display: block;
   background-color: gray;
   border-radius: 50%;
@@ -95,24 +99,24 @@ table tbody tr:nth-child(odd){
   place-content: center;
   margin: auto;
 }
-table{
+table {
   width: 100%;
   table-layout: auto;
   border-collapse: collapse;
   padding-bottom: 5px;
   border-bottom: 2px solid black;
 }
-tr:last-child{
+tr:last-child {
   border-bottom: 2px solid black;
 }
-tbody tr td:has(del){
+tbody tr td:has(del) {
   background-color: lightgrey;
-  text-align: center ;
+  text-align: center;
 }
-ul li{
+ul li {
   margin-left: 1rem;
 }
-ul li:has(input){
+ul li:has(input) {
   list-style: none;
   margin-left: 0;
   margin-block: 2rem;
@@ -121,43 +125,49 @@ ul li:has(input){
 
   font-size: 1.125rem;
 }
-ul li:has(input) input{
+ul li:has(input) input {
   flex-grow: 1;
   border: none;
   outline: none;
   border-bottom: 1px solid;
-  padding: .25rem;
+  padding: 0.25rem;
 }
-ul:has(a[href^='tel:']) li{
+ul:has(a[href^="tel:"]) li {
   list-style: none;
   margin-left: 0;
 }
-@page{
+@page {
   font-size: 8pt;
   border: 1em solid grey;
-  margin: 0in .5in;
+  margin: 0in 0.5in;
   size: 15in;
 }
-footer{
+footer {
   text-shadow: 1px 1px 2px blue;
   color: white;
   text-align: center;
   display: grid;
   gap: 0rem;
-  grid-template-columns: repeat(auto-fit,minmax(355px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
   background-color: rgb(177, 177, 0);
+  padding: .5rem clamp(1rem,15vw,  15rem);
+  min-width: 320px;
 }
-footer>*:first-child:first-of-type{
+footer > *:first-child:first-of-type {
   grid-column: 1/-1;
   font-size: 1.75rem;
   border-bottom: 2px solid yellow;
 }
-footer>*{
-  padding: .5rem 1rem;
+footer > * {
+  padding: 0.25rem 1rem;
+  margin-top: .25rem;
+  vertical-align: middle;
+  line-height: 1.8;
 }
-[attribution]{
-  background: repeating-conic-gradient(blue,yellow, blue .25%) 0/1rem 1rem;
+[attribution] {
+  background: repeating-conic-gradient(blue, yellow, blue 2.5%) 0/2rem 2rem;
 }
-th,td{
+th,
+td {
   word-break: break-all;
 }
