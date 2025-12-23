@@ -1,5 +1,14 @@
 const input = document.getElementById(`input`);
 const output = document.querySelector(`output`);
+const historyAns = localStorage.getItem(`answer`);
+document.addEventListener(`onload`,() => {
+})
+setInterval(() => {
+  document.body.style.background = `radial-gradient(blue 0% 5%,orange 70%,#0000) repeat 15% 25% /100vmax 100vmax`
+  document.body.style.backgroundColor = `skyblue`
+
+
+}, 1000);
 
 document.querySelectorAll(`button:not([data-calc])`).forEach((button) => {
   button.addEventListener(`click`, (e) => {
@@ -14,31 +23,37 @@ document.querySelectorAll(`button[data-calc]`).forEach((func) => {
         clear();
         break;
       case `delete`:
-        const expression = input.value.split(``)
-        expression.pop()
-        input.value = expression.join('');
+        const expression = input.value.split(``);
+        expression.pop();
+        input.value = expression.join("");
         break;
       case `calculate`:
         try {
-          calculate(e.target);
+          if (input.value) {
+            calculate(e.target);
+          }
         } catch (error) {
-          output.textContent = `ERROR`
+          output.textContent = `ERROR`;
           console.error(error);
         }
         break;
       case `history`:
-        input.value = output.textContent;
+        input.value = localStorage.getItem("answer");
         break;
     }
   });
 });
 function clear() {
   input.value = "";
-  output.textContent = "output";
+  const answer = localStorage.getItem("answer");
+  if (answer) {
+    output.textContent = answer;
+  } else;
 }
 function calculate(equal) {
   output.value = eval(input.value);
-  if (output.value.includes('.')) {
+  if (output.value.includes(".")) {
     output.value = eval(input.value).toFixed(4);
   }
+  localStorage.setItem("answer", output.value);
 }

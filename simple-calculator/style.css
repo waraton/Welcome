@@ -3,12 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+main{
+  backdrop-filter: blur(.5rem) brightness(1.5);
+  border-radius: .5rem;
+  padding: 1rem;
+  margin: auto;
+}
 body{
   background-color: skyblue;
   max-height: 100vh;
   display: grid;
   gap: 1rem;
   align-items: end;
+  transition: 1s;
 }
 header{
   background-color: teal;
