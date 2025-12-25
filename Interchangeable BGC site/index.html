@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interchangeable BGC site</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section>
-        <div data-clr="green"></div>
-        <div data-clr="blue"></div>
-        <div data-clr="teal"></div>
-        <div data-clr="yellow"></div>
-        <div data-clr="brown"></div>
-        <div data-clr="lime"></div>
-        <div data-clr="cyan"></div>
-        <div data-clr="black"></div>
-        <div data-clr="orange"></div>
-        <div data-clr="white"></div>
-        <div data-clr="purple"></div>
-        <div data-clr="skyblue"></div>
-        <div data-clr="aquamarine"></div>
-        <div data-clr="magenta"></div>
-        <div data-clr="goldenrod"></div>
+        <div data-colour="green"></div>
+        <div data-colour="blue"></div>
+        <div data-colour="teal"></div>
+        <div data-colour="yellow"></div>
+        <div data-colour="brown"></div>
+        <div data-colour="lime"></div>
+        <div data-colour="cyan"></div>
+        <div data-colour="black"></div>
+        <div data-colour="orange"></div>
+        <div data-colour="white"></div>
+        <div data-colour="purple"></div>
+        <div data-colour="skyblue"></div>
+        <div data-colour="aquamarine"></div>
+        <div data-colour="magenta"></div>
+        <div data-colour="goldenrod"></div>
+        <blockquote>
+             <p>Wealth consists not in having great possessions, but in having few wants.</p>
+             <small>Epictetus</small>
+        </blockquote>
     </section>
 
     <script>
         const divElements = document.querySelectorAll('section div');
         divElements.forEach(div => {
-            div.style.backgroundColor = div.dataset.clr;
-            document.body.style.backgroundColor = divElements[Math.floor(Math.random() * divElements.length)].dataset.clr;
+            div.style.backgroundColor = div.dataset.colour;
+            setInterval(() => {
+                document.body.style.backgroundColor = divElements[Math.floor(Math.random() * divElements.length)].dataset.colour;
+            }, 12555);
             div.style.cursor = 'pointer'
-            div.addEventListener('click',()=>{
-                document.body.style.backgroundColor = div.dataset.clr
-        })
+            div.addEventListener('click', () => {
+                document.body.style.backgroundColor = div.dataset.colour
+            })
         });
     </script>
 </body>
+
 </html>
