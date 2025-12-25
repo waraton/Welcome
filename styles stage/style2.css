@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  line-height:1.75rem;
+  max-width: 100%;
+  /* overflow: hidden; */
+}
+img,svg{
+  max-width: 2rem;
+}
+body{
+  background: repeating-linear-gradient(blue 0 1px,antiquewhite 1px 2rem);
+  display: grid;
+  min-height: 100vh;
+  overflow: auto;
+  grid-template-rows:fit-content 1fr fit-content;
+  font-size: 120%;
+
+  grid-template-columns:  .5fr 1fr  .5fr ;
+  grid-template-areas:
+  'head head head'
+  'nav main aside'
+  'footer footer footer'
+    ;
+}
+body *{
+  overflow: hidden;
+}
+h1{
+  font-size:2.5rem;
+}
+main h2 + p:first-of-type::first-letter,
+main h3 + p:first-of-type::first-letter{
+  font-size: 4rem;
+  background-color: aquamarine;
+  padding-top: .125em;
+  margin: 0;
+  line-height: 1;
+  float: left;
+}
+h2,h3{
+  margin-block: .5rem 1rem;
+  font-size: 2.5rem;
+  line-height: 1.75;
+}
+p{
+  margin-block: .5rem 1rem;
+}
+main p:first-of-type{
+  background-color: rgba(185, 210, 233, 0.411);
+}
+body > *{
+  outline: .1em solid;
+}
+main{
+  grid-area: main;
+}
+body > header{
+  grid-area: head;
+}
+body > footer{
+  grid-area: footer;
+}
+body > aside{
+  padding: .5rem;
+}
+nav {
+  overflow: visible;
+  background-color: rgba(128, 128, 0, 0.479);
+  color: white;
+  position: fixed;
+  top:50%;
+  translate: 0 -50%;
+  font-size: .85rem;
+}
+nav li {
+  padding: .125rem .5rem;
+  margin: .5rem;
+  outline: 2px inset blue;
+}
+nav a{
+  line-height: .75;
+  display: inline-block;
+  min-width: 100%;
+}
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a:link{
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+.skip-link{
+  position: absolute;
+  right: .5rem;
+  background-color: blue;
+  top: .5rem;
+  padding: .12rem 2rem;
+}
+/* nav::after{
+  position: absolute;
+  content: '>';
+  background-color: rgba(185, 210, 233, 0.411);
+  left: 100%;
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 1.5rem;
+  text-align-last: center;
+  line-height: .5;
+  border: 2px solid blue;
+  top: 50%;
+  translate: 0 -50%;
+  aspect-ratio: 1;
+  border-radius: 0 5rem 5rem 0;
+} */
