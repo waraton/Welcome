@@ -4,7 +4,7 @@ int main()
   int b;
   register int a = 78;
   b = 23;
-  printf("\nIam doing `a bit wise` operations:");
+  printf("\nI am doing `a bit wise` operations:");
   printf("\n\tAND: %d & %d = %d", a, b, a & b);
   printf("\n\tOR: %d | %d = %d", a, b, a | b);
   printf("\n\tXOR: %d ^ %d = %d", a, b, a ^ b);
@@ -23,11 +23,11 @@ int main()
   printf("\nSize of long is %d bytes", sizeof(i));
   short j;
   printf("\nSize of short is %d bytes", sizeof(j));
-  printf("\n\vEnter \va value for e >>", sizeof(j));
-/* esca9ees */
-  printf("\\\naudible alert\a.back[\b]space.form feed \f. A new line\n. carriage return\r. tab\t. vertical tab \v. Qn mark\?. Backslash\\.Null\0");
-/* while */
-  while (a < /* 46 */85)
+  printf("\n\vEnter \vA value for e >>", sizeof(j));
+  /* escapees */
+  printf("\\\n audible alert\a.back[\b]space.form feed \f. A new line\n. carriage return\r. tab\t. vertical tab \v. Question mark\?. Backslash\\.Null\0");
+  /* while */
+  while (a < /* 46 */ 85)
   {
     printf("\n\nThis is the %dst value <c>", a - 77);
     a++;
@@ -40,16 +40,26 @@ int main()
   /* do while */
   do
   {
-    printf("\n\nThis is the %dst value", a - 77);
+    printf("\n\nThis is the %dst value\n", a - 77);
     a++;
   } while (a < 85);
-  /* nesting loos */
-  for (int i = 1; i < 25; i++){
-    for (int j = 1; j < (i - (15 - j)) ; j++)
+  /* nesting loops */
+  for (int i = 0; i < 30; i+=3)
+  {
+    for (int k =(30 - i); k > 0; k-=3)
     {
-    printf("*");
+      printf(" ");
     }
-    printf("\r\1");
+    for (int j = 0; j < (i * 2 - 3); j+=3)
+    {
+      if (j % 5 && i > 16 && i < 19)
+      {
+        printf("O");
+      }else printf(".");
+
+    }
+
+    printf("\n");
   }
 
   return 0;
