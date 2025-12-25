@@ -63,3 +63,71 @@ These pre-release channels have many experimental features enabled by default or
 **Labs**: For easy access to new features in stable/beta builds.
 
 **`about:config`**: For deep-dive developer flags, primarily in Nightly.
+
+## Somebody's Angel
+
+> Mandisa
+
+``` txt
+They say this is the best time of the year
+And for most of us that's probably how it feels
+But what about the ones left alone
+And all the people hurting,
+Looking for a glimpse of hope
+
+We could be that shining light
+To show the heart of Christmas time
+People need love
+And we all are able
+So take some time and start today
+To give some joy and hope away
+'Cause you might be
+You might be
+Somebody's angel
+
+We run and run
+We fill our schedules up
+The gifts, the rush
+Consume us all so much
+Salvation army Santa's ringing his bell
+Giving us a little reminder
+There's a world that needs our help
+
+We could be that shining light
+To show the heart of Christmas time
+People need love
+And we all are able
+So take some time and start today
+To give some joy and hope away
+'Cause you might be
+You might be
+Somebody's angel
+
+This Christmas
+Don't miss it
+The chance to love someone right where they are
+Don't miss it
+Don't miss it
+
+We could be that shining light
+To show the heart of Christmas time
+People need love
+And we all are able
+So take some time and start today
+To give some joy and hope away
+'Cause you might be
+You might be
+Somebody's angel
+
+'Cause you might be, somebody's
+Christmas angel
+Somebody's Christmas angel
+```
+
+**Written by**: Benjamin Glover
+
+**Album**: It's Christmas (Christmas Angel Edition)
+
+**Released**: 2008
+
+Lyrics provided by [Musixmatch](https://www.musixmatch.com/lyrics/Mandisa/Somebody-s-Angel)
