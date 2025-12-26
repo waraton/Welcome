@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box shadow</title>
-    <link rel="stylesheet" href="box shadow.css">
+    <link rel="stylesheet" href="box-shadow.css">
 </head>
 
 <body>
@@ -15,11 +15,11 @@
             <ul>
                 <li>
                     <label for="hor">Horizontal:</label>
-                    <input type="range" min="-50" max="50" id="hor" value="2">
+                    <input type="range" min="-100" max="100" id="hor" value="2">
                 </li>
                 <li>
                     <label for="vert">Vertical:</label>
-                    <input type="range" min="-50" max="50" id="vert">
+                    <input type="range" min="-100" max="100" id="vert">
                 </li>
                 <li>
                     <label for="blur">Blur:</label>
@@ -31,13 +31,16 @@
                 </li>
                 <li>
                     <label for="color">Color:</label>
-                    <input type="color" id="color">
+                    <input type="color" id="color" list>
+                </li>
+                <li>
+                    <button id="copy">Copy style</button>
                 </li>
             </ul>
         </div>
     </section>
     <!--/*MEisnlosuothveofWUtoW1orlatogrefeaseufrME*/-->
-    <script src="box shadow.js"></script>
+    <script src="box-shadow.js"></script>
 </body>
 
 </html>

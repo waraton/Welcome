@@ -13,8 +13,8 @@ body{
     background-color: cyan;
 }
 .obj{
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 410px;
     background-color: coral;
     padding: 20px;
     border: 2px solid white;
@@ -49,4 +49,29 @@ ul li{
     list-style: none;
     border-bottom: 1px solid rgba(255,255,255,.2);
     margin-bottom: 12px;
+}
+button{
+    padding: 0.5rem 2rem;
+    font: inherit;
+    border: none;
+    font-family: sans-serif;
+    border-radius: 2rem;
+    display: inline-block;
+    margin:0 auto;
+    box-shadow: 2px 2px 5px;
+    transition: .12s;
+}
+button:active{
+    outline: auto;
+    color: blue;
+    translate: 2px 1px;
+    box-shadow: none;
+}
+button:hover{
+    filter: brightness(1.2);
+    box-shadow: none;
+}
+li:has(button){
+    display: grid;
+    border-bottom: none;
 }
