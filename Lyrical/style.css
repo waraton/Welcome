@@ -48,5 +48,6 @@ figcaption{
   font: bold 8vmax/.95 sans-serif;
   user-select: none;
   transition: .5s;
-  background:linear-gradient(blue,orange)
+  background:linear-gradient(blue,orange);
+  mix-blend-mode: hard-light;
 }
