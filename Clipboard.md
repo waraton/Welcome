@@ -37,9 +37,9 @@ You can set experimental features in Firefox through **Firefox Labs** in **Setti
 
 This is for features directly in Settings, often appearing in Nightly/Beta builds first.
 
-- Open **Firefox Menu** (three lines) > **Settings** (or **Preferences** on macOS).
-- Click on **Firefox Labs** in the left-hand menu.
-- Toggle **features** on/off, read about them, and give feedback.
+1. Open **Firefox Menu** (three lines) > **Settings** (or **Preferences** on macOS).
+2. Click on **Firefox Labs** in the left-hand menu.
+3. Toggle **features** on/off, read about them, and give feedback.
 
 **Note**: *Labs might be hidden if **telemetry** is off; enabling **studies** and **data sharing** can make it visible.*
 
@@ -47,10 +47,10 @@ This is for features directly in Settings, often appearing in Nightly/Beta build
 
 For deeper, less-polished features, often web platform tests.
 
-- Type `about:config` in the address bar and press Enter.
-- Accept the **risk warning**.
-- Use the **search bar** to find specific preferences (e.g., `layout.css.subgrid.enabled`).
-- Toggle the true/false **switch** or use the **reset button** to change settings.
+1. Type `about:config` in the address bar and press Enter.
+1. Accept the **risk warning**.
+1. Use the **search bar** to find specific preferences (e.g., `layout.css.subgrid.enabled`).
+1. Toggle the true/false **switch** or use the **reset button** to change settings.
 
 **Caution**: *Changing settings here can break browser functionality; only do this if you know what you're changing.*
 
