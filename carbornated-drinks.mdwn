@@ -1,0 +1,15 @@
+# About your soft carbonated drinks
+
+## Typical Nutritional information
+
+| Nutrient                 | Unit | Mirinda | CocaCola |
+|--------------------------|------|---------|----------|
+| Energy                   | kcal |         | 180      |
+| Protein                  | g    |         | 0.0      |
+| Carbohydrates            | g    |         | 10.6     |
+| __of which total Sugar   | g    |         | 10.6     |
+| Total fat                | g    |         | 0.0      |
+| __of which Saturated Fat | g    |         | 0.0      |
+| Dietary Fibre            | g    |         | 0.0      |
+| Total Sodium             | mg   |         | 2        |
+jlk
