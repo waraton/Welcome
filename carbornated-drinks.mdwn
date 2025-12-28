@@ -1,15 +1,64 @@
-# About your soft carbonated drinks
+# ABOUT YOUR DRINKS
 
-## Typical Nutritional information
+## Carbonated Drinks
 
-| Nutrient                 | Unit | Mirinda | CocaCola |
-|--------------------------|------|---------|----------|
-| Energy                   | kcal |         | 180      |
-| Protein                  | g    |         | 0.0      |
-| Carbohydrates            | g    |         | 10.6     |
-| __of which total Sugar   | g    |         | 10.6     |
-| Total fat                | g    |         | 0.0      |
-| __of which Saturated Fat | g    |         | 0.0      |
-| Dietary Fibre            | g    |         | 0.0      |
-| Total Sodium             | mg   |         | 2        |
-jlk
+### Typical Nutritional information
+
+| Brand                    | Energy (kcal) | Protein (g) | Carbohydrates (g) [of which total Sugar   (g)] | Total fat [of which Saturated Fat] | Dietary Fibre (g) | Total Sodium (mg) |
+|--------------------------|--------------:|------------:|-----------------------------------------------:|-----------------------------------:|------------------:|------------------:|
+| [COCA-COLA][1]           |           180 |         0.0 |                                    10.6 (10.6) |                          0.0 (0.0) |               0.0 |                 2 |
+| [FANTA][2]               |          36.3 |         0.0 |                                      8.9 (8.9) |                          0.0 (0.0) |               0.0 |               5.8 |
+| [PEPSI][3]               |            27 |         0.0 |                                        7 (7.0) |                          0.0 (0.0) |               0.0 |                10 |
+| [NOVIDA][4]              |            48 |         0.1 |                                    11.6 (11.6) |                          0.0 (0.0) |               0.0 |               6.8 |
+| [MIRINDA FRUITY][5]      |            27 |         0.0 |                                      6.8 (6.8) |                          0.0 (0.0) |               0.0 |                21 |
+| [MIRINDA PINEAPPLE][6]   |            51 |         0.0 |                                    13.4 (13.4) |                          0.0 (0.0) |               0.0 |              21.7 |
+| [MIRINDA GREEN APPLE][7] |            49 |         0.0 |                                    12.8 (12.8) |                          0.0 (0.0) |               0.0 |               5.2 |
+| [MOUNTAIN DEW][8]        |            27 |         0.0 |                                      7.0 (7.0) |                          0.0 (0.0) |                 - |                15 |
+| [SPRITE][9]              |            33 |         0.0 |                                      8.0 (8.0) |                          0.0 (0.0) |               0.0 |               5.0 |
+
+**Note:** Composition per 100ml
+
+### Coca-Cola
+
+**Label:**
+Coca-Cola Original taste carbonated soft drink
+
+**Ingredients:**
+Carbonated water, Sugar, Colour: Caramel, Acidulant: Phosphoric acid, Flavouring and Caffein.
+
+**Bottled by:**
+COCA-COLA Beverages Uganda LTD,
+
+**Email:** <ccbaug@ccbagroup.com>
+
+&copy; The Coca-cola company
+
+***
+
+### Fanta - Carbonated orange flavoured drink
+
+**Label:**
+Fanta Carbonated orange flavoured drink
+
+**Ingredients:**
+Carbonated water, sugar, acidulant (Citric acid), stabilisers (Acacia gum (INS414), Sucrose Acetate Isobutyrate (INS444), Xantham gum (INS415), Glycerol Ester of wood rosin (INS445)), preservative (Sodium Benzoate), flavouring, non-nutritive sweeteners (Sodium  Cylamate, Sodium Saccharin), colourant (sunset-yellow), and antioxiant(Ascorbic acid).
+
+**Bottled by:**
+COCA-COLA Beverages Uganda LTD,
+
+**Email:** <ccbaug@ccbagroup.com>
+
+&copy; The Coca-cola company
+
+***
+
+## Bottled WATER
+
+| Brand    | Sodium | Potassium | Calcium | Magnesium | Iron | Chloride | Sulphate | Flouride | Nitrate | TDS |  PH range |
+|----------|-------:|----------:|--------:|----------:|-----:|---------:|---------:|---------:|--------:|-----|----------:|
+| Rwenzori |    9.1 |       3.8 |    10.1 |       3.5 | 0.04 |      2.6 |      4.2 |      0.3 |     1.6 | 108 | 5.5 - 8.5 |
+
+**Note:** composition ppm
+
+[1]: #coca-cola "Original Taste Carbonated Soft Drink"
+[2]: #fanta---carbonated-orange-flavoured-drink
