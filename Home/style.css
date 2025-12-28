@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+body{
+  background-color: skyblue;
+}
+header{
+  background-color: teal;
+  color: white;
+  padding: 1rem;
+  font-family: harrington;
+  font-size: 2rem;
+  text-align: center;
+}
+main{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+  width: clamp(320px, 85vw, 800px);
+  margin: auto;
+  justify-content: center;
+  gap: 1rem;
+}
+figure{
+  border: .1px solid;
+  object-fit: cover;
+  display: grid;
+  padding: .5rem;
+  max-width: 85vw;
+}
+div:has(img){
+  outline: teal .5rem solid;
+  outline-offset: -.75rem;
+  border-radius: 0 8.5rem 0 5rem;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+figcaption{
+  display: grid;
+  gap: .5rem;
+  text-align: center;
+}
+img{
+  max-width: 100%;
+  object-fit: contain;
+}
