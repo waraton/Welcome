@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description">
+  <link rel="styleSheet" href="style.css" type="text/css" media="all" />
+  <title>No Internet Connection</title>
+  <style>
+    :root{
+      --width: 55vmin;
+      --bgColor: skyblue;
+      --lineWidth: calc(var(--width) / 18);
+      --lineColor: rgb(255, 255, 255);
+    }
+    body{
+      background-color: var(--bgColor);
+      padding: 0;
+      margin: 0;
+    }
+    div{
+      margin: auto;
+      width: var(--width);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: var(--lineWidth) solid var(--lineColor);
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+                                        #1210 calc(-1 * var(--lineWidth)) calc(100%/3 - var(--lineWidth)),
+                                        var(--lineColor) calc(100%/3 - var(--lineWidth)) calc(100% / 3))
+    }
+    div::before{
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      height: 100%;
+      width: 40%;
+      inset: 0;
+      margin: auto;
+      border: var(--lineWidth) solid var(--lineColor);
+    }
+    div::after{
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      background: var(--bgColor) linear-gradient(45deg,
+                                      #1210 calc(50% - .5 * var(--lineWidth)),
+                                      var(--lineColor) 25% calc(50% + .5 * var(--lineWidth)),
+                                      #1210 calc(50% + .5 * var(--lineWidth)));
+      height: 40%;
+      width: 40%;
+      inset: auto 0 0 auto;
+      margin: auto;
+      border: var(--lineWidth) solid var(--lineColor);
+      box-shadow: 0 0 0 var(--lineWidth) var(--bgColor);
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
