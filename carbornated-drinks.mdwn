@@ -4,17 +4,17 @@
 
 ### Typical Nutritional information
 
-| Brand                    | Energy (kcal) | Protein (g) | Carbohydrates (g) [of which total Sugar   (g)] | Total fat [of which Saturated Fat] | Dietary Fibre (g) | Total Sodium (mg) |
-|--------------------------|--------------:|------------:|-----------------------------------------------:|-----------------------------------:|------------------:|------------------:|
-| [COCA-COLA][1]           |           180 |         0.0 |                                    10.6 (10.6) |                          0.0 (0.0) |               0.0 |                 2 |
-| [FANTA][2]               |          36.3 |         0.0 |                                      8.9 (8.9) |                          0.0 (0.0) |               0.0 |               5.8 |
-| [PEPSI][3]               |            27 |         0.0 |                                        7 (7.0) |                          0.0 (0.0) |               0.0 |                10 |
-| [NOVIDA][4]              |            48 |         0.1 |                                    11.6 (11.6) |                          0.0 (0.0) |               0.0 |               6.8 |
-| [MIRINDA FRUITY][5]      |            27 |         0.0 |                                      6.8 (6.8) |                          0.0 (0.0) |               0.0 |                21 |
-| [MIRINDA PINEAPPLE][6]   |            51 |         0.0 |                                    13.4 (13.4) |                          0.0 (0.0) |               0.0 |              21.7 |
-| [MIRINDA GREEN APPLE][7] |            49 |         0.0 |                                    12.8 (12.8) |                          0.0 (0.0) |               0.0 |               5.2 |
-| [MOUNTAIN DEW][8]        |            27 |         0.0 |                                      7.0 (7.0) |                          0.0 (0.0) |                 - |                15 |
-| [SPRITE][9]              |            33 |         0.0 |                                      8.0 (8.0) |                          0.0 (0.0) |               0.0 |               5.0 |
+| Brand                    | Energy (kcal) | Protein (g) | Carbohydrates (g) [of which total Sugar (g)] | Total fat [of which Saturated Fat] | Dietary Fibre (g) | Total Sodium (mg) |
+|--------------------------|--------------:|------------:|---------------------------------------------:|-----------------------------------:|------------------:|------------------:|
+| [COCA-COLA][1]           |           180 |         0.0 |                                  10.6 (10.6) |                          0.0 (0.0) |               0.0 |                 2 |
+| [FANTA][2]               |          36.3 |         0.0 |                                    8.9 (8.9) |                          0.0 (0.0) |               0.0 |               5.8 |
+| [PEPSI][3]               |            27 |         0.0 |                                      7 (7.0) |                          0.0 (0.0) |               0.0 |                10 |
+| [NOVIDA][4]              |            48 |         0.1 |                                  11.6 (11.6) |                          0.0 (0.0) |               0.0 |               6.8 |
+| [MIRINDA FRUITY][5]      |            27 |         0.0 |                                    6.8 (6.8) |                          0.0 (0.0) |               0.0 |                21 |
+| [MIRINDA PINEAPPLE][6]   |            51 |         0.0 |                                  13.4 (13.4) |                          0.0 (0.0) |               0.0 |              21.7 |
+| [MIRINDA GREEN APPLE][7] |            49 |         0.0 |                                  12.8 (12.8) |                          0.0 (0.0) |               0.0 |               5.2 |
+| [MOUNTAIN DEW][8]        |            27 |         0.0 |                                    7.0 (7.0) |                          0.0 (0.0) |               0.0 |                15 |
+| [SPRITE][9]              |            33 |         0.0 |                                    8.0 (8.0) |                          0.0 (0.0) |               0.0 |               5.0 |
 
 **Note:** Composition per 100ml
 
@@ -32,6 +32,43 @@ COCA-COLA Beverages Uganda LTD,
 **Email:** <ccbaug@ccbagroup.com>
 
 &copy; The Coca-cola company
+
+***
+
+### Mirinda Fruity
+
+**Label:**
+Mirinda Fruity Mixed berry flavoured carbonated soft drink
+
+**Ingredients:**
+Carbonated water, Sugar, Colour (Caramel, allura red), flavours (berries), acidity regulators (citric acid, sodium citrate), preservatives (potassium sorbate, sodium benzoate), non-nutritive sweeteners (acesulfame potasium, sucralose), sequestrant (sodium bicalcium EDTA).
+
+**Produced and bottled in uganda by:**
+Crown Beverages Uganda limited
+
+Under the Authority of PepsiCo Inc, Purchase N.Y., USA
+
+**Email:** <info@pepsi-cola.co.ug>
+
+Mirinda and the Mirinda Stylized logo are trade marks of PepsiCola Inc
+
+***
+
+### Mountain Dew ~ Citrus Blast
+
+**Label:**
+Mountain Dew ~ Citrus Blast - Citrus flavoured carbonated soft drink
+
+**Ingredients:**
+Carbonated water, Sugar, acidity regulators (citric acid, sodium citrate), flavours (including caffein), preservative (sodium benzoate), non-nutritive sweeteners (acesulfame potassium, sucralose), stabilisers (gum arabic, glycerol ester of wood rosin), Colour (tetrazine), sequestrant (sodium bicalcium EDTA).
+
+**Produced and bottled in uganda by:**
+Crown Beverages Uganda limited.
+Under the Authority of PepsiCo Inc, Purchase N.Y., USA
+
+**Email:** <info@pepsi-cola.co.ug>
+
+Mountain Dew and the Mountain Dew logo are trade marks of PepsiCola Inc
 
 ***
 
@@ -62,3 +99,5 @@ COCA-COLA Beverages Uganda LTD,
 
 [1]: #coca-cola "Original Taste Carbonated Soft Drink"
 [2]: #fanta---carbonated-orange-flavoured-drink
+[5]: #mirinda-fruity 'Mirinda Fruity Mixed berry flavoured carbonated soft drink'
+[8]: #mountain-dew-citrus-blast 'Mountain Dew Citrus Blast - Citrus flavoured carbonated soft drink'
