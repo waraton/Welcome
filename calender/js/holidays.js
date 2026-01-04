@@ -1,0 +1,20 @@
+export const holidays = [
+  [`01-01`, `New year`],
+  [`12-25`, `Christmas`],
+  [`12-25`, `Kiden's Birthday`],
+  [`07-30`, `Newton's Birthday`],
+  [`05-25`, `Jansuk's Birthday`],
+  [`07-11`, `South Sudan Independence day`],
+  [`09-10`, `Uganda independence day`],
+  [`06-03`, `Uganda Martyrs day`],
+  [`12-27`, `Cyrus's Birthday`],
+  [`03-23`, `Fiona's Birthday`],
+  [`01-06`, `Meeting of elders`, 2026],
+  [`01-15`, `Election`, 2026],
+  [`01-16`, `Election`, 2026],
+  [`01-06`, `Search Journal webinar`, 2026],
+  [`01-03`, `Uncle travelled to Juba`, 2026],
+  [`01-08`, `Inno travelled to the camp`, 2026],
+  [`06-10`, `Abe's Birthday`],
+  [`12-30`, `Ivan's Birthday`]
+].sort();
