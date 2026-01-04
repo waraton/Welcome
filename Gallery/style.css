@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: skyblue;
+}
+main{
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+section:has(figure){
+  width: clamp(325px,85vw,500px);
+  display: grid;
+  position: relative;
+  max-height: 95vh;
+}
+section>figure{
+  width: 95%;
+  max-height: 100%;
+  object-fit: cover;
+  margin: auto;
+  border: 1rem groove green;
+  aspect-ratio: .75;
+  overflow: hidden;
+  background-image: url(imagesGallery/img2.jpg),linear-gradient(
+    green,orange,blue
+  );
+  background-size: cover;
+  background-position: center;
+}
+.buttons button{
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  font-size: 2rem;
+  opacity: .75;
+  border-radius: 55%;
+  padding: .5rem;
+  cursor: pointer;
+  translate: -50% -50% ;
+}
+button:last-child{
+  inset-inline:auto 1rem;
+  translate: 50% -50% ;
+}
