@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background:
+  repeating-linear-gradient(25deg,rgba(128, 128, 128, 0.5) 5%, #1211, gainsboro 18%)  25% 5% fixed,
+  repeating-linear-gradient(35deg,rgba(128, 128, 128, 0.5) 5%, #1211, gainsboro 18%)  25% 5% fixed;
+}
+section:has(table){
+  margin: auto;
+  width: clamp(320px,65vw,500px);
+  font-family: sans-serif;
+}
+table{
+  border-collapse: collapse;
+  border-block: 2px solid;
+}
+section h2{
+  font-size: 2.5rem;
+  margin-block: 1rem 0.25rem;
+}
+caption{
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+thead{
+  border-block: 2px solid;
+}
+table td,table th{
+  border-block-start: 1px solid;
+  padding: .25rem 1rem;
+  text-transform: capitalize;
+}
+tbody td:last-child{
+  text-align: right;
+}
+section p:has(small){
+  font-style: italic;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+tbody tr{
+  background-repeat: no-repeat;
+  color: gray;
+  transition: .15s;
+}
+tbody tr td{
+  mix-blend-mode: color-dodge;
+  transition: .15s;
+}
+tbody tr td:last-child{
+  color: black;
+  mix-blend-mode: normal;
+}
+tbody tr:hover{
+  outline: solid 2px;
+  outline-offset: -2px;
+}
+tbody tr:hover td:first-child{
+  border-right: solid 1px;
+  outline-offset: -2px;
+}
