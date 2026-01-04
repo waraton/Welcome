@@ -1,4 +1,5 @@
 import Month from "./createMonth.js";
+import { holidays } from "./holidays.js";
 import { months, days } from "./monthsArray.js";
 
 const calender = document.getElementById("calender");
@@ -35,8 +36,11 @@ months.forEach((month, index) => {
       dayCount < monthData.daysInThisMonth + (firstOfMonth + daysInAWeek)
     ) {
       day.textContent = dayCount - firstOfMonth - daysInAWeek + 1;
+      day.dataset.date = `${monthData.year}-${month}-${
+        dayCount - firstOfMonth - daysInAWeek + 1
+      }`;
     }
-    if (dayCount === weeksInTheMonth * daysInAWeek - 1) {
+    if (dayCount === weeksInTheMonth * daysInAWeek) {
       day.style.gridRowEnd = weeksInTheMonth + 1;
       day.textContent = month;
       day.classList.add(`heading`);
@@ -51,5 +55,29 @@ months.forEach((month, index) => {
     ) {
       day.classList.add(`thisDay`);
     }
+  }
+});
+holidays.forEach((holiday) => {
+  let year;
+  if (holiday[2]) {
+    year = holiday[2];
+  } else {
+    year = new Date().getFullYear();
+  }
+  const dateData = `${year}-${holiday[0]}`;
+  const date = new Date(dateData);
+  const [month, day] = [
+    date.toLocaleString("en", { month: "long" }).toLocaleLowerCase(),
+    date.getDate(),
+  ];
+  const element = calender.querySelector(
+    `[data-date='${year}-${month}-${day}']`
+  );
+  if (element) {
+    const newElement = document.createElement(`div`);
+    newElement.innerHTML = `<a href='#id${dateData}'>${dateData}</a>: ${holiday[1]}`;
+    calender.appendChild(newElement);
+    element.classList.add(`holiday`);
+    element.id = `id${dateData}`;
   }
 });
