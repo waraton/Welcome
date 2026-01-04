@@ -3,9 +3,9 @@ export default class CreateYear {
     const aboutYear = new Date();
     const year = aboutYear.getFullYear();
     const [typeOfYear, daysInYear, daysInFebruary] =
-      year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
-        ? ["leapYear", 365, 28]
-        : ["normalYear", 366, 29];
+      year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)
+        ? ["leapYear", 366, 29]
+        : ["normalYear", 365, 28];
 
     const month = aboutYear
       .toLocaleString("en", {
