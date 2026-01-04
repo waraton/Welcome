@@ -10,7 +10,7 @@ const showOrHide = document.getElementById("showOrHide");
 generatePassword.disabled = true;
 copyPassword.disabled = true;
 output.textContent = "Select length..";
-output.classList.add('error')
+output.classList.add("error");
 
 generatePassword.addEventListener("click", generate);
 
@@ -19,12 +19,12 @@ lengthPassword.addEventListener("input", () => {
     output.textContent = "Enter a length > 8";
     generatePassword.disabled = true;
     copyPassword.disabled = true;
-    output.classList.add('error')
+    output.classList.add("error");
   } else {
     copyPassword.disabled = false;
     generatePassword.disabled = false;
     output.textContent = "Click generate";
-    output.classList.remove('error')
+    output.classList.remove("error");
   }
 });
 
@@ -56,3 +56,35 @@ function paste() {
 }
 document.querySelector("[paste]").addEventListener("click", paste);
 document.querySelector("[show]").addEventListener("click", showHide);
+
+const strongPassword = document.getElementById("strongPassword");
+const bgImage = document.querySelector(`[bg]`);
+
+strongPassword.addEventListener(`input`, (e) => {
+  const length = e.target.value.length;
+  const blur = 12 - length;
+  bgImage.style.filter = `blur(${blur}px)`;
+});
+
+const allPasswords = document.querySelectorAll(`input[type='password']`);
+const submit = document.querySelector(`[submit]`);
+submit.disabled = true;
+allPasswords.forEach((auth) => {
+  auth.addEventListener(`input`, (e) => {
+    if (e.target.value.length < 8) {
+      document.querySelector(
+        `section:has(#${e.target.id})`
+      ).style.borderColor = `#911`;
+      submit.disabled = true;
+      e.target.style.outline = `auto orange`;
+    } else {
+      document.querySelector(
+        `section:has(#${e.target.id})`
+      ).style.borderColor = `#fff`;
+      e.target.style.outline = `auto green`;
+      e.target.style.borderColor = `#1211`;
+      submit.disabled = false;
+    }
+  });
+});
+
