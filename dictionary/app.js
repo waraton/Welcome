@@ -15,7 +15,7 @@ document
     e.preventDefault();
     if (WORD.value) {
       fetchDictionaryDefinition(WORD.value);
-    } else document.querySelector(`article#dict`).textContent += `ERROR1`;
+    } else document.querySelector(`article#dict`).textContent = `ERROR. check console`;
   });
 
 async function fetchDictionaryDefinition(WORD) {
