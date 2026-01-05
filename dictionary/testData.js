@@ -268,11 +268,15 @@ export function renderDefinitions(DATA) {
     const ELEMENT = document.createElement(`section`);
     ELEMENT.classList.add("word");
     dictionaryElement.appendChild(ELEMENT);
-    ELEMENT.innerHTML = `<h2>${data.word} </h2>`;
+    ELEMENT.innerHTML = `<h2>${data.word} <span></span></h2>`;
+    const sounds = [];
     data.phonetics.forEach((phonetic) => {
-      if (phonetic.text) {
-        ELEMENT.firstElementChild.textContent += ` ${phonetic.text} `;
+      let sound = phonetic.text;
+
+      if (sound && !sounds.includes(sound)) {
+        sounds.push(sound);
       }
+      ELEMENT.lastElementChild.lastElementChild.innerHTML = `[${sounds.join(`, `)}]`;
     });
 
     const meanings = document.createElement(`p`);
@@ -296,7 +300,7 @@ export function renderDefinitions(DATA) {
     ELEMENT.append(meanings);
 
     const licence = document.createElement(`p`);
-    licence.innerHTML = `Source: <a href='${data.license.url}'>${data.license.name}</a>`;
+    licence.innerHTML = `Licenced as: <a href='${data.license.url}'>${data.license.name}</a>`;
     ELEMENT.append(licence);
   });
 }
