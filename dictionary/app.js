@@ -8,25 +8,30 @@ import { testData2, renderDefinitions } from "./testData.js";
  */
 renderDefinitions(testData2);
 const WORD = document.querySelector(`input[id='word']`);
+const dictionaryElement = document.querySelector(`article#dict`);
+let loadingStatus = false
 
 document
   .querySelector(`input[type='submit']`)
   .addEventListener(`click`, (e) => {
     e.preventDefault();
     if (WORD.value) {
+      loadingStatus = true
       fetchDictionaryDefinition(WORD.value);
-    } else document.querySelector(`article#dict`).textContent = `ERROR. check console`;
+    } else {
+      dictionaryElement.textContent = `ERROR Encountered!`;
+    }
   });
 
 async function fetchDictionaryDefinition(WORD) {
   try {
+    var now = new Date();
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${WORD}`
     );
     const data = await response.json();
 
     if (response.ok) {
-      console.log(response);
       renderDefinitions(data);
     } else {
       console.log(response);
@@ -41,5 +46,13 @@ async function fetchDictionaryDefinition(WORD) {
       `article`
     ).textContent = `ERROR ocurred. Check console`;
     throw new Error(`ERROR >>`, error);
+  } finally {
+    loadingStatus = false
+    const timeLoading = new Date().getTime() - now.getTime();
+    console.log(`Fetch attempt completed in ${timeLoading} ms`);
   }
+}
+
+while (loadingStatus) {
+  console.log("Loading...");
 }
