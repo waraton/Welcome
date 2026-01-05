@@ -1,4 +1,4 @@
-const testData = [
+export const testData = [
   {
     word: "hello",
     phonetics: [
@@ -39,11 +39,7 @@ const testData = [
       {
         partOfSpeech: "verb",
         definitions: [
-          {
-            definition: 'To greet with "hello".',
-            synonyms: [],
-            antonyms: [],
-          },
+          { definition: 'To greet with "hello".', synonyms: [], antonyms: [] },
         ],
         synonyms: [],
         antonyms: [],
@@ -97,7 +93,7 @@ const testData = [
     sourceUrls: ["https://en.wiktionary.org/wiki/hello"],
   },
 ];
-const testData2 = [
+export const testData2 = [
   {
     word: "king",
     phonetic: "/kɪŋ/",
@@ -259,3 +255,48 @@ const testData2 = [
     ],
   },
 ];
+
+/**
+ *@param {Array} DATA returned object, send to renderDefinitions function
+ */
+
+export function renderDefinitions(DATA) {
+  const dictionaryElement = document.querySelector(`article#dict`);
+  dictionaryElement.textContent = ``;
+
+  DATA.forEach((data) => {
+    const ELEMENT = document.createElement(`section`);
+    ELEMENT.classList.add("word");
+    dictionaryElement.appendChild(ELEMENT);
+    ELEMENT.innerHTML = `<h2>${data.word} </h2>`;
+    data.phonetics.forEach((phonetic) => {
+      if (phonetic.text) {
+        ELEMENT.firstElementChild.textContent += ` ${phonetic.text} `;
+      }
+    });
+
+    const meanings = document.createElement(`p`);
+    data.meanings.forEach((meaning) => {
+      const newMeaning = document.createElement(`p`);
+      newMeaning.innerHTML = `<h3>${meaning.partOfSpeech}</h3>`;
+
+      const definitions = document.createElement(`ol`);
+      meaning.definitions.forEach((definition) => {
+        const aGivenMeaning = document.createElement(`li`);
+        aGivenMeaning.innerHTML = `<p>${definition.definition}</p>`;
+        if (definition.example) {
+          aGivenMeaning.innerHTML += `<q>${definition.example}</q>`;
+        } else;
+        definitions.append(aGivenMeaning);
+      });
+      newMeaning.append(definitions);
+
+      meanings.appendChild(newMeaning);
+    });
+    ELEMENT.append(meanings);
+
+    const licence = document.createElement(`p`);
+    licence.innerHTML = `Source: <a href='${data.license.url}'>${data.license.name}</a>`;
+    ELEMENT.append(licence);
+  });
+}
