@@ -12,18 +12,19 @@
     <h1>Get A Bible Verse</h1>
   </header>
   <main>
-    <blockquote>
-      <p class="verse"></p>
-      <small class="reference"></small>
-    </blockquote>
     <form>
       <ul>
-        <li><label for="book">Book: </label><input type="text" name="book" id="book"></li>
-        <li><label for="chapter">Chapter: </label><input type="number" name="chapter" id="chapter"></li>
-        <li><label for="verse">Verse: </label><input type="number" name="verse" id="verse"></li>
+        <li><label for="book">Book: </label><input type="text" name="book" id="book" list="books"></li>
+        <li><label for="chapter">Chapter: </label><input type="number" name="chapter" id="chapter" min="1"></li>
+        <li><label for="verse">Verse: </label><input type="text" name="verse" id="verse"></li>
       </ul>
       <button>Get Verse</button>
+      <datalist></datalist>
     </form>
+    <blockquote>
+      <p class="verse">But he that doeth truth cometh to the light, that his deeds may be made manifest, that they are wrought in God.</p>
+      <small class="reference">John 3:21</small>
+    </blockquote>
   </main>
 <script src="app.js"></script>
 </body>
