@@ -25,13 +25,10 @@ async function fetchJson(BOOK, CHAPTER, VERSE) {
     verse.textContent = data.text;
     reference.textContent = `${
       data.reference
-    }(${data.translation_id.toUpperCase()})`;
+    } (${data.translation_id.toUpperCase()})`;
   } catch (error) {
     console.error(error);
   }
-  /* const res2 = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${BOOK}`)
-  const  data2 = await res2.json()
-   console.table(data2); */
 }
 
 const bibleBooks = [
@@ -109,8 +106,8 @@ bibleBooks.forEach((book) => {
 });
 
 inputs[1].addEventListener(`input`, () => {
-  const in1 = inputs[0].value.toLowerCase();
-  const max = document.querySelector(`datalist *[value='${in1}']`);
-  inputs[1].max = max.dataset.max;
-  inputs[1].title = `Maximum chapters: ${max.dataset.max}`;
+  const book = inputs[0].value.toLowerCase();
+  const maxChapters = document.querySelector(`datalist *[value='${book}']`).dataset.max;
+  inputs[1].max = maxChapters;
+  inputs[1].title = `Maximum chapters: ${maxChapters}`;
 });
