@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  flex-direction: column;
+  background-color: hsl(245, 25%, 25%);
+}
+canvas {
+  border: 2px solid skyblue;
+  background-color: black;
+}
+button{
+  justify-self: center;
+  margin: .5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  outline: .2rem solid orange;
+  outline-offset: -.2rem;
+  border: none;
+}
+button:hover{
+  filter: invert() drop-shadow(-.1rem -.1rem .25rem white);
+}
+button:active{
+  filter: invert();
+}
