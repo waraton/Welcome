@@ -5,6 +5,11 @@ const mutate = document.getElementById("mutate");
 const SIZE = 600;
 canvas.width = SIZE;
 canvas.height = SIZE;
+ctx.lineCap = 'round'
+ctx.shadowColor = '#2fa2'
+ctx.shadowBlur = 8
+ctx.shadowOffsetX = 5
+ctx.shadowOffsetY = 5
 /** PROPERTIES
  *
  * @constant SIDES define sides of the fractal
