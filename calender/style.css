@@ -64,7 +64,6 @@ section > span {
   word-break: break-all;
   vertical-align: middle;
   text-transform: uppercase;
-  border-radius: 0%;
   letter-spacing: 0.75ch;
   padding: 0% 0.75rem;
   border-radius: 0 0.5rem 0.5rem 0;
@@ -82,16 +81,16 @@ section > span {
   text-transform: uppercase;
 }
 [month] span.thisDay {
-  background-color: grey;
-  font-size: 1.25rem;
   color: white;
   text-transform: uppercase;
-  border: 2px solid;
+  border: none;
+  font-family:consolas, 'Courier New', Courier, monospace;
+  outline: auto;
 }
-.holiday.holiday.holiday{
+.holiday.holiday{
   border-radius: 0;
   color: skyblue;
   background-color: brown;
-  outline: inset .2rem;
+  outline: double .2rem;
   outline-offset: -.2rem;
 }
