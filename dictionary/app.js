@@ -37,7 +37,7 @@ async function fetchDictionaryDefinition(WORD) {
       console.log(response);
       document.querySelector(
         `article#dict`
-      ).innerHTML = `<h2>${response.status}: ${data.title}</h2>
+      ).innerHTML = `<h2>${response.status}: ${data.title} for ${WORD} (:</h2>
       <p>${data.message}</p>
       <p>${data.resolution}</p>`;
     }
@@ -51,8 +51,4 @@ async function fetchDictionaryDefinition(WORD) {
     const timeLoading = new Date().getTime() - now.getTime();
     console.log(`Fetch attempt completed in ${timeLoading} ms`);
   }
-}
-
-while (loadingStatus) {
-  console.log("Loading...");
 }
