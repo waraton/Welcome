@@ -40,7 +40,8 @@ function drawFractal() {
 function drawBranch(level, maxLevel, diverge, scale, branches, hue) {
   if (level > maxLevel) return;
   const branchSize = SIZE * 0.25;
-  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+  let lightness = 8 + level * 8
+  ctx.strokeStyle = `hsl(${hue}, 75%, ${lightness}%)`;
   ctx.beginPath();
   ctx.moveTo(0, 0);
   ctx.lineTo(branchSize, 0);
