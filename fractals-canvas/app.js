@@ -57,7 +57,7 @@ function drawBranch(level, maxLevel, diverge, scale, branches, hue) {
     ctx.save();
     ctx.translate(ref, 0);
     ctx.scale(scale, scale);
-    ctx.rotate(diverge * (i - (branches - diverge * 5 ) / 2));
+    ctx.rotate(diverge);
     drawBranch(level + 1, maxLevel, diverge, scale, branches, hue);
     ctx.restore();
   }
