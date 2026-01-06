@@ -25,11 +25,11 @@ ctx.shadowOffsetY = 5
 function drawFractal() {
   const hue = Math.random() * 360;
   const lineWidth = Math.random() * 5 + 5;
-  const SIDES = 5;
+  const SIDES = 6;
   const maxLevel = 5;
-  const diverge = Math.random() * 3 - 2;
+  const diverge = Math.random() * .5 + .4;
   const scale = Math.random() * 0.1 + 0.5;
-  const branches = 4 ;
+  const branches = 5;
 
   ctx.clearRect(0, 0, SIZE, SIZE);
   ctx.lineWidth = lineWidth;
@@ -44,8 +44,8 @@ function drawFractal() {
 
 function drawBranch(level, maxLevel, diverge, scale, branches, hue) {
   if (level > maxLevel) return;
-  const branchSize = SIZE * 0.25;
-  let lightness = 5 + level * 15
+  const branchSize = SIZE * 0.125;
+  let lightness = 15 + level * 15
   ctx.strokeStyle = `hsl(${hue}, 50%, ${lightness}%)`;
   ctx.beginPath();
   ctx.moveTo(0, 0);
@@ -57,7 +57,7 @@ function drawBranch(level, maxLevel, diverge, scale, branches, hue) {
     ctx.save();
     ctx.translate(ref, 0);
     ctx.scale(scale, scale);
-    ctx.rotate(diverge);
+    ctx.rotate(diverge * i * 2 / branches - diverge);
     drawBranch(level + 1, maxLevel, diverge, scale, branches, hue);
     ctx.restore();
   }
