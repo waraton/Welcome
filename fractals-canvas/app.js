@@ -27,9 +27,9 @@ function drawFractal() {
   const lineWidth = Math.random() * 5 + 5;
   const SIDES = 6;
   const maxLevel = 5;
-  const diverge = Math.random() * .5 + .4;
-  const scale = Math.random() * 0.1 + 0.5;
-  const branches = 5;
+  const diverge = Math.random() * .5 + .5;
+  const scale = Math.random() * 0.1 + 0.7;
+  const branches = 4;
 
   ctx.clearRect(0, 0, SIZE, SIZE);
   ctx.lineWidth = lineWidth;
