@@ -27,10 +27,10 @@ class Fractal {
     this.scale = Math.random() * 0.1 + 0.7;
     this.branches = 4;
     this.branchSize = SIZE * 0.125;
+    this.drawMode = drawMode;
   }
 
   draw(ctx) {
-    ctx.clearRect(0, 0, SIZE, SIZE);
     ctx.lineWidth = this.lineWidth;
     ctx.save();
     ctx.translate(canvas.width / 2, canvas.height / 2);
@@ -44,11 +44,19 @@ class Fractal {
   drawBranch(ctx, level) {
     if (level > this.maxLevel) return;
     let lightness = 15 + level * 15;
-    ctx.strokeStyle = `hsl(${this.hue}, 50%, ${lightness}%)`;
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(this.branchSize, 0);
-    ctx.stroke();
+
+    if (this.drawMode === 'branched') {
+      ctx.strokeStyle = `hsl(${this.hue}, 50%, ${lightness}%)`;
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(this.branchSize, 0);
+      ctx.stroke();
+    } else if (this.drawMode === `circles`) {
+      ctx.fillStyle = `hsl(${this.hue - 10}, 70%, ${lightness + 5}%)`;
+      ctx.beginPath();
+      ctx.arc(this.branchSize + 12, 12, this.lineWidth, 0, Math.PI * 2);
+      ctx.fill();
+    }
 
     for (let i = 0; i < this.branches; i++) {
       const ref = this.branchSize - (this.branchSize / this.branches) * i;
@@ -63,7 +71,10 @@ class Fractal {
 }
 
 function drawFractal() {
-  const fractal = new Fractal();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const fractal = new Fractal("branched");
+  fractal.draw(ctx);
+  fractal.drawMode = `circles`;
   fractal.draw(ctx);
 }
 

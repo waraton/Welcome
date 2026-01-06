@@ -11,6 +11,7 @@ body {
 canvas {
   border: 5px solid skyblue;
   background-color: black;
+  background: url(fractalImages/fractal6.png) center / cover ;
 }
 button{
   justify-self: center;
