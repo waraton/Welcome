@@ -81,3 +81,22 @@ holidays.forEach((holiday) => {
     element.id = `id${dateData}`;
   }
 });
+
+setInterval(() => {
+  const now = new Date();
+  const nowHour = new Date().getHours();
+  const nowMinutes = new Date().getMinutes();
+  const thisHour = (nowHour + nowMinutes / 60) * 15;
+  document.body.style.background = `
+      conic-gradient(
+            #0000 0,
+            hsl(${nowMinutes * 6} 75% 50%  / 50%) 0 ${nowMinutes * 6}deg,
+            #0000 ${nowMinutes * 6}deg
+      ) center no-repeat fixed,
+      linear-gradient(${thisHour - 90}deg,
+            hsl(${thisHour} 75% 50%) 0% 49%,
+            hsl(${180 - thisHour} 75% 50%) 49.15% 50.85%,
+            hsl(${thisHour} 75% 50%) 51% 98%,
+            hsl(${180 - thisHour} 75% 50%) 99%
+            ) no-repeat fixed`;
+}, 500);
