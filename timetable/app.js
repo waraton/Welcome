@@ -119,7 +119,8 @@ function loadLocal() {
   for (const key in localStorage) {
     if (
       Object.hasOwnProperty.call(localStorage, key) &&
-      !document.getElementById(key)
+      !document.getElementById(key) &&
+      new Date(key).valueOf()
     ) {
       const element = JSON.parse(localStorage[key]);
       [a, b, c, d] = element;
@@ -235,7 +236,7 @@ function counter() {
 }
 
 function timer(fun) {
-  
+
   const ms = new Date(fun[1]).getTime() - fun[0]
   const tim = new Date(fun[1]).getTime() - new Date(fun[2]).getTime()
   const used = fun[0] - new Date(fun[2]).getTime()
