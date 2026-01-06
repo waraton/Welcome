@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="canvas" />
     <link rel="styleSheet" href="style.css" type="text/css" media="all" />
-    <link rel="shortcut icon" href="fractalImages/fractal2.png" type="image">
+    <link rel="shortcut icon" href="fractalImages/fractal3.png" type="image">
     <title>canvas dive</title>
   </head>
   <style>
@@ -23,10 +23,27 @@
     }
     canvas {
       border: 2px solid skyblue;
+      background-color: black;
+    }
+    button{
+      justify-self: center;
+      margin: .5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      outline: .2rem solid orange;
+      outline-offset: -.2rem;
+      border: none;
+    }
+    button:hover{
+      filter: invert() drop-shadow(-.1rem -.1rem .25rem white);
+    }
+    button:active{
+      filter: invert();
     }
   </style>
   <body>
     <canvas id="cvs"></canvas>
+    <button id='mutate'>MUTate</button>
   </body>
   <script src="app.js"></script>
 </html>
