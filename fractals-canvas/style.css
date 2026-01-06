@@ -4,28 +4,31 @@
   box-sizing: border-box;
 }
 body {
-  display: grid;
   min-height: 100vh;
-  place-content: center;
-  flex-direction: column;
   background: linear-gradient(to bottom, black, midnightblue);
+  overflow: hidden;
 }
 canvas {
-  border: 0px solid skyblue;
+  border: 5px solid skyblue;
   background-color: black;
 }
 button{
   justify-self: center;
   margin: .5rem;
   padding: 0.5rem 1.5rem;
-  font-size: 1.25rem;
+  font-size: .75rem;
   outline: .2rem solid;
   outline-offset: -.2rem;
   border: none;
-  background-color: #fff2;
-  color: white;
+  background-color: #fff;
+  color: black;
   border-radius: .3rem;
-
+  position: absolute;
+  z-index: 2;
+  bottom: 1rem;
+  left: 50%;
+  cursor: pointer;
+  translate: -50%;
 }
 button:hover{
   filter: invert() drop-shadow(-.1rem -.1rem .25rem white);

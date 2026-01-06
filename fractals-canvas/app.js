@@ -3,13 +3,7 @@ const ctx = canvas.getContext("2d");
 const mutate = document.getElementById("mutate");
 
 const SIZE = 600;
-canvas.width = SIZE;
-canvas.height = SIZE;
-ctx.lineCap = "round";
-ctx.shadowColor = "#222a";
-ctx.shadowBlur = 8;
-ctx.shadowOffsetX = 5;
-ctx.shadowOffsetY = 5;
+
 /** PROPERTIES
  *
  * @constant SIDES define sides of the fractal
@@ -39,7 +33,7 @@ class Fractal {
     ctx.clearRect(0, 0, SIZE, SIZE);
     ctx.lineWidth = this.lineWidth;
     ctx.save();
-    ctx.translate(SIZE / 2, SIZE / 2);
+    ctx.translate(canvas.width / 2, canvas.height / 2);
     for (let i = 0; i < this.SIDES; i++) {
       this.drawBranch(ctx, 0);
       ctx.rotate((Math.PI * 2) / this.SIDES);
@@ -75,4 +69,16 @@ function drawFractal() {
 
 drawFractal();
 
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.lineCap = "round";
+  ctx.shadowColor = "#222a";
+  ctx.shadowBlur = 8;
+  ctx.shadowOffsetX = 5;
+  ctx.shadowOffsetY = 5;
+  drawFractal();
+}
+resizeCanvas();
+window.addEventListener(`resize`, resizeCanvas);
 mutate.addEventListener("click", drawFractal);
