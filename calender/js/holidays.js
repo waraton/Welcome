@@ -16,5 +16,6 @@ export const holidays = [
   [`01-03`, `Uncle travelled to Juba`, 2026],
   [`01-08`, `Inno travelled to the camp`, 2026],
   [`06-10`, `Abe's Birthday`],
-  [`12-30`, `Ivan's Birthday`]
+  [`12-30`, `Ivan's Birthday`],
+  [`01-05`, `Uncles's Birthday`],
 ].sort();
