@@ -17,7 +17,7 @@ document
     e.preventDefault();
     if (WORD.value) {
       loadingStatus = true
-      fetchDictionaryDefinition(WORD.value);
+      fetchDictionaryDefinition(WORD.value.toLowerCase());
     } else {
       dictionaryElement.textContent = `ERROR Encountered!`;
     }
@@ -33,6 +33,7 @@ async function fetchDictionaryDefinition(WORD) {
 
     if (response.ok) {
       renderDefinitions(data);
+      localStorage.setItem(WORD, JSON.stringify(data));
     } else {
       console.log(response);
       document.querySelector(
@@ -42,13 +43,12 @@ async function fetchDictionaryDefinition(WORD) {
       <p>${data.resolution}</p>`;
     }
   } catch (error) {
-    document.querySelector(
-      `article`
-    ).textContent = `ERROR ocurred. Check console`;
+    dictionaryElement.textContent = `ERROR ocurred. Check console`;
     throw new Error(`ERROR >>`, error);
   } finally {
     loadingStatus = false
     const timeLoading = new Date().getTime() - now.getTime();
-    console.log(`Fetch attempt completed in ${timeLoading} ms`);
+    console.log(`Fetch (attempt) completed in ${timeLoading} ms`);
+    dictionaryElement.innerHTML += `\n(Fetch (attempt) completed in ${timeLoading} ms)`;
   }
 }
