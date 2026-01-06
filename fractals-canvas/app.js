@@ -2,7 +2,7 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const mutate = document.getElementById("mutate");
 
-const SIZE = 600;
+const SIZE = 800;
 
 /** PROPERTIES
  *
@@ -19,14 +19,14 @@ const SIZE = 600;
 class Fractal {
   // properties
   constructor(drawMode) {
-    this.lineWidth = Math.random() * 5 + 5;
+    this.lineWidth = Math.random() * 5 + 2;
     this.hue = Math.random() * 360;
     this.SIDES = 6;
     this.maxLevel = 5;
     this.diverge = Math.random() * 0.5 + 0.5;
     this.scale = Math.random() * 0.1 + 0.7;
     this.branches = 4;
-    this.branchSize = SIZE * 0.125;
+    this.branchSize = SIZE * 0.15;
     this.drawMode = drawMode;
   }
 
@@ -43,9 +43,9 @@ class Fractal {
 
   drawBranch(ctx, level) {
     if (level > this.maxLevel) return;
-    let lightness = 15 + level * 15;
+    let lightness = 2.5 + level * 8;
 
-    if (this.drawMode === 'branched') {
+    if (this.drawMode === "branched") {
       ctx.strokeStyle = `hsl(${this.hue}, 50%, ${lightness}%)`;
       ctx.beginPath();
       ctx.moveTo(0, 0);
@@ -56,6 +56,22 @@ class Fractal {
       ctx.beginPath();
       ctx.arc(this.branchSize + 12, 12, this.lineWidth, 0, Math.PI * 2);
       ctx.fill();
+    } else if (this.drawMode === `sparks`) {
+      if (level > this.maxLevel - 4 && Math.random() < 0.05) {
+        ctx.fillStyle = `hsl(${this.hue - 10}, 70%, ${lightness + 5}%)`;
+        ctx.globalAlpha = 0.5;
+
+        for (let i = 0; i < 5; i++) {
+          ctx.save();
+          ctx.translate(60, 80);
+          ctx.rotate(Math.PI * 0.4 * i);
+          ctx.beginPath();
+          ctx.ellipse(0, 8, 4, 50, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+        ctx.globalAlpha = 1;
+      }
     }
 
     for (let i = 0; i < this.branches; i++) {
@@ -74,8 +90,10 @@ function drawFractal() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   const fractal = new Fractal("branched");
   fractal.draw(ctx);
+  fractal.drawMode = `sparks`;
+  fractal.draw(ctx);/*
   fractal.drawMode = `circles`;
-  fractal.draw(ctx);
+  fractal.draw(ctx); */
 }
 
 drawFractal();
