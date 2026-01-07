@@ -21,12 +21,12 @@ class Fractal {
   constructor(drawMode) {
     this.lineWidth = Math.random() * 5 + 2;
     this.hue = Math.random() * 360;
-    this.SIDES = 6;
+    this.SIDES = 5;
     this.maxLevel = 5;
     this.diverge = Math.random() * 0.5 + 0.5;
     this.scale = Math.random() * 0.1 + 0.7;
-    this.branches = 4;
-    this.branchSize = SIZE * 0.15;
+    this.branches = 5;
+    this.branchSize = SIZE * 0.125;
     this.drawMode = drawMode;
   }
 
@@ -43,7 +43,7 @@ class Fractal {
 
   drawBranch(ctx, level) {
     if (level > this.maxLevel) return;
-    let lightness = 2.5 + level * 8;
+    let lightness = 2.5 + level * 12;
 
     if (this.drawMode === "branched") {
       ctx.strokeStyle = `hsl(${this.hue}, 50%, ${lightness}%)`;
@@ -57,13 +57,13 @@ class Fractal {
       ctx.arc(this.branchSize + 12, 12, this.lineWidth, 0, Math.PI * 2);
       ctx.fill();
     } else if (this.drawMode === `sparks`) {
-      if (level > this.maxLevel - 4 && Math.random() < 0.05) {
-        ctx.fillStyle = `hsl(${this.hue - 10}, 70%, ${lightness + 5}%)`;
+      if (level > this.maxLevel - 2 && Math.random() < 0.01) {
+        ctx.fillStyle = `hsl(${this.hue - 10}, 90%, ${lightness + 12}%)`;
         ctx.globalAlpha = 0.5;
 
         for (let i = 0; i < 5; i++) {
           ctx.save();
-          ctx.translate(60, 80);
+          ctx.translate(120, 75);
           ctx.rotate(Math.PI * 0.4 * i);
           ctx.beginPath();
           ctx.ellipse(0, 8, 4, 50, 0, 0, Math.PI * 2);
@@ -71,6 +71,22 @@ class Fractal {
           ctx.restore();
         }
         ctx.globalAlpha = 1;
+      }
+    } else if (this.drawMode === "electricity") {
+      ctx.strokeStyle = `hsl(${this.hue * Math.random() + 25}, 70%, ${lightness}%)`;
+
+      if (level < this.maxLevel - 3) {
+        ctx.save();
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(this.branchSize * 0.2, Math.random() * 20 - 10);
+        ctx.lineTo(this.branchSize * 0.4, Math.random() * 50 - 25);
+        ctx.lineTo(this.branchSize * 0.6, Math.random() * 70 - 10);
+        ctx.lineTo(this.branchSize * 0.8, Math.random() * 90 - 5);
+        ctx.lineTo(this.branchSize, Math.random() * 110 - 20);
+        ctx.stroke();
+        ctx.restore();
       }
     }
 
@@ -88,12 +104,12 @@ class Fractal {
 
 function drawFractal() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const fractal = new Fractal("branched");
+  const fractal = new Fractal("electricity");
+  fractal.draw(ctx);
+  fractal.drawMode = `circles`;
   fractal.draw(ctx);
   fractal.drawMode = `sparks`;
-  fractal.draw(ctx);/*
-  fractal.drawMode = `circles`;
-  fractal.draw(ctx); */
+  fractal.draw(ctx);
 }
 
 drawFractal();
