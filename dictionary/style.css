@@ -5,8 +5,10 @@
   font-family: sans-serif;
 }
 section,li{
-  backdrop-filter: invert();
+  backdrop-filter: invert(.25);
+  padding: .25rem 1rem;
   color: white;
+  margin-block-end: .5rem;
 }
 body{
   background-color: skyblue;
