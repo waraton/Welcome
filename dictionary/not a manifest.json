@@ -1,7 +1,7 @@
 {
   "name": "Waraton Web Dictionary",
   "short_name": "WWD",
-  "start_url": "/",
+  "start_url": "/New folder/new/Welcome/dictionary/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#aaa",
