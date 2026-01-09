@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+    <ellipse transform="matrix(0,-1,1,0,0.3,71.5)" cx="35.9" cy="35.6" rx="27" ry="26.8" fill="skyblue"/>
+    <text font-size="22" font-family="GEORGIA" textLength="50.8" transform="matrix(1,0,0,1,-0.9,0.9)" x="12.1" y="41.7" fill="rgb(25, 25, 25)">
+        WWD
+    </text>
+</svg>
