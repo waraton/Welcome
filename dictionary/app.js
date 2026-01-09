@@ -9,23 +9,23 @@ import { testData2, renderDefinitions } from "./testData.js";
 renderDefinitions(testData2);
 const WORD = document.querySelector(`input[id='word']`);
 const dictionaryElement = document.querySelector(`article#dict`);
-let loadingStatus = false
+let loadingStatus = false;
 
 document
   .querySelector(`input[type='submit']`)
   .addEventListener(`click`, (e) => {
     e.preventDefault();
     if (WORD.value) {
-      loadingStatus = true
+      loadingStatus = true;
       fetchDictionaryDefinition(WORD.value.toLowerCase());
     } else {
       dictionaryElement.textContent = `ERROR Encountered!`;
     }
   });
-
+let now;
 async function fetchDictionaryDefinition(WORD) {
   try {
-    var now = new Date();
+    now = new Date();
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${WORD}`
     );
@@ -46,9 +46,21 @@ async function fetchDictionaryDefinition(WORD) {
     dictionaryElement.textContent = `ERROR ocurred. Check console`;
     throw new Error(`ERROR >>`, error);
   } finally {
-    loadingStatus = false
+    loadingStatus = false;
     const timeLoading = new Date().getTime() - now.getTime();
     console.log(`Fetch (attempt) completed in ${timeLoading} ms`);
     dictionaryElement.innerHTML += `\n(Fetch (attempt) completed in ${timeLoading} ms)`;
+  }
+}
+
+const buttons = document.querySelectorAll(`button`);
+for (const button in document.querySelectorAll(`button`)) {
+  if (Object.hasOwnProperty.call(buttons, button)) {
+    const element = buttons[button];
+    if (element.previousElementSibling.tagName.toLowerCase() === `audio` ) {
+      console.log(`audio`);
+      element.style.cursor = 'pointer'
+      element.addEventListener(`click`,element.previousElementSibling.play())
+    }
   }
 }

@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+  line-height: 1.5;
+  border-radius: .5rem;
+  font-family: sans-serif;
+}
+section,li{
+  backdrop-filter: invert();
+  color: white;
+}
+body{
+  background-color: skyblue;
+}
+main{
+  width: clamp(320px,85vw, 700px);
+  margin: auto;
+}
+.example{
+  font-style: italic;
+}

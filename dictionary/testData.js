@@ -268,15 +268,23 @@ export function renderDefinitions(DATA) {
     const ELEMENT = document.createElement(`section`);
     ELEMENT.classList.add("word");
     dictionaryElement.appendChild(ELEMENT);
-    ELEMENT.innerHTML = `<h2>${data.word} <span></span></h2>`;
+    ELEMENT.innerHTML = `<hgroup><h2>${data.word}</h2> <p></p></hgroup>`;
     const sounds = [];
     data.phonetics.forEach((phonetic) => {
-      let sound = phonetic.text;
+      const soundText = phonetic.text;
+      const soundUrl = phonetic.audio;
+      const audioElement =
+        soundUrl !== "" ? `<audio src='${soundUrl}' ></audio>` : "";
+      const audioPlayButton =
+        soundText
+          ? `<button>${soundText}</button>`
+          : `<button>${data.word}</button>`;
 
-      if (sound && !sounds.includes(sound)) {
-        sounds.push(sound);
-      }
-      ELEMENT.lastElementChild.lastElementChild.innerHTML = `[${sounds.join(`, `)}]`;
+      sounds.push(audioElement, audioPlayButton);
+
+      ELEMENT.lastElementChild.lastElementChild.innerHTML = `${sounds.join(
+        ` `
+      )}`;
     });
 
     const meanings = document.createElement(`p`);
@@ -289,7 +297,7 @@ export function renderDefinitions(DATA) {
         const aGivenMeaning = document.createElement(`li`);
         aGivenMeaning.innerHTML = `<p>${definition.definition}</p>`;
         if (definition.example) {
-          aGivenMeaning.innerHTML += `<q>${definition.example}</q>`;
+          aGivenMeaning.innerHTML += `<q class=example>${definition.example}</q>`;
         } else;
         definitions.append(aGivenMeaning);
       });

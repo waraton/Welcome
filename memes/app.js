@@ -1,15 +1,22 @@
-const data = null;
+async function randoms() {
+  for (let i = 1; i < 5; i++) {
+    const result = await (
+      await fetch(`http://alpha-meme-maker.herokuapp.com`)
+		);
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+		console.log(result);
 
-xhr.addEventListener('readystatechange', function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
-});
+			meme.innerHTML += `<img  href="image" title="image"><br>`;
 
-xhr.open('GET', 'https://dad-jokes.p.rapidapi.com/random/joke');
-xhr.setRequestHeader('x-rapidapi-host', 'dad-jokes.p.rapidapi.com');
-
-xhr.send(data);
+    /* {
+			"albumId":1,
+			"id":1,
+			"title":"accusamus beatae ad facilis cum similique qui sunt",
+			"url":"https://via.placeholder.com/600/92c952",
+			"thumbnailUrl":"https://via.placeholder.com/150/92c952"
+		} */
+  }
+}
+const button = document.querySelector(`button`);
+const meme = document.querySelector(`.meme`);
+button.addEventListener(`click`, randoms);
