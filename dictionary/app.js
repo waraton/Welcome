@@ -6,10 +6,20 @@ import { testData2, renderDefinitions } from "./testData.js";
  * @const {Array} data data returned to the user that can be displayed to the front end
  * @function  fetchDictionaryDefinition used to send data to api and retrieve responce
  */
-renderDefinitions(testData2);
+let loadingStatus = false;
+let now;
 const WORD = document.querySelector(`input[id='word']`);
 const dictionaryElement = document.querySelector(`article#dict`);
-let loadingStatus = false;
+
+try {
+  await renderDefinitions(testData2);
+  now = new Date()
+} catch (error) {
+throw new error(`Error `,error)
+}
+finally {
+  loaded();
+}
 
 document
   .querySelector(`input[type='submit']`)
@@ -22,7 +32,7 @@ document
       dictionaryElement.textContent = `ERROR Encountered!`;
     }
   });
-let now;
+
 async function fetchDictionaryDefinition(WORD) {
   try {
     now = new Date();
@@ -46,21 +56,31 @@ async function fetchDictionaryDefinition(WORD) {
     dictionaryElement.textContent = `ERROR ocurred. Check console`;
     throw new Error(`ERROR >>`, error);
   } finally {
-    loadingStatus = false;
-    const timeLoading = new Date().getTime() - now.getTime();
-    console.log(`Fetch (attempt) completed in ${timeLoading} ms`);
-    dictionaryElement.innerHTML += `\n(Fetch (attempt) completed in ${timeLoading} ms)`;
-  }
-}
-
-const buttons = document.querySelectorAll(`button`);
-for (const button in document.querySelectorAll(`button`)) {
-  if (Object.hasOwnProperty.call(buttons, button)) {
-    const element = buttons[button];
-    if (element.previousElementSibling.tagName.toLowerCase() === `audio` ) {
-      console.log(`audio`);
-      element.style.cursor = 'pointer'
-      element.addEventListener(`click`,element.previousElementSibling.play())
+    loaded()
     }
+  }
+
+
+function loaded() {
+  loadingStatus = false;
+  const timeLoading = new Date().getTime() - now.getTime();
+  console.log(`Fetch (attempt) completed in ${timeLoading} ms`);
+  dictionaryElement.innerHTML += `\n(Fetch (attempt) completed in ${timeLoading} ms)`;
+
+  const buttons = document.querySelectorAll(`button`);
+  for (const button in document.querySelectorAll(`button`)) {
+    if (Object.hasOwnProperty.call(buttons, button)) {
+      const element = buttons[button];
+      if (element.previousElementSibling.tagName.toLowerCase() === `audio`) {
+        console.log(`audio`);
+        element.style.cursor = "pointer";
+        element.addEventListener(
+          `click`,()=>{
+            element.previousElementSibling.play()
+          }
+        );
+      }
+    }
+
   }
 }
