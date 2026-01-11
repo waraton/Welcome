@@ -4,7 +4,7 @@ export const holidays = [
 
   [`01-01`, `generalHoliday`, `New year`],
   [`12-25`, `generalHoliday`, `Christmas`],
-  [`09-10`, `generalHoliday`, `Uganda independence day`],
+  [`10-09`, `generalHoliday`, `Uganda independence day`],
   [`07-11`, `generalHoliday`, `South Sudan Independence day`],
 
   [`06-03`, `countryEvent`, `Uganda Martyrs day`],
