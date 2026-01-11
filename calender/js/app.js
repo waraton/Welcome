@@ -59,8 +59,8 @@ months.forEach((month, index) => {
 });
 holidays.forEach((holiday) => {
   let year;
-  if (holiday[2]) {
-    year = holiday[2];
+  if (holiday[3]) {
+    year = holiday[3];
   } else {
     year = new Date().getFullYear();
   }
@@ -79,6 +79,8 @@ holidays.forEach((holiday) => {
     calender.appendChild(newElement);
     element.classList.add(`holiday`);
     element.id = `id${dateData}`;
+    element.dataset.event = `id${holiday[1]}`;
+    element.title = `${holiday[2]}`;
   }
 });
 
