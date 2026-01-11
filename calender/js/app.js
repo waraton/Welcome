@@ -75,11 +75,11 @@ holidays.forEach((holiday) => {
   );
   if (element) {
     const newElement = document.createElement(`div`);
-    newElement.innerHTML = `<a href='#id${dateData}'>${dateData}</a>: ${holiday[1]}`;
+    newElement.innerHTML = `<a href='#id${dateData}'>${dateData}</a>: ${holiday[2]}`;
     calender.appendChild(newElement);
     element.classList.add(`holiday`);
     element.id = `id${dateData}`;
-    element.dataset.event = `id${holiday[1]}`;
+    element.dataset.event = `${holiday[1]}`;
     element.title = `${holiday[2]}`;
   }
 });
