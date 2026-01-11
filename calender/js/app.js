@@ -57,6 +57,7 @@ months.forEach((month, index) => {
     }
   }
 });
+const newElementsContainer = document.createElement(`article`);
 holidays.forEach((holiday) => {
   let year;
   if (holiday[3]) {
@@ -74,15 +75,18 @@ holidays.forEach((holiday) => {
     `[data-date='${year}-${month}-${day}']`
   );
   if (element) {
-    const newElement = document.createElement(`div`);
+    const newElement = document.createElement(`p`);
     newElement.innerHTML = `<a href='#id${dateData}'>${dateData}</a>: ${holiday[2]}`;
-    calender.appendChild(newElement);
+    newElement.dataset.event = `${holiday[1]}`;
+    newElementsContainer.appendChild(newElement);
+
     element.classList.add(`holiday`);
     element.id = `id${dateData}`;
     element.dataset.event = `${holiday[1]}`;
     element.title = `${holiday[2]}`;
   }
 });
+calender.append(newElementsContainer)
 
 setInterval(() => {
   const now = new Date();
