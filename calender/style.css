@@ -50,6 +50,7 @@ section > span {
   padding: 0.5rem 1rem;
   place-content: center;
   border-radius: 0.25rem;
+  outline-offset: -0.2rem;
   font-size: 1.5rem;
 }
 .heading {
@@ -81,16 +82,26 @@ section > span {
   text-transform: uppercase;
 }
 [month] span.thisDay {
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  font-family:consolas, 'Courier New', Courier, monospace;
+  font-family: consolas, "Courier New", Courier, monospace;
   outline: auto;
 }
-.holiday.holiday{
-  border-radius: 0;
-  color: skyblue;
-  background-color: brown;
-  outline: double .2rem;
-  outline-offset: -.2rem;
+[data-event] {
+  --boxShadow: 0.1rem 0.1rem 1rem .4rem var(--color) inset;
+  box-shadow: var(--boxShadow);
+  --color: teal;
+}
+[data-event="birthday"] {
+  --color: purple;
+}
+[data-event="myEvent"] {
+  --color: green;
+}
+[data-event="countryEvent"] {
+  --color: black;
+}
+[data-event="familyEvent"] {
+  --color: brown;
+}
+[data-event="courseEvent"] {
+  --color: navy;
 }
