@@ -1,0 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+section{
+  display: grid;
+  grid-template-columns: repeat(15,1fr);
+  grid-template-rows: repeat(15,1fr);
+  border: .2rem solid green;
+  gap: .25rem;
+  grid-template-areas: 'r r r r r r . . . g g g g g g'
+                       'r r r r r r . . . g g g g g g'
+                       'r r r r r r . . . g g g g g g'
+                       'r r r r r r . . . g g g g g g'
+                       'r r r r r r . . . g g g g g g'
+                       'r r r r r r . . . g g g g g g'
+                       '. . . . . . c c c . . . . . .'
+                       '. . . . . . c c c . . . . . .'
+                       '. . . . . . c c c . . . . . .'
+                       'b b b b b b . . . y y y y y y'
+                       'b b b b b b . . . y y y y y y'
+                       'b b b b b b . . . y y y y y y'
+                       'b b b b b b . . . y y y y y y'
+                       'b b b b b b . . . y y y y y y'
+                       'b b b b b b . . . y y y y y y';
+}
+section > *{
+  border: .1em solid;
+  aspect-ratio: 1;
+  border-radius: .5rem;
+}
+
+section > *:nth-child(1){
+  grid-area: r ;
+}
+section > *:nth-child(20){
+  grid-area: g ;
+}
+section > *:nth-last-child(1){
+  grid-area: y ;
+}
+section > *:nth-last-child(20){
+  grid-area: b ;
+}
+section > *:nth-child(5){
+  grid-area: c ;
+}
+
+section > *:nth-child(2n){
+  background-color: cyan;
+}
