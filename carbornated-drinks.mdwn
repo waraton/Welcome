@@ -54,6 +54,25 @@ Mirinda and the Mirinda Stylized logo are trade marks of PepsiCola Inc
 
 ***
 
+### Mirinda Pineapple
+
+**Label:**
+Mirinda - carbonated pineapple flavoured soft drink
+
+**Ingredients:**
+Carbonated water, Sugar, acidulant (citric acid), flavor enhancer (Sodium chloride), preservatives (potassium sorbate, sodium benzoate, potassium sulphate), Colour (tetrazine, sunset yellow).
+
+**Produced and bottled in uganda by:**
+Crown Beverages Uganda limited
+
+Under the Authority of PepsiCo Inc, Purchase N.Y., USA
+
+**Email:** <info@pepsi-cola.co.ug>
+
+Mirinda and the Mirinda Stylized logo are trade marks of PepsiCola Inc
+
+***
+
 ### Novida - Pineapple Breeze
 
 **Label:**
@@ -123,6 +142,7 @@ COCA-COLA Beverages Uganda LTD,
 [2]: #fanta---carbonated-orange-flavoured-drink
 [4]: #novida---pineapple-breeze 'Novida Pineapple Breeze Non-Alcoholic Malt Beverage carbonated soft drink'
 [5]: #mirinda-fruity 'Mirinda Fruity Mixed berry flavoured carbonated soft drink'
+[6]: #mirinda-pineapple 'Mirinda carbonated pineapple flavoured soft drink'
 [8]: #mountain-dew---citrus-blast 'Mountain Dew Citrus Blast - Citrus flavoured carbonated soft drink'
 
 ## Disclaimer
