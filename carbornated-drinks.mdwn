@@ -54,10 +54,31 @@ Mirinda and the Mirinda Stylized logo are trade marks of PepsiCola Inc
 
 ***
 
-### Mountain Dew ~ Citrus Blast
+### Novida - Pineapple Breeze
 
 **Label:**
-Mountain Dew ~ Citrus Blast - Citrus flavoured carbonated soft drink
+**Novida** Pineapple Breeze Non-Alcoholic Malt Beverage carbonated soft drink
+
+**Ingredients:**
+Carbonated water, Sugar, acidulnts (citric acid, Malic acid), Flavouring, Malt extract (gluten), Whey protein (milk), preservatives (potassium sorbate, sodium benzoate), Non-Nutritive Sweeteners (Sodium saccharin)
+
+**Allergens:** Gluten and Milk Protein.
+
+**Bottled by:**
+Coca-Cola Beverages Uganda limited
+
+Under the Authority of Schweppes Holdings Limited.
+
+**Email:** <ccbaug@ccbagroup.com>
+
+Novida, Schweppes are reistered trade marks of European Refreshments. &copy; European Refreshments.
+
+***
+
+### Mountain Dew - Citrus Blast
+
+**Label:**
+Mountain Dew - Citrus Blast - Citrus flavoured carbonated soft drink
 
 **Ingredients:**
 Carbonated water, Sugar, acidity regulators (citric acid, sodium citrate), flavours (including caffein), preservative (sodium benzoate), non-nutritive sweeteners (acesulfame potassium, sucralose), stabilisers (gum arabic, glycerol ester of wood rosin), Colour (tetrazine), sequestrant (sodium bicalcium EDTA).
@@ -91,13 +112,15 @@ COCA-COLA Beverages Uganda LTD,
 
 ## Bottled WATER
 
-| Brand    | Sodium | Potassium | Calcium | Magnesium | Iron | Chloride | Sulphate | Flouride | Nitrate | TDS |  PH range |
-|----------|-------:|----------:|--------:|----------:|-----:|---------:|---------:|---------:|--------:|-----|----------:|
-| Rwenzori |    9.1 |       3.8 |    10.1 |       3.5 | 0.04 |      2.6 |      4.2 |      0.3 |     1.6 | 108 | 5.5 - 8.5 |
+| Brand    | Sodium | Potassium | Calcium | Magnesium |  Iron | Chloride | Sulphate | Fluoride | Nitrate | TDS |  PH range |
+|----------|-------:|----------:|--------:|----------:|------:|---------:|---------:|---------:|--------:|----:|----------:|
+| Rwenzori |    9.1 |       3.8 |    10.1 |       3.5 |  0.04 |      2.6 |      4.2 |      0.3 |     1.6 | 108 | 5.5 - 8.5 |
+| Yaket    |    5.6 |       4.1 |     2.6 |       2.3 | 0.034 |      9.5 |      0.5 |      0.0 |   ----- |  46 | 6.5 - 8.5 |
 
 **Note:** composition ppm
 
 [1]: #coca-cola "Original Taste Carbonated Soft Drink"
 [2]: #fanta---carbonated-orange-flavoured-drink
+[4]: #novida---pineapple-breeze 'Novida Pineapple Breeze Non-Alcoholic Malt Beverage carbonated soft drink'
 [5]: #mirinda-fruity 'Mirinda Fruity Mixed berry flavoured carbonated soft drink'
-[8]: #mountain-dew-citrus-blast 'Mountain Dew Citrus Blast - Citrus flavoured carbonated soft drink'
+[8]: #mountain-dew---citrus-blast 'Mountain Dew Citrus Blast - Citrus flavoured carbonated soft drink'
