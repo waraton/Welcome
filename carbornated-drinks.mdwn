@@ -124,3 +124,7 @@ COCA-COLA Beverages Uganda LTD,
 [4]: #novida---pineapple-breeze 'Novida Pineapple Breeze Non-Alcoholic Malt Beverage carbonated soft drink'
 [5]: #mirinda-fruity 'Mirinda Fruity Mixed berry flavoured carbonated soft drink'
 [8]: #mountain-dew---citrus-blast 'Mountain Dew Citrus Blast - Citrus flavoured carbonated soft drink'
+
+## Disclaimer
+
+*The information given here is a property of the given entities.*
