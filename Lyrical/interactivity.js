@@ -71,12 +71,12 @@ function startEngine(timeline) {
         textArea.innerHTML = activeLyric.text;
       }
     }
-  }, 100);
+  }, 50);
 
   // Visual Effect Loop (Keep at 2500ms as per your design)
   visualInterval = setInterval(() => {
     if (!audio.paused && !audio.seeking) {
-      const progress = (audio.currentTime / audio.duration) * 25 || 0;
+      const progress = (audio.currentTime / audio.duration) * 5 || 0;
       const type = gradientNames[Math.floor(Math.random() * 3)];
 
       textArea.style.background = `repeating-${type}-gradient(

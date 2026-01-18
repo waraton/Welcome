@@ -40,14 +40,14 @@ figcaption{
   border-radius: .5rem;
   display: grid;
   color: orange;
-  filter: blur(.1mm) brightness(1.2);
+  filter: brightness(1);
   text-shadow: .1rem .1rem white;
-  place-content: center;
+  place-content: end center;
   padding: 1rem;
   text-align: center;
-  font: bold 8vmax/.95 sans-serif;
+  font: bold 5vmax/1.95 sans-serif;
   user-select: none;
   transition: .5s;
   background:linear-gradient(blue,orange);
-  mix-blend-mode: hard-light;
+  mix-blend-mode: difference;
 }
