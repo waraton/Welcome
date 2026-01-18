@@ -131,12 +131,15 @@ COCA-COLA Beverages Uganda LTD,
 
 ## Bottled WATER
 
-| Brand    | Sodium | Potassium | Calcium | Magnesium |  Iron | Chloride | Sulphate | Fluoride | Nitrate | TDS |  PH range |
-|----------|-------:|----------:|--------:|----------:|------:|---------:|---------:|---------:|--------:|----:|----------:|
-| Rwenzori |    9.1 |       3.8 |    10.1 |       3.5 |  0.04 |      2.6 |      4.2 |      0.3 |     1.6 | 108 | 5.5 - 8.5 |
-| Yaket    |    5.6 |       4.1 |     2.6 |       2.3 | 0.034 |      9.5 |      0.5 |      0.0 |   ----- |  46 | 6.5 - 8.5 |
+| Brand                 |    Na |  Ka | Calcium |  Mg |    Fe | ClO | SO$_4$ |   FO | NO$_2$ | TDS |  PH range |
+|-----------------------|------:|----:|--------:|----:|------:|----:|-------:|-----:|-------:|----:|----------:|
+| Rwenzori              |   9.1 | 3.8 |    10.1 | 3.5 |  0.04 | 2.6 |    4.2 |  0.3 |    1.6 | 108 | 5.5 - 8.5 |
+| Yaket                 |   5.6 | 4.1 |     2.6 | 2.3 | 0.034 | 9.5 |    0.5 |  0.0 |      - |  46 | 6.5 - 8.5 |
+| Ice Springs[*](#comp) | 12.08 | .51 |   13.42 | 4.1 |  0.01 | .76 |    3.7 | 0.74 |      - | 132 | 6.5 - 8.5 |
 
 **Note:** composition ppm
+
+<p id=comp>* Composition is in mg/L</p>
 
 [1]: #coca-cola "Original Taste Carbonated Soft Drink"
 [2]: #fanta---carbonated-orange-flavoured-drink
