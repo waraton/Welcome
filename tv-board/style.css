@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgba(0, 0, 0, 0.801);
+}
+.box{
+  --shadow:.25rem .5rem .5rem  hsl(0 0% 10% /.25);
+  --gap:5vw;
+  background-color: aliceblue;
+  display: grid;
+  width: clamp(255px,85vw,550px);
+  grid-template-columns: 1fr 8fr 1fr 1fr;
+  grid-template-rows: 2fr 4fr 2fr;
+  padding: var(--gap);
+  gap: var(--gap);
+  grid-template-areas:
+      'tl c tr vs'
+      'll c rc vs'
+      'lb bs br vs'
+  ;
+  box-shadow: var(--shadow);
+  aspect-ratio: 1.2;
+  margin: auto;
+}
+.box *{
+  box-shadow:
+    .25rem -.25rem .1rem .25rem inset rgba(250, 235, 215, 0.4),
+    var(--shadow) inset;
+  background-color: rgba(250, 235, 215, 0.2);
+}
+.area1{
+  grid-area: tl;
+}
+.area2{
+  grid-area: c;
+  border-radius: 55%;
+}
+.area3{
+  grid-area: bs;
+}
+.area4{
+  grid-area: vs;
+}
+header{
+  background-color: teal;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: white;
+  margin-bottom: 2rem;
+
+  & *{
+    text-decoration: none;
+  }
+}
