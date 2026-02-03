@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+h3{
+  text-transform: uppercase;
+  counter-increment: count countIn;
+  counter-reset: countIn -1;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+
+  &:before{
+    content: counter(count) '. '
+    ;
+  }
+  &~*:not(h3,h4){
+    margin-left: 4rem
+  }
+}
+h4{
+  counter-increment:  countIn;
+  text-transform: capitalize;
+  margin-left: 2rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+
+  &:before{
+    content: counter(count) '.' counter(countIn) ' ';
+  }
+}
