@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+[images]{
+    position: relative;
+    width: 200px;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+    transform: perspective(15000px) rotateX(0deg);
+    transition: transform .25s;
+    backface-visibility: hidden;
+}
+figure{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    overflow: hidden;
+    outline: auto;
+    transform: rotateY(calc(var(--n) * 36deg)) translateZ(350px);
+    
+    &  img{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+    }
+}
+button{
+    width: 4rem;
+    background: yellow;
+    color: black;
+    border: none;
+    padding: .5rem 1rem;
+    position: fixed;
+    bottom: 1rem;
+    z-index: 8621;
+    cursor: pointer;
+    left: 25%;
+    filter: brightness(.75);
+    font-size: 1.25rem;
+    transition: .1s;
+    border-radius: .25rem;
+}
+button:hover{
+    filter: brightness(1);
+}
+button:active{
+    filter: invert(.2);
+    translate: 1px 1px;
+}
+button:last-child{
+    right: 25%;
+    left: auto;
+}
