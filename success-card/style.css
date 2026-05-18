@@ -55,7 +55,7 @@ body{
 }
 section{
   margin: auto;
-  aspect-ratio: .8;
+  aspect-ratio: .75;
   grid-template-rows: auto 2rem;
   background:
   linear-gradient(90deg,
@@ -86,7 +86,7 @@ section h1{
 }
 section p[wish]{
   font-family: 'brush script mt';
-  font-size: 1.5rem;
+  font-size: .85rem;
   position: absolute;
   top: 35%;
   rotate: -15deg;
@@ -98,10 +98,11 @@ section p[wish]{
   font-size: 1rem;
   padding-top: .15rem;
   font-style: italic;
+  display:none
 }
 .author{
   width: fit-content;
   margin-left: auto;
-  font-size: 2rem;
+  font-size: .75rem;
   font-family:'tahoma', monospace;
 }
