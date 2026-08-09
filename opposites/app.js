@@ -151,133 +151,396 @@ const opposites = {
   150: ["Lead", "Follow"],
   151: ["Victory", "Defeat"],
 };
-let counter = 1;
-let getFrom = [];
 
-for (iterator in opposites) {
-  for (let i = 0; i < 3; i++) {
-    let ind = opposites[Math.floor(Math.random() * 150) + 1][1]
-    if (!(ind in getFrom)) {
-      getFrom.push(ind);
+// ============================================================
+// STATE MANAGEMENT - Centralized state tracking
+// ============================================================
+const appState = {
+  currentQuestion: 0,
+  totalQuestions: Object.keys(opposites).length,
+  answered: false,
+  score: [],
+  wronged: [],
+  skipped: [],
+  questionData: [], // Will store question + answer data
+  
+  reset() {
+    this.currentQuestion = 0;
+    this.answered = false;
+    this.score = [];
+    this.wronged = [];
+    this.skipped = [];
+  },
+  
+  getCurrentCorrectAnswer() {
+    return this.questionData[this.currentQuestion]?.correctAnswer || null;
+  },
+  
+  isAnswered() {
+    return this.answered;
+  },
+  
+  markAnswered() {
+    this.answered = true;
+  },
+  
+  getProgress() {
+    const total = this.score.length + this.wronged.length + this.skipped.length;
+    return {
+      total,
+      correct: this.score.length,
+      wrong: this.wronged.length,
+      skipped: this.skipped.length
+    };
+  }
+};
+
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
+
+/**
+ * Converts object to array for easier iteration
+ */
+function getOppositesList() {
+  return Object.values(opposites);
+}
+
+/**
+ * Gets 3 random incorrect answers (distractors)
+ * Ensures they are unique and different from the correct answer
+ */
+function getRandomDistracters(correctAnswer, count = 3) {
+  const oppositesList = getOppositesList();
+  const selected = new Set();
+  const result = [];
+  
+  while (result.length < count) {
+    const randomIndex = Math.floor(Math.random() * oppositesList.length);
+    const distracter = oppositesList[randomIndex][1]; // Get the opposite/second word
+    
+    // Ensure it's not the correct answer and not already selected
+    if (distracter !== correctAnswer && !selected.has(distracter)) {
+      result.push(distracter);
+      selected.add(distracter);
     }
   }
-    getFrom.push(opposites[iterator][0]);
-  getFrom.sort();
-  const cont = document.createElement("section");
-  cont.classList.add(`qn-container`);
-  cont.classList.add(`qsn${counter}`);
-  cont.innerHTML = `<p class="question">
-  <span  class='counter'>${counter}.</span>
-    What is the opposite of 
-      <span class="word">${opposites[iterator][1]}</span>?
-  </p>
-    <ol>
-    <li>${getFrom[0]}</li>
-    <li>${getFrom[1]}</li>
-    <li>${getFrom[2]}</li>
-    <li>${getFrom[3]}</li>
-    </ol>
-    `;
-  ++counter;
-  getFrom = [];
-  document.querySelector("section").append(cont);
+  
+  return result;
 }
 
-const qns = document.querySelectorAll("section[class*='qn-container qsn']");
-const choices = document.querySelectorAll("ol li");
-const questions = document.querySelectorAll("section[class^='qsn']");
-const timeOut = 5;
-counter = 1;
-const nextButton = document.querySelector(".next");
-const score = []
-const wronged = []
-const skipped = []
-
-function viewer(e) {
-  e.classList.add('selected')
-  setTimeout(() => {
-    e.classList.remove('selected')
-  }, timeOut * 1000);
-}
-hideAllQns();
-disNext();
-
-function hideAllQns() {
-  qns.forEach((qn) => {
-    qn.style.display = "none";
-  });
-}
-
-function disNext() {
-  qns[counter - 1].style.display = "grid";
-  nextButton.addEventListener("click", ()=>{
-    nextQns(skipped)
-    const n = qns[counter].querySelector('.word')
-    skipped.push(n.textContent)
-    document.querySelector('[next]').textContent = skipped.length
-  })
-}
-function nextQns(a) {
-  hideAllQns();
-  qns[counter].style.display = "grid";
-  ++counter;
-  let total ;
-  if (total < 0) {
-    total = 1
-  } else {
-    total = skipped.length + score.length + wronged.length
+/**
+ * Shuffles an array (Fisher-Yates shuffle)
+ */
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  const max = (total / 151) * 100
-  console.log(max); 
-  const stops = [
-    ['green',skipped.length],
-    ['blue',skipped.length + score.length],
-    ['red',total]
-  ]
- document.querySelector('.dataRep').style.background = `conic-gradient(
-    ${stops[0][0]} 
-      0
-      ${(stops[0][1] / total)*(max - .25)}%,
-    ${stops[1][0]} 
-      ${(stops[0][1] / total)*(max + .25)}% 
-      ${(stops[1][1] / total)*(max - .25)}%,
-    ${stops[2][0]} 
-      ${(stops[1][1] / total)*(max + .25)}%
-      ${(stops[2][1] / total)*(max - .25)}%,
-    white
-      ${(stops[2][1]/total)*(max + .25)}%
-      ${max}%
-  )`
+  return shuffled;
 }
 
-choices.forEach((choice) => {
-  choice.addEventListener("click", () => {
-    choice.textContent === opposites[counter][0]
-    ? correct(choice,score)
-    : wrong(choice,wronged);
+// ============================================================
+// QUESTION GENERATION
+// ============================================================
+
+/**
+ * Generates all quiz questions with shuffled answer options
+ */
+function generateQuestions() {
+  const oppositesList = getOppositesList();
+  let counter = 1;
+  
+  oppositesList.forEach((pair) => {
+    const questionWord = pair[1]; // What we ask about
+    const correctAnswer = pair[0]; // The correct opposite
+    
+    // Get 3 random distractors
+    const distracters = getRandomDistracters(correctAnswer);
+    
+    // Combine and shuffle all options
+    const allOptions = shuffleArray([correctAnswer, ...distracters]);
+    
+    appState.questionData.push({
+      number: counter,
+      question: questionWord,
+      correctAnswer: correctAnswer,
+      options: allOptions
+    });
+    
+    counter++;
   });
+}
+
+/**
+ * Creates and renders a single question
+ */
+function renderQuestion(index) {
+  const mainSection = document.querySelector("main > section");
+  
+  // Remove existing question containers
+  const existingContainers = mainSection.querySelectorAll(".qn-container");
+  existingContainers.forEach(container => container.remove());
+  
+  // Get question data
+  const data = appState.questionData[index];
+  
+  // Create question container
+  const cont = document.createElement("section");
+  cont.classList.add("qn-container");
+  cont.classList.add(`qsn${data.number}`);
+  
+  // Build HTML
+  cont.innerHTML = `
+    <p class="question">
+      <span class="counter">${data.number}.</span>
+      What is the opposite of 
+      <span class="word">${data.question}</span>?
+    </p>
+    <ol>
+      ${data.options.map((option, i) => `<li data-answer="${option}">${option}</li>`).join('')}
+    </ol>
+  `;
+  
+  // Insert at the beginning (before scoreboard)
+  mainSection.insertBefore(cont, mainSection.querySelector("[scoreBoard]"));
+  
+  // Attach event listeners to choices
+  attachChoiceListeners();
+}
+
+// ============================================================
+// EVENT HANDLERS
+// ============================================================
+
+/**
+ * Attaches click listeners to answer choices for the current question
+ */
+function attachChoiceListeners() {
+  const currentContainer = document.querySelector(".qn-container");
+  if (!currentContainer) return;
+  
+  const choices = currentContainer.querySelectorAll("ol li");
+  
+  choices.forEach((choice) => {
+    // Remove existing listeners by cloning
+    const newChoice = choice.cloneNode(true);
+    choice.parentNode.replaceChild(newChoice, choice);
+    
+    // Add new listener
+    newChoice.addEventListener("click", () => {
+      if (appState.isAnswered()) return; // Prevent multiple answers
+      
+      const selectedAnswer = newChoice.dataset.answer;
+      const correctAnswer = appState.getCurrentCorrectAnswer();
+      
+      if (selectedAnswer === correctAnswer) {
+        handleCorrectAnswer(newChoice);
+      } else {
+        handleWrongAnswer(newChoice, correctAnswer);
+      }
+    });
+  });
+}
+
+/**
+ * Handles correct answer selection
+ */
+function handleCorrectAnswer(choiceElement) {
+  appState.markAnswered();
+  appState.score.push(appState.getCurrentCorrectAnswer());
+  
+  // Visual feedback
+  choiceElement.classList.add("correctChoice");
+  disableAllChoices();
+  
+  // Update UI
+  updateScoreBoard();
+  
+  // Move to next question
+  setTimeout(() => {
+    moveToNextQuestion();
+  }, 1500);
+}
+
+/**
+ * Handles wrong answer selection
+ */
+function handleWrongAnswer(choiceElement, correctAnswer) {
+  appState.markAnswered();
+  appState.wronged.push(choiceElement.dataset.answer);
+  
+  // Visual feedback - show wrong choice and highlight correct answer
+  choiceElement.classList.add("wrong");
+  
+  // Highlight the correct answer
+  const currentContainer = document.querySelector(".qn-container");
+  const allChoices = currentContainer.querySelectorAll("ol li");
+  allChoices.forEach((choice) => {
+    if (choice.dataset.answer === correctAnswer) {
+      choice.classList.add("correctChoice", "showCorrect");
+    }
+  });
+  
+  disableAllChoices();
+  
+  // Update UI
+  updateScoreBoard();
+  
+  // Move to next question
+  setTimeout(() => {
+    moveToNextQuestion();
+  }, 1500);
+}
+
+/**
+ * Disables all choice buttons after an answer is selected
+ */
+function disableAllChoices() {
+  const choices = document.querySelectorAll(".qn-container ol li");
+  choices.forEach(choice => {
+    choice.style.pointerEvents = "none";
+    choice.style.opacity = "0.6";
+  });
+}
+
+/**
+ * Handles the "Skip" button click
+ */
+function handleSkipQuestion() {
+  if (appState.isAnswered()) return;
+  
+  const currentData = appState.questionData[appState.currentQuestion];
+  appState.skipped.push(currentData.question);
+  appState.markAnswered();
+  
+  updateScoreBoard();
+  
+  setTimeout(() => {
+    moveToNextQuestion();
+  }, 500);
+}
+
+/**
+ * Moves to the next question or ends quiz
+ */
+function moveToNextQuestion() {
+  appState.currentQuestion++;
+  
+  if (appState.currentQuestion >= appState.totalQuestions) {
+    endQuiz();
+  } else {
+    appState.answered = false;
+    renderQuestion(appState.currentQuestion);
+  }
+}
+
+/**
+ * Updates the scoreboard with current progress
+ */
+function updateScoreBoard() {
+  const progress = appState.getProgress();
+  
+  document.querySelector('[next]').textContent = progress.skipped;
+  document.querySelector('[corr]').textContent = progress.correct;
+  document.querySelector('[wrong]').textContent = progress.wrong;
+  
+  // Update pie chart
+  updateChart(progress);
+}
+
+/**
+ * Updates the conic gradient pie chart
+ */
+function updateChart(progress) {
+  const { total, skipped, correct, wrong } = progress;
+  
+  if (total === 0) {
+    document.querySelector('.dataRep').style.background = 'white';
+    return;
+  }
+  
+  const skippedPercent = (skipped / total) * 100;
+  const correctPercent = ((skipped + correct) / total) * 100;
+  const wrongPercent = ((skipped + correct + wrong) / total) * 100;
+  
+  document.querySelector('.dataRep').style.background = `
+    conic-gradient(
+      green 0% ${skippedPercent}%,
+      blue ${skippedPercent}% ${correctPercent}%,
+      red ${correctPercent}% ${wrongPercent}%,
+      white ${wrongPercent}% 100%
+    )
+  `;
+}
+
+/**
+ * Ends the quiz and shows final results
+ */
+function endQuiz() {
+  const mainSection = document.querySelector("main > section");
+  const container = mainSection.querySelector(".qn-container");
+  
+  if (container) {
+    container.style.display = "none";
+  }
+  
+  const progress = appState.getProgress();
+  const accuracy = progress.total > 0 
+    ? Math.round((progress.correct / progress.total) * 100) 
+    : 0;
+  
+  // Show end screen (you can enhance this)
+  alert(`
+Quiz Complete!
+
+Correct: ${progress.correct}
+Wrong: ${progress.wrong}
+Skipped: ${progress.skipped}
+Total: ${progress.total}
+
+Accuracy: ${accuracy}%
+  `);
+  
+  // Optional: Reset button
+  const nextButton = document.querySelector(".next");
+  nextButton.textContent = "Restart";
+  nextButton.onclick = () => {
+    appState.reset();
+    appState.questionData = [];
+    generateQuestions();
+    appState.answered = false;
+    renderQuestion(0);
+    nextButton.textContent = "Skip";
+    nextButton.onclick = null;
+    updateScoreBoard();
+  };
+}
+
+// ============================================================
+// INITIALIZATION
+// ============================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Generate all questions
+  generateQuestions();
+  
+  // Render first question
+  renderQuestion(0);
+  
+  // Setup Next/Skip button
+  const nextButton = document.querySelector(".next");
+  nextButton.textContent = "Skip";
+  nextButton.addEventListener("click", handleSkipQuestion);
+  
+  // Setup Show/Hide Score button
+  document.querySelector('[scoreBoard] button').addEventListener('click', (e) => {
+    e.target.parentElement.classList.toggle('active');
+    const isActive = e.target.parentElement.classList.contains('active');
+    e.target.textContent = isActive ? 'Hide Score' : 'Show Score';
+  });
+  
+  // Initialize scoreboard
+  updateScoreBoard();
 });
-
-function correct(a,b) {
-  a.classList.add("correctChoice");
-  disableOtherChoices(a);
-  b.push(a.textContent)
-  document.querySelector('[corr]').textContent = b.length
-}
-function wrong(a,b) {
-  a.classList.add("wrong");
-  disableOtherChoices(a);
-  b.push(a.textContent)
-  document.querySelector('[wrong]').textContent = b.length
-}
-
-function disableOtherChoices(a) {
-  setTimeout(nextQns, 1000)
-}
-
-document.querySelector('[scoreBoard] button').addEventListener('click',(b)=>{
-  b.target.parentElement.classList.toggle('active')
-  let c = b.target.parentElement.classList.contains('active')
-  if (c) b.target.textContent = 'Hide Score'
-  else b.target.textContent = 'Show Score'
-})
