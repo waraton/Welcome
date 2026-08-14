@@ -8,7 +8,7 @@ I am Waran Newton Mono KORSUK and an upcoming front end developer who started se
 
 I started my primary in **Afoji Primary School** the finished in **Lire Primary School** before joining **Ebenezer Baptist sec sch** though i got my UCE in **Bishop Angelo Negri College Gulu** with *15 of 10*. A level finished in 2023 from **St Mary's Boarding sec sch Kitende** with ***20***.
 
-Currently (May 2026) I'm an undergraduate bachelors student of Electrical Engineering at [Makerere University](mak.ac.ug) ([CEDAT](cedat.mak.ac.ug))
+Currently (May 2026) I'm an undergraduate bachelors student of Electrical Engineering at [Makerere University](https://mak.ac.ug) ([CEDAT](https://cedat.mak.ac.ug))
 
 
 ## likes
