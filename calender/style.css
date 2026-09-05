@@ -36,16 +36,19 @@ form{
     font: inherit;
   }
 }
-#calender {
+#calender,  #calender > article {
   margin: auto;
   display: grid;
   width: clamp(355px, 85vw, 825px);
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+#calender article{
+  gap: .125rem;
 }
 #calender section {
   max-width: fit-content;
   break-inside: avoid;
-  margin: 1rem;
   display: grid;
   grid-template-columns: repeat(8, minmax(2rem, 4rem));
   border: 0.2rem solid oldlace;
@@ -102,9 +105,12 @@ section > span {
   font-family: consolas, "Courier New", Courier, monospace;
   outline: auto;
 }
+
 [data-event] {
-  --boxShadow: 0.1rem 0.1rem 1rem .4rem var(--color) inset;
+  --boxShadow: 0.25rem 0.125rem 0 .25rem var(--color) inset;
   box-shadow: var(--boxShadow);
+  padding: .125rem .85rem;
+  line-height: 1.85;
   --color: teal;
 }
 [data-event="birthday"] {
